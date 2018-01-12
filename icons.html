@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Uso de Modales</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="dist/styles/app.css" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav id="sidebar" class="main-nav">
+            <div class="sidebar-header">
+                <h1 id="brand"><a href="./dashboard.html"><span>Intranet</span></a></h1>
+            </div>
+            <div class="media">
+                <a href="#"><img class="" src="../images/foto.png" width="48" height="48" /></a>
+                <div class="media-body">
+                    <h4><a href="#">Marcial Soto Sánchez</a></h4>
+                    <p><small>OA - UTI</small></p>
+                </div>
+            </div>
+            <ul class="nav flex-column components">
+                <li class="nav-item">
+                    <a href="./dashboard.html" class="nav-link "><i class="fas fa-home"></i> <span>Inicio</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#homeSubmenu" class="nav-link active" data-toggle="collapse" aria-expanded="true" aria-controls="homeSubmenu">
+                        <i class="fas fa-edit"></i>
+                        <span>Contenido</span>
+                    </a>
+                    <ul class="collapse list-unstyled show" id="homeSubmenu">
+                        <li><a href="./buttons.html">Botones</a></li>
+                        <li><a href="./charts.html">Charts</a></li>
+                        <li><a href="./forms.html">Forms</a></li>
+                        <li><a href="./index.html">Login</a></li>
+                        <li><a href="./modal.html" class="active">Modales</a></li>
+                        <li><a href="./tables.html">Tablas</a></li>
+                        <li><a href="./typo.html">Tipografía</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"><i class="fab fa-app-store"></i> <span>Sistemas</span></a>
+                </li>
+            </ul>
+            <a href="./index.html" class="logout-button"><i class="fas fa-power-off"></i> <span>Salir</span></a>
+        </nav>
+        <section id="content">
+            <nav class="header">
+                <form>
+                    <fieldset>
+                        <button type="button" id="sidebarCollapse" class="btn btn-link">
+                                <i class="ar-arrow-left-top_solid"></i>
+                            </button>
+                    </fieldset>
+                </form>
+                <ul class="nav ml-auto">
+                    <li class="nav-item dropdown notifications new">
+                        <a class="nav-link" href="" data-toggle="dropdown" aria-expanded="false">
+                            <i class="far fa-bell"></i>
+                            <sup>
+                                <span class="counter">7</span>
+                            </sup>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item active" href="#">Link</a>
+                            <a class="dropdown-item" href="#">Link</a>
+                            <a class="dropdown-item" href="#">Link</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-expanded="false">
+                            <i class="far fa-user-circle"></i>
+                            <span class="name"> Marcial Soto </span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item active" href="#">Link</a>
+                            <a class="dropdown-item" href="#">Link</a>
+                            <a class="dropdown-item" href="#">Link</a>
+                            <a class="dropdown-item" href="#">Salir</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <main>
+                <article>
+                    <div id="post-content">
+                        <header>
+                            <nav aria-label="breadcrumb" role="navigation">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Botones</li>
+                                </ol>
+                            </nav>
+                            <h2 class="title">Uso de Modales</h2>
+                            <p class="lead">Use Bootstrap’s JavaScript modal plugin to add dialogs to your site for lightboxes, user notifications, or completely custom content.</p>
+                        </header>
+                    </div>
+                </article>
+            </main>
+        </section>
+    </div>
+    <script src="dist/scripts/vendor.js"></script>
+</body>
+
+</html>
