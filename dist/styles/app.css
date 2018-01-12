@@ -7247,7 +7247,7 @@ select:-webkit-autofill:focus {
 
 input:-webkit-autofill + label {
   color: #A2D72D !important;
-  top: 3px !important;
+  top: 0 !important;
   font-size: 11px !important;
   line-height: 11px !important; }
 
@@ -7360,7 +7360,8 @@ input[type=datetime-local]:not(.browser-default),
 input[type=tel]:not(.browser-default),
 input[type=number]:not(.browser-default),
 input[type=search]:not(.browser-default),
-textarea {
+textarea,
+.custom-select {
   font-size: 14px;
   line-height: 14px;
   font-size: 1.4rem;
@@ -7387,7 +7388,8 @@ textarea {
   input[type=tel]:not(.browser-default):focus:not([readonly]),
   input[type=number]:not(.browser-default):focus:not([readonly]),
   input[type=search]:not(.browser-default):focus:not([readonly]),
-  textarea:focus:not([readonly]) {
+  textarea:focus:not([readonly]),
+  .custom-select:focus:not([readonly]) {
     border-bottom: 1px solid #3a9609;
     -webkit-box-shadow: 0 1px 0 0 #3a9609;
     box-shadow: 0 1px 0 0 #3a9609; }
@@ -7403,7 +7405,8 @@ textarea {
   input[type=tel]:not(.browser-default):focus:not([readonly]) + label,
   input[type=number]:not(.browser-default):focus:not([readonly]) + label,
   input[type=search]:not(.browser-default):focus:not([readonly]) + label,
-  textarea:focus:not([readonly]) + label {
+  textarea:focus:not([readonly]) + label,
+  .custom-select:focus:not([readonly]) + label {
     color: #3a9609; }
 
 form .form-group {
@@ -7422,9 +7425,9 @@ form .form-group {
     line-height: 1.6rem; }
   form .form-group .form-control {
     font-size: 13px;
-    line-height: 13px;
+    line-height: 21.034px;
     font-size: 1.3rem;
-    line-height: 1.3rem; }
+    line-height: 2.1034rem; }
   form .form-group.form-check label {
     padding-left: 1.5rem; }
     form .form-group.form-check label input {
@@ -7442,7 +7445,7 @@ form .form-group {
         line-height: 11px;
         font-size: 1.1rem;
         line-height: 1.1rem;
-        top: 3px; }
+        top: 0; }
     form .form-group.input-field textarea {
       background-color: transparent; }
     form .form-group.input-field label {
@@ -7453,7 +7456,7 @@ form .form-group {
       line-height: 1.4rem;
       top: 20px; }
     form .form-group.input-field.not-empty label, form .form-group.input-field.placeholder label {
-      top: 3px;
+      top: 0;
       font-size: 11px;
       line-height: 11px;
       font-size: 1.1rem;
@@ -7464,7 +7467,7 @@ form .form-group {
       line-height: 11px;
       font-size: 1.1rem;
       line-height: 1.1rem;
-      top: 3px; }
+      top: 0; }
     form .form-group.input-field input.is-valid {
       border-bottom: 1px solid #3a9609; }
       form .form-group.input-field input.is-valid ~ label {
@@ -7473,6 +7476,27 @@ form .form-group {
       border-bottom: 1px solid #cd0500; }
       form .form-group.input-field input.is-invalid ~ label {
         color: #cd0500; }
+    form .form-group.input-field input:disabled ~ label, form .form-group.input-field input[type="date"] ~ label {
+      top: 0;
+      font-size: 11px;
+      line-height: 11px;
+      font-size: 1.1rem;
+      line-height: 1.1rem; }
+    form .form-group.input-field input:disabled {
+      cursor: not-allowed; }
+  form .form-group .custom-select {
+    font-size: 13px;
+    line-height: 13px;
+    font-size: 1.3rem;
+    line-height: 1.3rem; }
+    form .form-group .custom-select ~ label {
+      position: absolute;
+      top: 0;
+      left: 15px;
+      font-size: 11px;
+      line-height: 11px;
+      font-size: 1.1rem;
+      line-height: 1.1rem; }
 
 .custom-file {
   font-size: 100% !important; }
@@ -7482,10 +7506,6 @@ form .form-group {
 .popover-header,
 .tooltip {
   font-size: 100%; }
-
-.custom-select {
-  background: none;
-  background-size: 0%; }
 
 .btn, nav .logout-button {
   font-family: "ubuntumedium", sans-serif;
@@ -7764,14 +7784,12 @@ table tbody tr td {
       border-bottom: 1px solid #ebebeb;
       -webkit-transition: all 0.3s;
       transition: all 0.3s;
-      z-index: 1; }
+      z-index: 20px; }
       #wrapper #content nav.header .navbar-header {
         height: 70px; }
       #wrapper #content nav.header form {
         color: #868e96; }
         #wrapper #content nav.header form fieldset {
-          height: 32px;
-          line-height: 32px;
           float: left;
           background-color: rgba(255, 255, 255, 0.25); }
           #wrapper #content nav.header form fieldset #sidebarCollapse {
@@ -7960,10 +7978,15 @@ nav.header {
       font-size: 1.2rem;
       line-height: 1.9416rem; }
   nav.header form {
-    width: calc(100% - 175px); }
+    width: 50%;
+    line-height: 70px; }
     @media (max-width: 575.99px) {
       nav.header form {
-        width: calc(100% - 100px); } }
+        width: 75%; } }
+    nav.header form h2 {
+      margin-bottom: 0;
+      margin-left: 3rem;
+      line-height: 70px; }
     nav.header form fieldset #sidebarCollapse {
       padding: 0; }
     nav.header form fieldset.fieldset-light {
