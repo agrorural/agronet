@@ -23,9 +23,9 @@ let config = {
     sass: {
         source: './assets/styles/app.scss',
         dist: './dist/styles',
-        fileName: 'style.css',
-        minifiedFileName: 'style.min.css',
-        watch: './assets/styles/*.scss'
+        fileName: 'app.css',
+        minifiedFileName: 'app.min.css',
+        watch: './assets/styles/**/*.scss'
     },
     html: {
         watch: './*.html'
@@ -113,23 +113,6 @@ gulp.task('js', function() {
         .pipe(browserSync.stream());
 });
 
-// Compile js into dist folder
-gulp.task('scripts-required', function() {
-    return gulp.src([
-            './node_modules/jquery/dist/jquery.js',
-            './assets/js/popper.js',
-            './assets/js/bootstrap.js',
-            './assets/js/owl.carousel.js',
-            './assets/js/jquery.dataTables.js',
-            './assets/js/jquery.dataTables.bootstrap4.js',
-            './assets/js/jquery.viewportchecker.js'
-        ])
-        .pipe(concat('concat-required.js'))
-        .pipe(rename('required.js'))
-        .pipe(gulp.dest("dist/js"))
-        .pipe(browserSync.stream());
-});
-
 // default task adn watch
 gulp.task('serve', ['sass', 'js', 'imagemin', 'fonts', 'misc'], function() {
     browserSync.init(config.sync);
@@ -149,7 +132,7 @@ gulp.task('serve', ['sass', 'js', 'imagemin', 'fonts', 'misc'], function() {
 gulp.task('default', ['serve']);
 
 // gulp build and minify things
-gulp.task('building', ['sass', 'js', 'imagemin', 'fonts', 'misc'], function() {
+gulp.task('production', ['sass', 'js', 'imagemin', 'fonts', 'misc'], function() {
     gulp.src(config.js.dist + '/' + config.js.fileName)
         .pipe(rename(config.js.minifiedFileName))
         .pipe(uglify())
@@ -163,5 +146,5 @@ gulp.task('building', ['sass', 'js', 'imagemin', 'fonts', 'misc'], function() {
 });
 
 gulp.task('prod', ['clean'], function() {
-    gulp.start('building');
+    gulp.start('production');
 });
