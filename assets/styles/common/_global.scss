@@ -1,0 +1,728 @@
+    //
+    // Fonts
+    //
+    @font-face {
+        font-family: 'vigaregular';
+        src: url('../fonts/Viga-Regular.woff2') format('woff2'), url('../fonts/Viga-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    
+    @font-face {
+        font-family: 'ubuntulight';
+        src: url('../fonts/Ubuntu-Light.woff2') format('woff2'), url('../fonts/Ubuntu-Light.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    
+    @font-face {
+        font-family: 'ubunturegular';
+        src: url('../fonts/Ubuntu-Regular.woff2') format('woff2'), url('../fonts/Ubuntu-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    
+    @font-face {
+        font-family: 'ubuntumedium';
+        src: url('../fonts/Ubuntu-Medium.woff2') format('woff2'), url('../fonts/Ubuntu-Medium.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    
+    @font-face {
+        font-family: 'ubuntubold';
+        src: url('../fonts/Ubuntu-Bold.woff2') format('woff2'), url('../fonts/Ubuntu-Bold.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    
+    @font-face {
+        font-family: 'ubuntumono';
+        src: url('../fonts/Ubuntu-Mono.woff2') format('woff2'), url('../fonts/Ubuntu-Mono.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    
+    @font-face {
+        font-family: 'libre_franklinlight';
+        src: url('../fonts/Libre_Franklin-Light.woff2') format('woff2'), url('../fonts/Libre_Franklin-Light.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    
+    @font-face {
+        font-family: 'agroruralicon';
+        src: url('../fonts/Agro-Rural-Icon.eot?cafbxg');
+        src: url('../fonts/Agro-Rural-Icon.eot?cafbxg#iefix') format('embedded-opentype'), url('../fonts/Agro-Rural-Icon.ttf?cafbxg') format('truetype'), url('../fonts/Agro-Rural-Icon.woff?cafbxg') format('woff'), url('../fonts/Agro-Rural-Icon.svg?cafbxg#icomoon') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+    /* Mozilla based browsers */
+    
+     ::-moz-selection {
+        background-color: $lime;
+        color: $gray-800;
+    }
+    /* Works in Safari */
+    
+     ::selection {
+        background-color: $lime;
+        color: $gray-800;
+    }
+    
+    html {
+        font-size: 62.5%;
+    }
+    
+    body {
+        @include font-family('libre_franklin',
+        'light');
+        @include font-size(14);
+    }
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @include font-family('ubuntu',
+        'light');
+    }
+    
+    h1 {
+        @include font-size(40);
+    }
+    
+    h2 {
+        @include font-size(32);
+    }
+    
+    h3 {
+        @include font-size(28);
+    }
+    
+    h4 {
+        @include font-size(24);
+    }
+    
+    h5 {
+        @include font-size(20);
+    }
+    
+    h6 {
+        @include font-size(16);
+    }
+    
+    a {
+        color: $link-color;
+        text-decoration: $link-hover-decoration;
+        &:hover,
+        &:focus {
+            outline: none;
+            color: $link-hover-color;
+            text-decoration: $link-hover-decoration;
+            transition: all 0.1s;
+        }
+    }
+    
+    //
+    // Cards
+    //
+    .card {
+        .card-body {
+            padding: 2rem;
+        }
+        .card-config {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            list-style: none;
+        }
+        .card-title {
+            @include font-size(30,
+            30);
+        }
+        .card-subtitle {
+            @extend .mb-2;
+            @extend .text-muted;
+            margin-top: -.75rem;
+            padding-bottom: .5rem;
+        }
+    }
+    
+    //
+    // Charts
+    //
+    .chart {
+        min-height: 175px;
+    }
+    
+    //
+    // Breadcrumb
+    //
+    .breadcrumb {
+        padding: 0;
+        background-color: transparent;
+        @extend .rounded-0;
+        font-size: 75%;
+    }
+    
+    //
+    // Forms
+    //
+    input:not([type]),
+    input[type=text]:not(.browser-default),
+    input[type=password]:not(.browser-default),
+    input[type=email]:not(.browser-default),
+    input[type=url]:not(.browser-default),
+    input[type=time]:not(.browser-default),
+    input[type=date]:not(.browser-default),
+    input[type=datetime]:not(.browser-default),
+    input[type=datetime-local]:not(.browser-default),
+    input[type=tel]:not(.browser-default),
+    input[type=number]:not(.browser-default),
+    input[type=search]:not(.browser-default),
+    textarea {
+        @include font-size(14,
+        14);
+        color: $gray-700;
+        background-color: transparent;
+        border: none;
+        border-bottom: $input-btn-border-width solid $input-border-color;
+        border-radius: 0;
+        outline: none;
+        box-shadow: none;
+        padding: 20px 0 10px;
+        height: 46px;
+        // Focused input style
+        &:focus:not([readonly]) {
+            border-bottom: 1px solid $primary;
+            box-shadow: 0 1px 0 0 $primary;
+        }
+        // Focused label style
+        &:focus:not([readonly])+label {
+            color: $primary;
+        }
+    }
+    
+    form {
+        .form-group {
+            position: relative;
+            margin-bottom: 2rem;
+            @include font-size(13);
+            label {
+                z-index: 12;
+                color: $gray-700;
+                @include font-size(11,
+                16);
+            }
+            .form-control {
+                @include font-size(13,
+                13);
+            }
+            &.form-check {
+                label {
+                    padding-left: 1.5rem;
+                    input {
+                        margin-left: -1.5rem;
+                    }
+                }
+            }
+            &.input-field {
+                height: 46px;
+                input,
+                textarea {
+                    &:focus {
+                        border-bottom: 1px solid $primary;
+                        z-index: 11;
+                        ~label {
+                            color: $primary;
+                            @include font-size(11,
+                            11);
+                            top: 3px;
+                        }
+                    }
+                }
+                textarea {
+                    background-color: transparent;
+                }
+                label {
+                    position: absolute;
+                    @include font-size(14,
+                    14);
+                    top: 20px;
+                }
+                &.not-empty,
+                &.placeholder {
+                    label {
+                        top: 3px;
+                        @include font-size(11,
+                        11);
+                    }
+                }
+                input.is-valid,
+                input.is-invalid {
+                    ~label {
+                        @include font-size(11,
+                        11);
+                        top: 3px;
+                    }
+                }
+                input.is-valid {
+                    border-bottom: 1px solid $primary;
+                    ~label {
+                        color: $primary;
+                    }
+                }
+                input.is-invalid {
+                    border-bottom: 1px solid $danger;
+                    ~label {
+                        color: $danger;
+                    }
+                }
+            }
+        }
+    }
+    
+    .custom-file {
+        font-size: 100% !important;
+    }
+    
+    .btn,
+    .popover,
+    .popover-header,
+    .tooltip {
+        font-size: 100%;
+    }
+    
+    .custom-select {
+        background: none;
+        background-size: 0%;
+    }
+    
+    .btn {
+        @include font-family('ubuntu',
+        'medium');
+        @include font-size(13);
+        text-transform: uppercase;
+        letter-spacing: .075rem;
+        cursor: pointer;
+    }
+    
+    .btn-sm {
+        @include font-size(11);
+    }
+    
+    .btn-lg {
+        @include font-size(16);
+    }
+    
+    //
+    // Tipografia
+    //    
+    .lead {
+        @include font-size(20);
+    }
+    
+    //
+    // Code
+    //
+    pre {
+        background-color: $gray-100;
+        border: 1px solid $gray-300;
+        padding: 2rem;
+        color: $gray-700;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        &:hover {
+            background-color: $white;
+            color: $gray-900;
+        }
+        code {
+            @include font-size(13);
+            line-height: inherit;
+        }
+    }
+    
+    code {
+        @include font-family('ubuntu',
+        'mono');
+        @include font-size(14);
+    }
+    
+    //
+    // Tables
+    //
+    table {
+        @extend .table;
+        @extend .table-striped;
+        //@extend .table-bordered;
+        @extend .table-hover;
+        thead {
+            tr {
+                th {
+                    @include font-size(12);
+                }
+            }
+        }
+        tbody {
+            tr {
+                &:nth-of-type(odd) {
+                    background-color: rgba($gray-300, 0.25);
+                }
+                &:hover {
+                    background-color: rgba($brown-100, 0.25);
+                }
+                td {
+                    @include font-size(12);
+                    ul {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    
+    //
+    // Brand
+    //
+    #brand {
+        @include img-replace(185,
+        125);
+        background-image: url(../images/agronet__logo--color--sm.png);
+        margin: 0 auto;
+        a {
+            position: relative;
+            display: block;
+            width: 185px;
+            height: 125px;
+        }
+    }
+    
+    // JS
+    // 
+    // Popover
+    .popover {
+        .popover-header {
+            @include font-size(16,
+            16);
+            color: $primary;
+            background-color: transparent;
+            border-bottom: 1px solid transparent;
+        }
+        .popover-body {
+            @include font-size(13,
+            18);
+            color: $gray-600;
+        }
+    }
+    
+    //
+    // Wrapper
+    //
+    #wrapper {
+        @extend .d-flex;
+        @extend .flex-row;
+        min-height: 100vh;
+        max-width: 100%;
+        margin: auto;
+        background-color: $gray-100;
+        nav.main-nav {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            overflow: hidden;
+            @include media-breakpoint-down(sm) {
+                min-width: 80px;
+                max-width: 80px;
+                text-align: center;
+                margin-left: -80px !important;
+            }
+            min-width: 250px;
+            max-width: 250px;
+            color: $white;
+            background-color: $primary;
+            transition: all 0.3s;
+            .sidebar-header {
+                background-color: $white;
+                max-height: 70px;
+                padding: 15px;
+                h1#brand {
+                    @include img-replace(135,
+                    40);
+                    background-image: url(../images/agronet__logo--color--sm--horizontal.png);
+                    margin: 0;
+                    width: 135px;
+                    height: 40px;
+                    a {
+                        width: 135px;
+                        height: 40px;
+                    }
+                    @include media-breakpoint-down(sm) {
+                        @include img-replace(50,
+                        50);
+                        background-image: url(../images/agronet__logo--white--xs.png);
+                        margin: 0;
+                        width: 50px;
+                        height: 50px;
+                        a {
+                            width: 50px;
+                            height: 50px;
+                        }
+                    }
+                }
+            }
+            .media {
+                background-color: lighten($primary, 2%);
+                padding: 15px;
+                img {
+                    @extend .rounded-circle;
+                    margin-right: 1rem;
+                }
+                .media-body {
+                    @media (max-width: 767px) {
+                        display: none;
+                    }
+                    display: block;
+                }
+            }
+            a {
+                color: $white;
+                @include media-breakpoint-down(sm) {
+                    span {
+                        display: none;
+                    }
+                }
+            }
+            ul {
+                li {
+                    a {
+                        padding: 10px 15px;
+                        display: block;
+                        i {
+                            margin-right: 5px;
+                            @include font-size(16);
+                        }
+                        &:hover {
+                            background-color: $white;
+                            color: $primary;
+                        }
+                        &.active {
+                            background-color: darken($primary, 3%);
+                            color: $white;
+                        }
+                    }
+                }
+            }
+            &.active {
+                min-width: 80px;
+                max-width: 80px;
+                text-align: center;
+                margin-left: 0 !important;
+                .sidebar-header {
+                    h1#brand {
+                        @include img-replace(50,
+                        50);
+                        background-image: url(../images/agronet__logo--color--xs.png);
+                        margin: 0;
+                        width: 50px;
+                        height: 50px;
+                        a {
+                            width: 50px;
+                            height: 50px;
+                        }
+                    }
+                }
+                .media {
+                    .media-body {
+                        display: none;
+                    }
+                }
+                ul {
+                    li {
+                        a {
+                            i {
+                                margin-right: 0;
+                                display: block;
+                            }
+                            span {
+                                @include font-size(13,
+                                13);
+                            }
+                        }
+                    }
+                }
+                ~#content {
+                    margin-left: 80px;
+                    nav.header {
+                        left: 80px;
+                        #sidebarCollapse {
+                            transform: rotate(180deg);
+                            @include media-breakpoint-down(sm) {
+                                transform: rotate(0deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #content {
+            @extend .d-flex;
+            @extend .flex-column;
+            @extend .flex-wrap;
+            flex: 1 1 100%;
+            background-color: $gray-100;
+            @include media-breakpoint-up(sm) {
+                margin-left: 250px;
+            }
+            @include media-breakpoint-down(sm) {
+                margin-left: 0;
+            }
+            nav.header {
+                @extend .d-flex;
+                @extend .flex-row;
+                @extend .flex-wrap;
+                height: 70px;
+                @extend .align-items-center;
+                background-color: $gray-200;
+                border-bottom: 1px solid $gray-200;
+                transition: all 0.3s;
+                z-index: 1;
+                .navbar-header {
+                    @extend .d-flex;
+                    @extend .flex-row;
+                    @extend .flex-wrap;
+                    @extend .col-sm-2;
+                    height: 70px;
+                    @extend .align-items-center;
+                }
+                form {
+                    color: $gray-600;
+                    fieldset {
+                        height: 32px;
+                        line-height: 32px;
+                        float: left;
+                        background-color: rgba($white, .25);
+                        #sidebarCollapse {
+                            @extend .rounded-0;
+                            background-color: $gray-200;
+                            height: 32px;
+                            @include media-breakpoint-down(sm) {
+                                transform: rotate(180deg);
+                            }
+                        }
+                        input {
+                            width: auto;
+                            border-bottom: 0px solid transparent;
+                            box-shadow: none;
+                            padding: initial;
+                            height: initial;
+                        }
+                        &.fieldset-light {
+                            border: 1px solid $gray-200;
+                            background-color: rgba($white, .85);
+                            i {
+                                cursor: pointer;
+                                text-align: center;
+                                height: auto;
+                                width: 32px;
+                                color: $gray-400;
+                            }
+                            input {
+                                @include media-breakpoint-down(sm) {
+                                    width: 75px;
+                                }
+                            }
+                        }
+                    }
+                }
+                &.searching {
+                    background-color: $gray-300;
+                    form {
+                        padding-left: 0;
+                        padding-right: 0;
+                        fieldset {
+                            #sidebarCollapse {
+                                background-color: $gray-300;
+                            }
+                            &.fieldset-light {
+                                width: calc(100% - 75px);
+                                input {
+                                    color: $gray-800;
+                                    @include media-breakpoint-down(xs) {
+                                        width: calc(100% - 55px);
+                                    }
+                                    @include media-breakpoint-up(sm) {
+                                        width: calc(100% - 75px);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            main {
+                @extend .container-fluid;
+                background-color: transparent;
+                padding-left: 0;
+                padding-right: 0;
+                width: calc(100% - 60px);
+                flex: 1;
+                margin-top: 100px;
+            }
+        }
+    }
+    
+    .dropdown-toggle {
+        transition: all 0.3s;
+        &[aria-expanded="true"] {
+            &::after {
+                transform: rotate(180deg);
+            }
+        }
+    }
+    
+    //
+    // Buttons
+    //
+    .btn-success,
+    .btn-success:hover,
+    .btn-info,
+    .btn-info:hover,
+    .btn-warning,
+    .btn-warning:hover {
+        color: $white;
+    }
+    
+    .btn-secondary,
+    .btn-secondary:hover,
+    .btn-outline-secondary:hover {
+        color: $brown-300 !important;
+    }
+    
+    .btn-light {
+        background-color: $gray-200;
+        &:hover {
+            background-color: $gray-300;
+        }
+    }
+    
+    .btn-outline-success,
+    .btn-outline-info {
+        &:hover {
+            color: $white;
+        }
+    }
+    
+    .btn-outline-light {
+        color: $gray-300;
+        border-color: $gray-300;
+        &:hover {
+            color: $gray-700;
+            border-color: $gray-300;
+            background-color: $gray-300;
+        }
+    }

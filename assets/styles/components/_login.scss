@@ -1,0 +1,136 @@
+body#login {
+    @extend .d-flex;
+    background-color: $gray-100;
+    flex-direction: column;
+    @include media-breakpoint-up(sm) {
+        flex-direction: row;
+    }
+    @extend .align-items-center;
+    @extend .justify-content-center;
+    min-height: 100vh;
+    .container {
+        width: 90%;
+        @include media-breakpoint-up(sm) {
+            width: 70%;
+        }
+        @include media-breakpoint-up(lg) {
+            width: 50%;
+        }
+        .row {
+            .preview-signin {
+                @extend .col;
+                text-align: center;
+                flex: 1 1 auto;
+                @include media-breakpoint-up(sm) {
+                    flex: 1;
+                }
+                background-color: $white;
+                padding: 2.25rem;
+                nav {
+                    @extend .d-flex;
+                    @extend .flex-wrap;
+                    flex-direction: row;
+                    @extend .justify-content-center;
+                    //@extend .justify-content-between;
+                    margin-top: 3rem;
+                    a {
+                        line-height: 3rem;
+                        width: 3rem;
+                        height: 3rem;
+                        margin: 1rem;
+                        border: 1px solid $primary;
+                        border-radius: 3rem;
+                        &:hover {
+                            color: $secondary;
+                            border: 1px solid $secondary;
+                        }
+                    }
+                }
+            }
+            .form-signin {
+                @extend .col;
+                flex: 1 1 auto;
+                @include media-breakpoint-up(sm) {
+                    flex: 1;
+                }
+                a {
+                    text-align: center;
+                }
+                background-color: $primary;
+                form {
+                    padding: 2.25rem;
+                    h2 {
+                        @include font-size(30);
+                        color: $secondary;
+                        margin-top: 3rem;
+                        text-align: center;
+                    }
+                    fieldset {
+                        padding-bottom: 2rem;
+                        padding-top: 6rem;
+                        .form-group {
+                            position: relative;
+                            height: 60px;
+                            margin-bottom: 2rem;
+                            label {
+                                // position: absolute;
+                                // display: block;
+                                // @include font-size(18);
+                                color: $gray-100;
+                                // top: 20px;
+                                // left: 0px;
+                                // right: 0;
+                                // text-align: left;
+                                // pointer-events: none;
+                                // transition: all .2s ease;
+                                // z-index: 12;
+                            }
+                            .form-control {
+                                // @include font-size(18);
+                                // padding: 27px 0px 9px;
+                                // box-sizing: border-box;
+                                // display: block;
+                                // width: 100%;
+                                // outline: none;
+                                // margin: 0;
+                                // transition: background-color .2s ease;
+                                // height: 60px;
+                                // -webkit-appearance: none;
+                                color: $white;
+                                &:focus {
+                                    border-bottom: 1px solid $secondary;
+                                }
+                            }
+                            &.not-empty {
+                                input {
+                                    // color: $lime;
+                                    border-bottom: 1px solid $lime;
+                                }
+                                label {
+                                    color: $lime;
+                                }
+                            }
+                        }
+                        .btn {
+                            margin-top: 4rem;
+                        }
+                    }
+                    a {
+                        @include font-size(13);
+                        color: $secondary;
+                        display: block;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#brand {
+    margin: 6rem auto;
+    a {
+        width: 185px;
+        height: 125px;
+    }
+}
