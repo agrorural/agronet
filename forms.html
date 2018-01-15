@@ -13,15 +13,24 @@
 <body class="">
     <div id="wrapper">
         <nav id="sidebar" class="main-nav">
-            <div class="sidebar-header">
-                <h1 id="brand"><a href="./dashboard.html"><span>Intranet</span></a></h1>
-            </div>
-            <div class="media">
-                <a href="#"><img class="" src="./dist/images/foto.png" width="48" height="48" /></a>
+            <div class="media dropdown">
+                <a href="#"><img class="" src="dist/images/foto.png" width="40" height="40" /></a>
                 <div class="media-body">
-                    <h4><a href="#">Marcial Soto Sánchez</a></h4>
+                    <a class="dropdown-toggle" role="button" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Marcial Soto
+                    </a>
                     <p><small>OA - UTI</small></p>
+                    <div class="dropdown-menu dropdown-menu-left" aria-labelledby="dLabel">
+                        <h6 class="dropdown-header">Mi perfil</h6>
+                        <a class="dropdown-item" href="#">Legajo</a>
+                        <a class="dropdown-item" href="#">Tardanzas</a>
+                        <a class="dropdown-item" href="#">Papeletas</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./index.html"><i class="fas fa-power-off"></i> <span>Salir</span></a>
+                    </div>
                 </div>
+
+
             </div>
             <ul class="nav flex-column components">
                 <li class="nav-item">
@@ -36,7 +45,7 @@
                         <li><a href="./buttons.html">Botones</a></li>
                         <li><a href="./charts.html">Charts</a></li>
                         <li><a href="./forms.html" class="active">Forms</a></li>
-                        <li><a href="./icons.html" class="">Icons</a></li>
+                        <li><a href="./icons.html">Icons</a></li>
                         <li><a href="./index.html">Login</a></li>
                         <li><a href="./modal.html">Modales</a></li>
                         <li><a href="./tables.html">Tablas</a></li>
@@ -47,13 +56,14 @@
                     <a href="#" class="nav-link"><i class="fab fa-app-store"></i> <span>Sistemas</span></a>
                 </li>
             </ul>
-            <a href="./index.html" class="logout-button"><i class="fas fa-power-off"></i> <span>Salir</span></a>
+
         </nav>
         <section id="content">
             <nav class="header">
-                <button type="button" id="sidebarCollapse" class="btn btn-link">
-                                <i class="ar-arrow-left-top_solid"></i>
-                            </button>
+                <a id="sidebarCollapse"><i class="ar-arrow-left-top_solid"></i></a>
+                <div class="navbar-header">
+                    <h1 id="brand"><a href="./dashboard.html"><span>Intranet</span></a></h1>
+                </div>
                 <ul class="nav ml-auto">
                     <li class="nav-item dropdown notifications new">
                         <a class="nav-link" href="" data-toggle="dropdown" aria-expanded="false">
@@ -91,8 +101,8 @@
                                 <li class="breadcrumb-item active" aria-current="page">Tipografía</li>
                             </ol>
                         </nav>
-                        <h2 class="title">Uso de tipografía</h2>
-                        <p class="lead">Uso comprensivo de uso de tipografía</p>
+                        <h2 class="title">Uso de Formularios</h2>
+                        <p class="lead">Uso comprensivo de uso de formularios</p>
                     </header>
                     <form>
                         <div class="row">

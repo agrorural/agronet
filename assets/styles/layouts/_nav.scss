@@ -11,6 +11,15 @@ nav {
                 p {
                     margin-bottom: 0;
                 }
+                .dropdown-toggle {
+                    position: relative;
+                    display: block;
+                }
+                .dropdown-menu {
+                    a {
+                        color: $black-200 !important;
+                    }
+                }
             }
         }
         ul {
@@ -30,7 +39,7 @@ nav {
                     transition: transform .3s ease;
                 }
                 a[aria-expanded="true"] {
-                    background-color: lighten($primary, 3%);
+                    background-color: lighten($black-200, 3%);
                     color: $white;
                     &::before {
                         transform: rotate(180deg);
@@ -41,11 +50,11 @@ nav {
                     li {
                         a {
                             @include font-size(13);
-                            background-color: lighten($primary, 3%);
+                            background-color: lighten($black-200, 3%);
                             &.active {
                                 background-color: $gray-100 !important;
-                                color: $primary !important;
-                                //text-decoration: underline;
+                                color: $black-200 !important;
+                                border-left: 2px solid transparent !important;
                             }
                         }
                     }
@@ -87,6 +96,9 @@ nav {
             li {
                 position: relative;
                 a {
+                    &.nav-link {
+                        color: $white;
+                    }
                     &.dropdown-toggle {
                         picture {
                             display: inline-block;
@@ -112,29 +124,14 @@ nav {
                     left: auto;
                     right: 0;
                     @include font-size(12);
+                    .dropdown-item {
+                        &.active {
+                            color: $black-200;
+                            background-color: $yellow-300;
+                        }
+                    }
                 }
             }
-        }
-    }
-    .logout-button {
-        @extend .btn;
-        @extend .btn-link;
-        position: absolute;
-        width: 85%;
-        bottom: 15px;
-        left: 50%;
-        -webkit-transform: translateX(-50%);
-        transform: translateX(-50%);
-        text-align: center;
-        span {
-            display: none;
-            @include media-breakpoint-up(md) {
-                display: inline-block;
-            }
-        }
-        &:hover {
-            color: $primary !important;
-            background-color: $white;
         }
     }
 }
