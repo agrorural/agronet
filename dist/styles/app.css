@@ -13219,7 +13219,8 @@ body#login {
           text-align: center; }
         body#login .container .row .form-signin form fieldset {
           padding: 6rem 0 2rem;
-          background-color: transparent; }
+          background-color: transparent;
+          border: 0 none; }
           body#login .container .row .form-signin form fieldset .form-group {
             position: relative;
             height: 60px;
