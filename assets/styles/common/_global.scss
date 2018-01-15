@@ -254,6 +254,7 @@
     
     form {
         fieldset {
+            border-radius: $border-radius;
             border: 1px solid $gray-400;
             padding: 10px;
             legend {
