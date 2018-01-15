@@ -4,6 +4,8 @@ require('bootstrap')
 
 const Chart = require('chart.js');
 const Chartkick = require('chartkick');
+const owlCarousel = require('owl.carousel');
+const confirm = require('jquery-confirm');
 
 Chartkick.options = {
     colors: ['#7daf28', '#f5d269', '#8c6437', '#b48caf', '#3ccdcd']
@@ -14,16 +16,16 @@ const dt = require('datatables.net-responsive-bs4')();
 jQuery(function() {
     jQuery('[data-toggle="popover"]').popover();
     jQuery('[data-toggle="tooltip"]').tooltip();
-    jQuery('#txtSearch').focus(function() {
-        jQuery('.header').addClass("searching");
-        jQuery(this).prev().removeClass("fa-search");
-        jQuery(this).prev().addClass("fa-chevron-left");
-        console.log('Esta enfocado');
-    }).blur(function() {
-        jQuery('.header').removeClass("searching")
-        jQuery(this).prev().addClass("fa-search");
-        jQuery(this).prev().removeClass("fa-chevron-left");
-    });
+    // jQuery('#txtSearch').focus(function() {
+    //     jQuery('.header').addClass("searching");
+    //     jQuery(this).prev().removeClass("fa-search");
+    //     jQuery(this).prev().addClass("fa-chevron-left");
+    //     console.log('Esta enfocado');
+    // }).blur(function() {
+    //     jQuery('.header').removeClass("searching")
+    //     jQuery(this).prev().addClass("fa-search");
+    //     jQuery(this).prev().removeClass("fa-chevron-left");
+    // });
     jQuery('input.form-control').blur(function() {
         let tmpval = jQuery(this).val();
         if (tmpval == '') {
@@ -38,7 +40,7 @@ jQuery(function() {
         jQuery('nav#sidebar').toggleClass('active');
     });
 
-    jQuery('table').DataTable({
+    jQuery('table.datagrid').DataTable({
         language: {
             "sProcessing": "Procesando...",
             "sLengthMenu": "Mostrar _MENU_ registros",

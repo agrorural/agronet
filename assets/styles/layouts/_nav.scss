@@ -1,5 +1,6 @@
 nav {
     &.main-nav {
+        z-index: 10;
         .media {
             .media-body {
                 h4 {
@@ -111,27 +112,6 @@ nav {
                     left: auto;
                     right: 0;
                     @include font-size(12);
-                }
-            }
-        }
-        form {
-            @include media-breakpoint-down(xs) {
-                width: 75%;
-            }
-            width:50%;
-            line-height: 70px;
-            h2 {
-                margin-bottom: 0;
-                margin-left: 3rem;
-                line-height: 70px;
-            }
-            fieldset {
-                #sidebarCollapse {
-                    padding: 0;
-                }
-                &.fieldset-light {
-                    margin-left: 2rem;
-                    ;
                 }
             }
         }

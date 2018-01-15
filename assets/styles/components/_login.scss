@@ -66,36 +66,16 @@ body#login {
                         text-align: center;
                     }
                     fieldset {
-                        padding-bottom: 2rem;
-                        padding-top: 6rem;
+                        padding: 6rem 0 2rem;
+                        background-color: transparent;
                         .form-group {
                             position: relative;
                             height: 60px;
                             margin-bottom: 2rem;
                             label {
-                                // position: absolute;
-                                // display: block;
-                                // @include font-size(18);
                                 color: $gray-100;
-                                // top: 20px;
-                                // left: 0px;
-                                // right: 0;
-                                // text-align: left;
-                                // pointer-events: none;
-                                // transition: all .2s ease;
-                                // z-index: 12;
                             }
                             .form-control {
-                                // @include font-size(18);
-                                // padding: 27px 0px 9px;
-                                // box-sizing: border-box;
-                                // display: block;
-                                // width: 100%;
-                                // outline: none;
-                                // margin: 0;
-                                // transition: background-color .2s ease;
-                                // height: 60px;
-                                // -webkit-appearance: none;
                                 color: $white;
                                 &:focus {
                                     border-bottom: 1px solid $secondary;

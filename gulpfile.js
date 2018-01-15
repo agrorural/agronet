@@ -31,7 +31,7 @@ let config = {
         watch: './*.html'
     },
     js: {
-        require: ['jquery', 'chartkick'],
+        require: ['jquery', 'chartkick', 'datatables.net-responsive-bs4', 'owl.carousel', 'jquery-confirm'],
         source: './assets/scripts/vendor.js',
         dist: './dist/scripts',
         fileName: 'vendor.js',

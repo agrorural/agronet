@@ -6,6 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="dist/images/favicon.png">
     <link rel="stylesheet" type="text/css" media="screen" href="dist/styles/app.css" />
 </head>
 
@@ -35,6 +36,7 @@
                         <li><a href="./buttons.html">Botones</a></li>
                         <li><a href="./charts.html">Charts</a></li>
                         <li><a href="./forms.html">Forms</a></li>
+                        <li><a href="./icons.html">Icons</a></li>
                         <li><a href="./index.html">Login</a></li>
                         <li><a href="./modal.html">Modales</a></li>
                         <li><a href="./tables.html">Tablas</a></li>
@@ -49,17 +51,7 @@
         </nav>
         <section id="content">
             <nav class="header">
-                <form>
-                    <fieldset>
-                        <button type="button" id="sidebarCollapse" class="btn btn-link">
-                                <i class="ar-arrow-left-top_solid"></i>
-                            </button>
-                    </fieldset>
-                    <fieldset class="fieldset-light">
-                        <i class="fa fa-search"></i>
-                        <input id="txtSearch" type="text" placeholder="Buscar...">
-                    </fieldset>
-                </form>
+                <button type="button" id="sidebarCollapse" class="btn btn-link"><i class="ar-arrow-left-top_solid"></i></button>
                 <ul class="nav ml-auto">
                     <li class="nav-item dropdown notifications new">
                         <a class="nav-link" href="" data-toggle="dropdown" aria-expanded="false">
@@ -95,6 +87,19 @@
                             <h1 class="mb-4">Bienvenido</h1>
                             <p class="lead">esta es la Intranet de AGRO RURAL, un lugar donde podrá compartir, colaborar y acceder a las aplicaciones de la institución.</p>
                             <p class="lead"><a class="btn btn-primary btn-lg mt-2" href="#" role="button">Saber más</a></p>
+                        </div>
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="owl-carousel owl-theme">
+                                    <div> Your Content </div>
+                                    <div> Your Content </div>
+                                    <div> Your Content </div>
+                                    <div> Your Content </div>
+                                    <div> Your Content </div>
+                                    <div> Your Content </div>
+                                    <div> Your Content </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="card mb-4">
                             <div class="card-block card-body">
@@ -194,9 +199,32 @@
     </div>
     <script src="dist/scripts/vendor.js"></script>
     <script>
-        let Chartkick = require('chartkick');
         let $ = require('jquery');
-        console.log(Chartkick);
+        let Chartkick = require('chartkick');
+        let owlCarousel = require('owl.carousel');
+        let confirm = require('jquery-confirm');
+        $(document).ready(function() {
+            $('.owl-carousel').owlCarousel();
+            $.confirm({
+                title: 'What is up?',
+                content: 'Here goes a little content',
+                type: 'green',
+                buttons: {
+                    ok: {
+                        text: "ok!",
+                        btnClass: 'btn-primary',
+                        keys: ['enter'],
+                        action: function() {
+                            console.log('the user clicked confirm');
+                        }
+                    },
+                    cancel: function() {
+                        console.log('the user clicked cancel');
+                    }
+                }
+            });
+        });
+        console.log(confirm);
         new Chartkick.LineChart("multiple-line", [{
             "name": "Sobretiempo",
             "data": {
