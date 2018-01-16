@@ -5,26 +5,39 @@
     <title>Uso de Modales</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="dist/images/favicon.png">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="dist/images/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="dist/images/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="dist/images/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="dist/images/favicon.ico">
     <link rel="stylesheet" type="text/css" media="screen" href="dist/styles/app.css" />
 </head>
 
 <body>
     <div id="wrapper">
         <nav id="sidebar" class="main-nav">
-            <div class="sidebar-header">
-                <h1 id="brand"><a href="./dashboard.html"><span>Intranet</span></a></h1>
-            </div>
-            <div class="media">
-                <a href="#"><img class="" src="./dist/images/foto.png" width="48" height="48" /></a>
+            <div class="media dropdown">
+                <a href="#"><img class="" src="dist/images/foto.png" width="40" height="40" /></a>
                 <div class="media-body">
-                    <h4><a href="#">Marcial Soto Sánchez</a></h4>
+                    <a class="dropdown-toggle" role="button" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Marcial Soto
+                    </a>
                     <p><small>OA - UTI</small></p>
+                    <div class="dropdown-menu dropdown-menu-left" aria-labelledby="dLabel">
+                        <h6 class="dropdown-header">Mi perfil</h6>
+                        <a class="dropdown-item" href="#">Legajo</a>
+                        <a class="dropdown-item" href="#">Tardanzas</a>
+                        <a class="dropdown-item" href="#">Papeletas</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="./index.html"><i class="fas fa-power-off"></i> <span>Salir</span></a>
+                    </div>
                 </div>
+
+
             </div>
             <ul class="nav flex-column components">
                 <li class="nav-item">
-                    <a href="./dashboard.html" class="nav-link "><i class="fas fa-home"></i> <span>Inicio</span></a>
+                    <a href="./dashboard.html" class="nav-link"><i class="fas fa-home"></i> <span>Inicio</span></a>
                 </li>
                 <li class="nav-item">
                     <a href="#homeSubmenu" class="nav-link active" data-toggle="collapse" aria-expanded="true" aria-controls="homeSubmenu">
@@ -46,7 +59,7 @@
                     <a href="#" class="nav-link"><i class="fab fa-app-store"></i> <span>Sistemas</span></a>
                 </li>
             </ul>
-            <a href="./index.html" class="logout-button"><i class="fas fa-power-off"></i> <span>Salir</span></a>
+
         </nav>
         <section id="content">
             <nav class="header">

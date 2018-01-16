@@ -3,6 +3,7 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "common/_mixins";
 @import "common/_global";
+@import "components/compass-mixins/animate";
 @import "components/font-awesome/fontawesome";
 @import "components/font-awesome/fa-regular";
 @import "components/font-awesome/fa-solid";
@@ -20,6 +21,6 @@
 // // @import "layouts/_page";
 // // @import "layouts/_aside";
 // // @import "layouts/_footer";
-// @import "layouts/_home";
+// //@import "layouts/_home";
 @import "components/_login";
 @import "components/_article";

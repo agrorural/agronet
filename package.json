@@ -23,6 +23,7 @@
         "browserify-shim": "^3.8.14",
         "chart.js": "^2.7.1",
         "chartkick": "^2.2.4",
+        "compass-mixins": "^0.12.10",
         "datatables.net": "^1.10.16",
         "datatables.net-bs4": "^1.10.16",
         "datatables.net-responsive": "^2.2.1",
