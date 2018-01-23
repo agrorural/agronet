@@ -6,6 +6,7 @@ const Chart = require('chart.js');
 const Chartkick = require('chartkick');
 const owlCarousel = require('owl.carousel');
 const confirm = require('jquery-confirm');
+const redirect = require('jquery.redirect');
 
 Chartkick.options = {
     colors: ['#7daf28', '#f5d269', '#8c6437', '#b48caf', '#3ccdcd']
@@ -38,6 +39,9 @@ jQuery(function() {
     });
     jQuery('#sidebarCollapse').click(function() {
         jQuery('nav#sidebar').toggleClass('active');
+    });
+    jQuery('#sidebartoggler').click(function() {
+        jQuery('body').toggleClass('active');
     });
 
     jQuery('table.datagrid').DataTable({

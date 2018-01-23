@@ -102,6 +102,7 @@
         @include font-family('libre_franklin',
         'light');
         @include font-size(14);
+        background-color: $gray-200;
     }
     
     h1,
@@ -509,10 +510,6 @@
         margin: auto;
         background-color: $gray-100;
         nav.main-nav {
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            overflow: hidden;
             @include media-breakpoint-down(sm) {
                 min-width: 80px;
                 max-width: 80px;
@@ -528,10 +525,6 @@
                 height: 70px;
                 padding: 15px;
                 background-color: darken($black-200, 10%);
-                img {
-                    @extend .rounded-circle;
-                    margin-right: 1rem;
-                }
                 .media-body {
                     @media (max-width: 767px) {
                         display: none;
@@ -550,7 +543,6 @@
             ul {
                 li {
                     a {
-                        padding: 10px 15px;
                         display: block;
                         i {
                             margin-right: 5px;
@@ -623,42 +615,12 @@
                 width: 100%;
             }
             nav.header {
-                @extend .d-flex;
-                @extend .flex-row;
-                @extend .flex-wrap;
                 height: 70px;
-                @extend .align-items-center;
                 background-color: $primary;
                 border-bottom: 1px solid $primary;
-                transition: all 0.3s;
-                z-index: 20;
                 .navbar-header {
                     max-height: 70px;
                     margin-left: 1rem;
-                    h1#brand {
-                        @include img-replace(135,
-                        40);
-                        background-image: url(../images/agronet__logo--white--sm--horizontal.png);
-                        margin: 0;
-                        width: 135px;
-                        height: 40px;
-                        a {
-                            width: 135px;
-                            height: 40px;
-                        }
-                        @include media-breakpoint-down(sm) {
-                            @include img-replace(40,
-                            40);
-                            background-image: url(../images/agronet__logo--white--xs.png);
-                            margin: 0;
-                            width: 40px;
-                            height: 40px;
-                            a {
-                                width: 40px;
-                                height: 40px;
-                            }
-                        }
-                    }
                 }
                 #sidebarCollapse {
                     @extend .rounded-circle;
@@ -689,11 +651,30 @@
         }
     }
     
-    .dropdown-toggle {
-        transition: all 0.3s;
-        &[aria-expanded="true"] {
-            &::after {
-                transform: rotate(180deg);
+    //
+    // Brand
+    //
+    h1#brand {
+        @include img-replace(135,
+        40);
+        background-image: url(../images/agronet__logo--white--sm--horizontal.png);
+        background-position: left center;
+        margin: 0;
+        width: 135px;
+        height: 40px;
+        a {
+            width: 135px;
+            height: 40px;
+        }
+        @include media-breakpoint-down(sm) {
+            @include img-replace(40,
+            40);
+            background-image: url(../images/agronet__logo--white--xs.png);
+            width: 40px;
+            height: 40px;
+            a {
+                width: 40px;
+                height: 40px;
             }
         }
     }
@@ -743,11 +724,76 @@
     //
     // Dropdowns
     //
-    .dropdown-menu {
-        .dropdown-header {
-            text-transform: uppercase;
+    // .dropdown-menu {
+    //     .dropdown-header {
+    //         text-transform: uppercase;
+    //     }
+    //     @include font-size(12);
+    // }
+    //
+    //User pic
+    //
+    .user-profile {
+        position: relative;
+        background-size: cover;
+        a {
+            color: $white;
         }
-        @include font-size(12);
+        .profile-img {
+            width: 60px;
+            margin: 0 auto;
+            padding: 10px 0 5px 0;
+            border-radius: 100%;
+            img {
+                width: 100%;
+                padding: 5px;
+                border: 1px solid rgba(120, 130, 140, 0.13);
+                border-radius: 100%;
+            }
+        }
+        .profile-menu {
+            padding: 5px 0px;
+            position: relative;
+            text-align: center;
+            h5 {
+                @include font-size(18);
+                margin-bottom: 0;
+            }
+        }
+        border-bottom: 1px solid rgba($white,
+        .35);
+        margin-bottom: 2rem;
+    }
+    
+    //
+    // Navs
+    //
+    nav {
+        &#sidebar {
+            ul {
+                @extend .flex-column;
+            }
+        }
+        >ul {
+            @extend .nav;
+            li {
+                @extend .nav-item;
+                a {
+                    @extend .nav-link;
+                    display: block;
+                }
+                &.dropdown {
+                    a.dropdown-toggle {
+                        transition: all 0.3s;
+                        &[aria-expanded="true"] {
+                            &::after {
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     
     //

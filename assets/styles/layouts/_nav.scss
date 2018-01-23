@@ -1,8 +1,227 @@
 nav {
-    &.main-nav {
+    &.header {
+        @extend .d-flex;
+        @extend .flex-row;
+        @extend .flex-wrap;
+        @extend .align-items-center;
+        position: fixed;
+        left: 250px;
+        right: 0;
+        @include media-breakpoint-down(sm) {
+            left: 0;
+        }
+        padding-left: 30px;
+        padding-right: 30px;
+        transition: all 0.3s;
+        z-index: 20;
+        &.wide {
+            position: sticky;
+            top: 0;
+            z-index: 1020;
+            left: 0;
+            height: 60px;
+            background-color: $white;
+            padding: 0;
+            .navbar-header {
+                @extend .d-flex;
+                @extend .flex-row;
+                @extend .flex-wrap;
+                @extend .align-items-center;
+                @extend .justify-content-center;
+                width: 250px;
+                height: 60px;
+                background-color: $primary;
+                transition: all 0.3s;
+                @include media-breakpoint-up(sm) {
+                    width: 250px;
+                }
+                @include media-breakpoint-down(sm) {
+                    width: 60px;
+                }
+                #brand {
+                    height: 60px;
+                }
+            }
+            ul {
+                li {
+                    position: relative;
+                    a {
+                        &.nav-link {
+                            color: inherit;
+                        }
+                        &.dropdown-toggle {
+                            span {
+                                display: none;
+                                @include media-breakpoint-up(md) {
+                                    display: inline-block;
+                                }
+                            }
+                        }
+                    }
+                    .dropdown-menu {
+                        left: auto;
+                        right: 0;
+                        @include font-size(12);
+                        .dropdown-item {
+                            &.active {
+                                color: $black-200;
+                                background-color: $yellow-300;
+                            }
+                        }
+                    }
+                }
+            }
+            ~#sidebar {
+                top: 60px;
+                left: 0;
+                @include media-breakpoint-down(xs) {
+                    margin-left: -60px;
+                }
+                @include media-breakpoint-down(sm) {
+                    width: 60px;
+                    text-align: center;
+                }
+                background-color: $primary;
+                @include media-breakpoint-down(sm) {
+                    .user-profile {
+                        .profile-img {
+                            padding: 10px 0;
+                            width: 48px !important;
+                        }
+                        .profile-menu {
+                            display: none;
+                        }
+                    }
+                }
+                .media {
+                    padding: 1rem;
+                }
+                ul {
+                    li {
+                        a {
+                            color: $white;
+                            span {
+                                @include media-breakpoint-down(sm) {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+                ~main {
+                    padding: 1.75rem;
+                    @include media-breakpoint-up(sm) {
+                        margin-left: 250px;
+                        width: calc(100% - 250px);
+                    }
+                    @include media-breakpoint-down(sm) {
+                        margin-left: 60px;
+                        width: calc(100% - 60px);
+                    }
+                    @include media-breakpoint-down(xs) {
+                        margin-left: 0;
+                        width: 100%;
+                    }
+                    transition: margin-left .3s;
+                }
+                &.active {
+                    width: 60px;
+                    text-align: center;
+                    margin-left: 0 !important;
+                    .media {
+                        .media-body {
+                            display: none;
+                        }
+                    }
+                    ul {
+                        li {
+                            a {
+                                i {
+                                    margin-right: 0;
+                                    display: block;
+                                }
+                                span {
+                                    @include font-size(13, 13);
+                                }
+                            }
+                        }
+                    }
+                    ~main {
+                        margin-left: 60px;
+                        width: calc(100% - 60px);
+                        nav.header {
+                            left: 60px;
+                            // #sidebarCollapse {
+                            //     transform: rotate(180deg);
+                            //     @include media-breakpoint-down(sm) {
+                            //         transform: rotate(0deg);
+                            //     }
+                            // }
+                        }
+                    }
+                }
+            }
+        }
+        ul {
+            li {
+                position: relative;
+                a {
+                    &.nav-link {
+                        color: $white;
+                    }
+                    &.dropdown-toggle {
+                        picture {
+                            display: inline-block;
+                            width: 22px;
+                            line-height: 22px;
+                            border-radius: 4px;
+                            margin-right: 10px;
+                            vertical-align: middle;
+                            img {
+                                @extend .img-fluid;
+                                border-radius: 4px;
+                            }
+                        }
+                        span {
+                            display: none;
+                            @include media-breakpoint-up(md) {
+                                display: inline-block;
+                            }
+                        }
+                    }
+                }
+                .dropdown-menu {
+                    left: auto;
+                    right: 0;
+                    @include font-size(12);
+                    .dropdown-item {
+                        &.active {
+                            color: $black-200;
+                            background-color: $yellow-300;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &#sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        overflow: hidden;
         z-index: 10;
+        width: 250px;
+        color: $white;
+        transition: all 0.3s;
         .media {
+            img {
+                @extend .rounded-circle;
+                margin-right: 1rem;
+            }
             .media-body {
+                a {
+                    color: $white;
+                }
                 h4 {
                     @include font-size(18);
                     line-height: inherit;
@@ -51,10 +270,8 @@ nav {
                     li {
                         a {
                             @include font-size(13);
-                            background-color: lighten($black-200, 3%);
                             &.active {
-                                background-color: $gray-100 !important;
-                                color: $black-200 !important;
+                                color: $lime !important;
                                 border-left: 2px solid transparent !important;
                             }
                         }
@@ -84,54 +301,63 @@ nav {
             }
         }
     }
-    &.header {
-        position: fixed;
-        left: 250px;
-        right: 0;
-        @include media-breakpoint-down(sm) {
-            left: 0;
-        }
-        padding-left: 30px;
-        padding-right: 30px;
-        ul {
-            li {
-                position: relative;
-                a {
-                    &.nav-link {
-                        color: $white;
-                    }
-                    &.dropdown-toggle {
-                        picture {
-                            display: inline-block;
-                            width: 22px;
-                            line-height: 22px;
-                            border-radius: 4px;
-                            margin-right: 10px;
-                            vertical-align: middle;
-                            img {
-                                @extend .img-fluid;
-                                border-radius: 4px;
+}
+
+body.active {
+    nav {
+        &.header {
+            &.wide {
+                .navbar-header {
+                    @include media-breakpoint-up(xs) {
+                        width: 60px;
+                        h1#brand {
+                            @include img-replace(40, 40);
+                            background-image: url(../images/agronet__logo--white--xs.png);
+                            width: 40px;
+                            height: 40px;
+                            a {
+                                width: 40px;
+                                height: 40px;
                             }
                         }
+                    }
+                }
+            }
+        }
+        &#sidebar {
+            overflow: visible !important;
+            width: 60px;
+            margin-left: 0 !important;
+            text-align: center;
+            .user-profile {
+                .profile-img {
+                    padding: 10px 0;
+                    width: 48px !important;
+                }
+                .profile-menu {
+                    display: none;
+                }
+            }
+            ul {
+                li {
+                    position: relative;
+                    a {
                         span {
                             display: none;
-                            @include media-breakpoint-up(md) {
-                                display: inline-block;
-                            }
                         }
                     }
-                }
-                .dropdown-menu {
-                    left: auto;
-                    right: 0;
-                    @include font-size(12);
-                    .dropdown-item {
-                        &.active {
-                            color: $black-200;
-                            background-color: $yellow-300;
-                        }
+                    ul.collapse,
+                    ul.collapsing {
+                        position: absolute;
+                        top: 0;
+                        left: 100%;
+                        background-color: $gray-500;
                     }
                 }
+            }
+            ~main {
+                margin-left: 60px !important;
+                width: calc(100% - 60px) !important;
             }
         }
     }
