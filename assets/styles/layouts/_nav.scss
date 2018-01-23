@@ -80,6 +80,30 @@ nav {
                 @include media-breakpoint-down(sm) {
                     width: 60px;
                     text-align: center;
+                    overflow: visible !important;
+                    ul {
+                        li {
+                            position: relative;
+                            ul.collapse,
+                            ul.collapsing {
+                                position: absolute;
+                                top: 0;
+                                left: 100%;
+                                background-color: $white;
+                                text-align: left;
+                                a {
+                                    color: $black-200;
+                                    &.active {
+                                        background-color: transparent;
+                                        color: $primary !important;
+                                    }
+                                    &:hover {
+                                        color: $primary;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
                 background-color: $primary;
                 @include media-breakpoint-down(sm) {
@@ -105,6 +129,14 @@ nav {
                                     display: none;
                                 }
                             }
+                            &.active {
+                                border-left: 2px solid $lime;
+                                color: $lime;
+                                background-color: darken($primary, 2%);
+                            }
+                        }
+                        ul {
+                            background-color: darken($primary, 2%);
                         }
                     }
                 }
@@ -351,7 +383,18 @@ body.active {
                         position: absolute;
                         top: 0;
                         left: 100%;
-                        background-color: $gray-500;
+                        background-color: $white;
+                        text-align: left;
+                        a {
+                            color: $black-200;
+                            &.active {
+                                background-color: transparent;
+                                color: $primary !important;
+                            }
+                            &:hover {
+                                color: $primary;
+                            }
+                        }
                     }
                 }
             }

@@ -3248,7 +3248,7 @@ tbody.collapse.show {
 
 .nav-link, nav > ul li a {
   display: block;
-  padding: 0.5rem 1rem; }
+  padding: 0.75rem 1rem; }
   .nav-link:hover, nav > ul li a:hover, .nav-link:focus, nav > ul li a:focus {
     text-decoration: none; }
   .nav-link.disabled, nav > ul li a.disabled {
@@ -3345,8 +3345,8 @@ tbody.collapse.show {
 
 .navbar-brand {
   display: inline-block;
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
+  padding-top: 0.5625rem;
+  padding-bottom: 0.5625rem;
   margin-right: 1rem;
   font-size: 1.25rem;
   line-height: inherit;
@@ -3374,8 +3374,8 @@ tbody.collapse.show {
 
 .navbar-text {
   display: inline-block;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem; }
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem; }
 
 .navbar-collapse {
   -ms-flex-preferred-size: 100%;
@@ -15321,7 +15321,27 @@ nav.header {
       @media (max-width: 767.98px) {
         nav.header.wide ~ #sidebar {
           width: 60px;
-          text-align: center; } }
+          text-align: center;
+          overflow: visible !important; }
+          nav.header.wide ~ #sidebar ul li {
+            position: relative; }
+            nav.header.wide ~ #sidebar ul li ul.collapse,
+            nav.header.wide ~ #sidebar ul li ul.collapsing {
+              position: absolute;
+              top: 0;
+              left: 100%;
+              background-color: #fff;
+              text-align: left; }
+              nav.header.wide ~ #sidebar ul li ul.collapse a,
+              nav.header.wide ~ #sidebar ul li ul.collapsing a {
+                color: #555555; }
+                nav.header.wide ~ #sidebar ul li ul.collapse a.active,
+                nav.header.wide ~ #sidebar ul li ul.collapsing a.active {
+                  background-color: transparent;
+                  color: #3c960a !important; }
+                nav.header.wide ~ #sidebar ul li ul.collapse a:hover,
+                nav.header.wide ~ #sidebar ul li ul.collapsing a:hover {
+                  color: #3c960a; } }
       @media (max-width: 767.98px) {
         nav.header.wide ~ #sidebar .user-profile .profile-img {
           padding: 10px 0;
@@ -15335,6 +15355,12 @@ nav.header {
         @media (max-width: 767.98px) {
           nav.header.wide ~ #sidebar ul li a span {
             display: none; } }
+        nav.header.wide ~ #sidebar ul li a.active {
+          border-left: 2px solid #D7FF00;
+          color: #D7FF00;
+          background-color: #388c09; }
+      nav.header.wide ~ #sidebar ul li ul {
+        background-color: #388c09; }
       nav.header.wide ~ #sidebar ~ main {
         padding: 1.75rem;
         -webkit-transition: margin-left .3s;
@@ -15516,7 +15542,18 @@ body.active nav#sidebar {
       position: absolute;
       top: 0;
       left: 100%;
-      background-color: #adb5bd; }
+      background-color: #fff;
+      text-align: left; }
+      body.active nav#sidebar ul li ul.collapse a,
+      body.active nav#sidebar ul li ul.collapsing a {
+        color: #555555; }
+        body.active nav#sidebar ul li ul.collapse a.active,
+        body.active nav#sidebar ul li ul.collapsing a.active {
+          background-color: transparent;
+          color: #3c960a !important; }
+        body.active nav#sidebar ul li ul.collapse a:hover,
+        body.active nav#sidebar ul li ul.collapsing a:hover {
+          color: #3c960a; }
   body.active nav#sidebar ~ main {
     margin-left: 60px !important;
     width: calc(100% - 60px) !important; }
