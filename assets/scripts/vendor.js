@@ -8,6 +8,8 @@ const owlCarousel = require('owl.carousel');
 const confirm = require('jquery-confirm');
 const redirect = require('jquery.redirect');
 
+
+
 Chartkick.options = {
     colors: ['#7daf28', '#f5d269', '#8c6437', '#b48caf', '#3ccdcd']
 }
@@ -17,16 +19,32 @@ const dt = require('datatables.net-responsive-bs4')();
 jQuery(function() {
     jQuery('[data-toggle="popover"]').popover();
     jQuery('[data-toggle="tooltip"]').tooltip();
-    // jQuery('#txtSearch').focus(function() {
-    //     jQuery('.header').addClass("searching");
-    //     jQuery(this).prev().removeClass("fa-search");
-    //     jQuery(this).prev().addClass("fa-chevron-left");
-    //     console.log('Esta enfocado');
-    // }).blur(function() {
-    //     jQuery('.header').removeClass("searching")
-    //     jQuery(this).prev().addClass("fa-search");
-    //     jQuery(this).prev().removeClass("fa-chevron-left");
-    // });
+
+
+    // media query event handler
+    if (matchMedia) {
+        const mq = window.matchMedia("(min-width: 768px)");
+        mq.addListener(WidthChange);
+        WidthChange(mq);
+    }
+
+    // media query change
+    function WidthChange(mq) {
+        if (mq.matches) {
+            jQuery('body').addClass('sidebar-expand');
+            jQuery('body').removeClass('sidebar-collapse');
+            console.log("window width is at least 768px");
+        } else {
+            jQuery('body').removeClass('sidebar-expand');
+            jQuery('body').addClass('sidebar-collapse');
+            console.log("window width is less than 768px");
+        }
+    }
+
+    jQuery('.sidebartoggler').click(function() {
+        jQuery('body').toggleClass('sidebar-expand sidebar-collapse');
+    });
+
     jQuery('input.form-control').blur(function() {
         let tmpval = jQuery(this).val();
         if (tmpval == '') {
@@ -40,9 +58,12 @@ jQuery(function() {
     jQuery('#sidebarCollapse').click(function() {
         jQuery('nav#sidebar').toggleClass('active');
     });
-    jQuery('#sidebartoggler').click(function() {
-        jQuery('body').toggleClass('active');
-    });
+
+    // jQuery('#sidebartoggler').click(function() {
+    //     jQuery('body').toggleClass('active');
+    // });
+
+
 
     jQuery('table.datagrid').DataTable({
         language: {

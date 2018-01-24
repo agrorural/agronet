@@ -74,11 +74,13 @@ body#login {
                             height: 60px;
                             margin-bottom: 2rem;
                             label {
+                                transition: all 0.3s;
                                 color: $gray-100;
                             }
                             .form-control {
                                 color: $white;
                                 &:focus {
+                                    transition: all 0.3s;
                                     border-bottom: 1px solid $secondary;
                                 }
                             }
@@ -106,12 +108,14 @@ body#login {
             }
         }
     }
-}
-
-#brand {
-    margin: 6rem auto;
-    a {
+    #brand {
+        margin: 4rem auto;
+        background-image: url(../images/agronet__logo--color--sm.png);
         width: 185px;
         height: 125px;
+        a {
+            width: 185px !important;
+            height: 125px !important;
+        }
     }
 }
