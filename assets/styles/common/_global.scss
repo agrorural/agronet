@@ -196,7 +196,7 @@
         @extend .justify-content-between;
         @extend .align-items-center;
         @extend .mb-5;
-        padding: 2rem;
+        padding: 1.5rem 3rem;
         h2 {
             @extend .card-title;
             margin: 0;
@@ -508,13 +508,11 @@
         min-height: 100vh;
         max-width: 100%;
         margin: auto;
-        // background-color: $gray-100;
         #content {
             @extend .d-flex;
             @extend .flex-column;
             @extend .flex-wrap;
             flex: 1 1 100%;
-            // background-color: $gray-100;
             transition: margin-left .5s;
             nav.header {
                 height: 70px;
@@ -546,9 +544,13 @@
                 background-color: transparent;
                 padding-left: 0;
                 padding-right: 0;
-                width: calc(100% - 60px);
+                width: calc(100% - 6rem);
                 flex: 1;
-                margin-top: 100px;
+                margin-top: 7rem;
+                .page-header {
+                    margin-left: -3rem;
+                    margin-right: -3rem;
+                }
             }
         }
     }

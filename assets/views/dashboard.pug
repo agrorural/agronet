@@ -1,0 +1,52 @@
+extends includes/base
+block globals
+    - var title= 'Bienvenido de nuevo a la Intranet'
+    - var body_id= 'index'
+
+block sidebarmenu
+    +mainmenu('Inicio','')
+
+block breadcrumb
+    -var items = [{name : "Inicio", href : ''}]
+    +breadcrumb(items)
+
+block content
+    .col-md-12.col-lg-8
+        +card('Asistencia', 'Último reporte de asistencia', '#')
+
+block append scripts
+    script.
+      let $ = require('jquery');
+      let Chartkick = require('chartkick');
+      let owlCarousel = require('owl.carousel');
+      
+      $(document).ready(function() {
+        $('.owl-carousel').owlCarousel();
+      });
+
+      new Chartkick.LineChart("multiple-line", [{
+      "name": "Sobretiempo",
+      "data": {
+        "2013-02-10": 3,
+        "2013-02-17": 3,
+        "2013-02-24": 3,
+        "2013-03-03": 1,
+        "2013-03-10": 4,
+        "2013-03-17": 3,
+        "2013-03-24": 2,
+        "2013-03-31": 3
+      }
+      }, {
+      "name": "Tardanzas",
+      "data": {
+        "2013-02-10": 0,
+        "2013-02-17": 0,
+        "2013-02-24": 0,
+        "2013-03-03": 0,
+        "2013-03-10": 2,
+        "2013-03-17": 1,
+        "2013-03-24": 0,
+        "2013-03-31": 0
+      }
+      }]
+      );

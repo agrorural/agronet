@@ -1,0 +1,132 @@
+block globals
+
+doctype html
+html(lang="en")
+  head
+    title #{title}
+    // Required meta tags
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    // Favicons
+    link(rel="apple-touch-icon" href="dist/images/apple-touch-icon.png" sizes="180x180")
+    link(rel="icon" href="dist/images/favicon-32x32.png" sizes="32x32" type="image/png")
+    link(rel="icon" href="dist/images/favicon-16x16.png" sizes="16x16" type="image/png")
+    link(rel="icon" href="dist/images/favicon.ico")
+    block styles
+        link(rel="stylesheet" type="text/css" media="screen" href="dist/styles/app.css")
+
+    body(id=(body_id || 'default-page'))
+        div#wrapper
+            nav.header
+                .navbar-header
+                    h1#brand
+                        a(href="./dashboard.html")
+                            span Intranet
+                a#sidebartoggler.btn.btn-link.sidebartoggler
+                    i.fas.fa-bars
+                ul.nav.ml-auto
+                    li.nav-item.dropdown.notifications.new
+                        a.nav-link(href="" data-toggle="dropdown" aria-expanded="false")
+                            i.far.fa-bell
+                            sup
+                                span.counter 7
+                        .dropdown-menu
+                            a.dropdown-item.active(href="#") Link
+                            a.dropdown-item(href="#") Link
+                            a.dropdown-item(href="#") Link
+                    li.nav-item.dropdown
+                        a.nav-link.dropdown-toggle(href="" data-toggle="dropdown" aria-expanded="false")
+                            i.far.fa-user-circle
+                            span.name  Marcial Soto 
+                        .dropdown-menu(x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;")
+                            a.dropdown-item.active(href="#") Link
+                            a.dropdown-item(href="#") Link
+                            a.dropdown-item(href="#") Link
+                            a.dropdown-item(href="#") Salir
+            section#content
+                nav#sidebar.main-nav
+                    .user-profile
+                        .profile-img
+                            img(src="dist/images/foto.png" alt="user")
+                        .profile-menu
+                            h5 Marcial Soto
+                            small OA-UTI
+                            nav.nav.justify-content-around
+                                a.nav-link(href="#" data-toggle="tooltip" title="" data-original-title="Detalles")
+                                    i.fas.fa-cog
+                                a.nav-link(href="#" data-toggle="tooltip" title="" data-original-title="Correo")
+                                    i.fas.fa-envelope
+                                a.nav-link(href="#" data-toggle="tooltip" title="" data-original-title="Salir")
+                                    i.fas.fa-power-off
+                    mixin mainmenu(activeItem, activeItemChild)
+                        -var menuItems = [{vName: 'Inicio', vUrl: './index.html', vIcon: 'fas fa-home', hasChild: null}, {vName: 'Contenido', vUrl :'contenido', vIcon: 'fas fa-edit', hasChild: [{vName: 'Botones', vUrl: './buttons.html', hasChild: null}, {vName: 'Gráficas', vUrl: './charts.html', hasChild: null}, {vName: 'Formularios', vUrl: './forms.html', hasChild: null}, {vName: 'Iconos', vUrl: './icons.html', hasChild: null}, {vName: 'Login', vUrl: './index.html', hasChild: null}, {vName: 'Modales', vUrl: './modals.html', hasChild: null}, {vName: 'Tablas', vUrl: './tables.html', hasChild: null}, {vName: 'Tipografía', vUrl: './typo.html', hasChild: null}]}, {vName: 'Sistemas', vUrl: '#', vIcon: 'fab fa-app-store', hasChild: null}]
+
+                        ul.nav.flex-column.components    
+                            each val, index in menuItems
+                                li.nav-item
+                                    if menuItems[index].vName === activeItem
+                                        if val.hasChild == null
+                                            a.nav-link.active(href=val.vUrl, title=val.vName)
+                                                i(class=val.vIcon)
+                                                span= val.vName
+                                        else
+                                            a.nav-link.active(href='#' + val.vUrl, title=val.vName, data-toggle='collapse', aria-expanded='true', aria-controls=val.vName)
+                                                i(class=val.vIcon)
+                                                span= val.vName
+                                            ul(class='collapse list-unstyled show' id=val.vUrl)
+                                                each value, index in val.hasChild
+                                                    li
+                                                        if value.vName === activeItemChild
+                                                            a.active(href=value.vUrl, title=value.vName)= value.vName
+                                                        else
+                                                            a(href=value.vUrl, title=value.vName)= value.vName
+                                    else
+                                        if val.hasChild == null
+                                            a.nav-link(href=val.vUrl, title=val.vName)
+                                                i(class=val.vIcon)
+                                                span= val.vName
+                                        else
+                                            a.nav-link(href='#' + val.vUrl, title=val.vName, data-toggle='collapse', aria-expanded='false', aria-controls=val.vName)
+                                                i(class=val.vIcon)
+                                                span= val.vName
+                                            ul(class='collapse list-unstyled' id=val.vUrl)
+                                                each value in val.hasChild
+                                                    li
+                                                        a(href=value.vUrl, title=value.vName)= value.vName
+                                
+                    block sidebarmenu
+                        +mainmenu('Inicio','')
+                block main
+                    main
+                        .page-header
+                            h2 #{title}
+                            mixin breadcrumb(params)
+                                nav(aria-label='breadcrumb')
+                                    ol(class='breadcrumb')
+                                        each param in params
+                                            if param.href != ''
+                                                li(class='breadcrumb-item')
+                                                    a.breadcrumb-item(href=param.href)= param.name
+                                            else
+                                                li(class='breadcrumb-item active', aria-current='page')= param.name
+                            block breadcrumb
+                                -var items = [{name : "Inicio", href : './dashboard.html'},{name : "Contenido", href : ''}]
+                                +breadcrumb(items)
+                        section.row
+                            mixin card(card_title, card_subtitle, href)
+                                .card.mb-5
+                                    .card-block.card-body
+                                        h3.card-title= card_title
+                                        .dropdown.card-config
+                                            a.btn.btn-light.btn-sm(href= href)
+                                                em.fa.fa-list-ul
+                                                |  Ver todo
+                                        h6.card-subtitle.mb-2.text-muted= card_subtitle
+                                        .canvas-wrapper
+                                            #multiple-line.chart
+                            block content
+                                .col-md-12.col-lg-8
+                                    +card('Mi titulo va aqui')
+                                
+        block scripts
+            script(src='dist/scripts/vendor.js')

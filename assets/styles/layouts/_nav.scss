@@ -161,8 +161,7 @@ body {
                             @include font-size(12);
                             color: $black-200;
                             &.active {
-                                color: $lime !important;
-                                border-left: 2px solid transparent !important;
+                                color: $primary;
                             }
                             &:hover {
                                 color: $primary;
@@ -281,7 +280,7 @@ body {
                         .collapsing {
                             li {
                                 a {
-                                    text-indent: 2.5rem;
+                                    text-indent: 2rem;
                                 }
                             }
                         }

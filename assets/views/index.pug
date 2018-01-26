@@ -1,0 +1,39 @@
+extends includes/login
+block variables
+    - var title= 'Accesando a la Intranet'
+    - var body_id= 'login'
+    - var active= 'blog'
+    
+block content
+    .container
+      .row
+        .preview-signin
+          h1#brand
+            a(href="./dashboard.html")
+              span Intranet
+          p
+            | Bienvenido a la intranet del Programa de Desarrollo Productivo Agrario Rural - AGRO RURAL.
+          nav
+            a(href="#" data-toggle="tooltip" data-placement="top" title="Reporte de Asistencia")
+              i.far.fa-clock
+            a(href="#" data-toggle="tooltip" data-placement="top" title="Ficha de Salida")
+              i.far.fa-file-alt
+            a(href="#" data-toggle="tooltip" data-placement="top" title="Compartir Documentos")
+              i.far.fa-sticky-note
+            a(href="#" data-toggle="tooltip" data-placement="top" title="Legajo de Personal")
+              i.far.fa-address-card
+        .form-signin
+          form
+            h2 Accede
+            include includes/menu
+            fieldset
+              .form-group.input-field
+                input#txtUser.form-control(type="text" required="" value="")
+                label(for="txtUser") Usuario
+                .invalid-feedback
+                  | Ingrese usuario.
+              .form-group.input-field
+                input#txtPassword.form-control(type="password" required="")
+                label(for="txtPassword") Contraseña
+              a.btn.btn-secondary.btn-lg.btn-block(href="./dashboard.html") Ingresar
+            a(href="#" data-toggle="popover" title="Ha perdido su contraseña" data-placement="top" data-content="Puede comunicarse al anexo 4198 y solicitar una nueva.") Olvide mi contraseña

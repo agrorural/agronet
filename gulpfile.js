@@ -2,6 +2,8 @@ const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
 const reload = browserSync.reload;
 const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
+const pug = require('gulp-pug');
 const del = require('del');
 const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
@@ -27,8 +29,10 @@ let config = {
         minifiedFileName: 'app.min.css',
         watch: './assets/styles/**/*.scss'
     },
-    html: {
-        watch: './*.html'
+    pug: {
+        source: './assets/views/*.pug',
+        dist: './',
+        watch: './assets/views/'
     },
     js: {
         require: ['jquery', 'chartkick', 'datatables.net-responsive-bs4', 'owl.carousel', 'jquery-confirm', 'jquery.redirect'],
@@ -91,14 +95,26 @@ gulp.task('imagemin', function() {
         .pipe(gulp.dest(config.image.dist));
 });
 
+// pug
+gulp.task('pug', function() {
+    return gulp.src(config.pug.source)
+        .pipe(pug({
+            pretty: true
+        }))
+        .pipe(gulp.dest(config.pug.dist))
+        .pipe(browserSync.stream());
+});
+
 // sass to css
 gulp.task('sass', function() {
     gulp.src(config.sass.source)
+        .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
         }))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(config.sass.dist))
         .pipe(browserSync.stream());
 });
@@ -123,8 +139,8 @@ gulp.task('serve', ['sass', 'js', 'imagemin', 'fonts', 'misc'], function() {
     watch(config.js.watch, function() {
         gulp.start('js');
     });
-    watch(config.html.watch, function() {
-        reload();
+    watch(config.pug.watch, function() {
+        gulp.start('pug');
     });
 });
 
