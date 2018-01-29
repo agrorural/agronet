@@ -3,16 +3,91 @@ block globals
     - var title= 'Bienvenido de nuevo a la Intranet'
     - var body_id= 'index'
 
-block sidebarmenu
+block mainmenu
     +mainmenu('Inicio','')
 
 block breadcrumb
-    -var items = [{name : "Inicio", href : ''}]
+    -var items = [{name : "Inicio", href : './dashboard.html'}]
     +breadcrumb(items)
 
 block content
     .col-md-12.col-lg-8
+        +card('', '', '')
+            .owl-carousel.owl-theme
+                div  Your Content 
+                div  Your Content 
+                div  Your Content 
+                div  Your Content 
+                div  Your Content 
+                div  Your Content 
+                div  Your Content 
         +card('Asistencia', 'Último reporte de asistencia', '#')
+            .canvas-wrapper
+                #multiple-line.chart
+        +card('Directorio', 'Del personal', '#')
+            .table-responsive
+                table.datagrid
+                    thead
+                        tr
+                            th Order #
+                            th Product
+                            th Customer
+                            th Status
+                    tbody
+                        tr
+                            td 0001
+                            td Product Name 1
+                            td Customer 1
+                            td Complete
+                        tr
+                            td 0002
+                            td Product Name 2
+                            td Customer 2
+                            td Complete
+                        tr
+                            td 0003
+                            td Product Name 3
+                            td Customer 3
+                            td Processing
+                        tr
+                            td 0004
+                            td Product Name 4
+                            td Customer 4
+                            td Pending
+    .col-md-12.col-lg-4
+        +card('Cumpleaños', 'Próximos', '#')
+            ul.list-group.list-group-flush
+                li.list-group-item.d-flex.justify-content-between.align-items-center
+                    .media
+                        img.mr-3.rounded-circle(src="http://via.placeholder.com/48x48" alt="Generic placeholder image")
+                        .media-body
+                            h6.mt-0 Juan Perez
+                            small OA-UTI
+                    span.badge.badge-primary.badge-pill 15/02
+                li.list-group-item.d-flex.justify-content-between.align-items-center
+                    .media
+                        img.mr-3.rounded-circle(src="http://via.placeholder.com/48x48" alt="Generic placeholder image")
+                        .media-body
+                            h6.mt-0 Luisa Sánchez
+                            small DIAR
+                    span.badge.badge-primary.badge-pill 22/02
+                li.list-group-item.d-flex.justify-content-between.align-items-center
+                    .media
+                        img.mr-3.rounded-circle(src="http://via.placeholder.com/48x48" alt="Generic placeholder image")
+                        .media-body
+                            h6.mt-0 Raquel Suárez
+                            small DAB-SDE
+                    span.badge.badge-primary.badge-pill 25/02
+        +card('Normas', 'Del día', '#')
+            ul.list-group.list-group-flush
+                li.list-group-item
+                    a(href="#") RESOLUCION DIRECTORAL N° 019-2018-MINAGRI-DVDIAR-AGRO RURAL-DE
+                li.list-group-item
+                    a(href="#") RESOLUCION DIRECTORAL N° 020-2018-MINAGRI-DVDIAR-AGRO RURAL-DE
+                li.list-group-item
+                    a(href="#") RESOLUCION DIRECTORAL N° 021-2018-MINAGRI-DVDIAR-AGRO RURAL-DE
+                li.list-group-item
+                    a(href="#") RESOLUCION DIRECTORAL N° 023-2018-MINAGRI-DVDIAR-AGRO RURAL-DE
 
 block append scripts
     script.
@@ -23,7 +98,6 @@ block append scripts
       $(document).ready(function() {
         $('.owl-carousel').owlCarousel();
       });
-
       new Chartkick.LineChart("multiple-line", [{
       "name": "Sobretiempo",
       "data": {

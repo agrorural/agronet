@@ -160,6 +160,9 @@
         @extend .rounded-0;
         .card-body {
             padding: 2rem;
+            >.list-group {
+                margin: 0 -2rem -2rem;
+            }
         }
         .card-config {
             position: absolute;
@@ -168,7 +171,7 @@
             list-style: none;
         }
         .card-title {
-            @include font-size(24);
+            @include font-size(18);
             line-height: 1;
         }
         .card-subtitle {
@@ -183,7 +186,7 @@
     // Charts
     //
     .chart {
-        min-height: 175px;
+        min-height: 22.5rem;
     }
     
     //
@@ -199,6 +202,8 @@
         padding: 1.5rem 3rem;
         h2 {
             @extend .card-title;
+            @include font-size(24);
+            line-height: 1;
             margin: 0;
             padding: 0;
         }

@@ -1,120 +1,96 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <title>Bienvenido a la Intranet</title>
-    <!-- Required meta tags -->
+  <head>
+    <title>Iframe</title>
+    <!-- Required meta tags-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Favicons -->
+    <!-- Favicons-->
     <link rel="apple-touch-icon" href="dist/images/apple-touch-icon.png" sizes="180x180">
     <link rel="icon" href="dist/images/favicon-32x32.png" sizes="32x32" type="image/png">
     <link rel="icon" href="dist/images/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="dist/images/favicon.ico">
-    <link rel="stylesheet" type="text/css" media="screen" href="dist/styles/app.css" />
-</head>
-
-<body>
-    <div id="wrapper">
-        <nav id="sidebar" class="main-nav">
-            <div class="media dropdown">
-                <a href="#"><img class="" src="dist/images/foto.png" width="48" height="48" /></a>
-                <div class="media-body">
-                    <a class="dropdown-toggle" role="button" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Marcial Soto
-                    </a>
-                    <p><small>OA - UTI</small></p>
-                    <div class="dropdown-menu dropdown-menu-left" aria-labelledby="dLabel">
-                        <h6 class="dropdown-header">Mi perfil</h6>
-                        <a class="dropdown-item" href="#">Legajo</a>
-                        <a class="dropdown-item" href="#">Tardanzas</a>
-                        <a class="dropdown-item" href="#">Papeletas</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="./index.html"><i class="fas fa-power-off"></i> <span>Salir</span></a>
-                    </div>
-                </div>
-
-
-            </div>
-            <ul class="nav flex-column components">
-                <li class="nav-item">
-                    <a href="./dashboard.html" class="nav-link"><i class="fas fa-home"></i> <span>Inicio</span></a>
-                </li>
-                <li class="nav-item">
-                    <a href="#homeSubmenu" class="nav-link active" data-toggle="collapse" aria-expanded="true" aria-controls="homeSubmenu">
-                        <i class="fas fa-edit"></i>
-                        <span>Contenido</span>
-                    </a>
-                    <ul class="collapse list-unstyled show" id="homeSubmenu">
-                        <li><a href="./buttons.html">Botones</a></li>
-                        <li><a href="./charts.html">Charts</a></li>
-                        <li><a href="./forms.html">Forms</a></li>
-                        <li><a href="./icons.html">Icons</a></li>
-                        <li><a href="./iframe.html" class="active">Iframes</a></li>
-                        <li><a href="./index.html">Login</a></li>
-                        <li><a href="./modal.html">Modales</a></li>
-                        <li><a href="./tables.html">Tablas</a></li>
-                        <li><a href="./typo.html">Tipografía</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link"><i class="fab fa-app-store"></i> <span>Sistemas</span></a>
-                </li>
-            </ul>
-
+    <link rel="stylesheet" type="text/css" media="screen" href="dist/styles/app.css">
+    <body id="page">
+      <div id="wrapper">
+        <nav class="header">
+          <div class="navbar-header">
+            <h1 id="brand"><a href="./dashboard.html"><span>Intranet</span></a></h1>
+          </div><a class="btn btn-link sidebartoggler" id="sidebartoggler"><i class="fas fa-bars"></i></a>
+          <ul class="nav ml-auto">
+            <li class="nav-item dropdown notifications new"><a class="nav-link" href="" data-toggle="dropdown" aria-expanded="false"><i class="far fa-bell"></i><sup><span class="counter">7</span></sup></a>
+              <div class="dropdown-menu"><a class="dropdown-item active" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Link</a></div>
+            </li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-expanded="false"><i class="far fa-user-circle"></i><span class="name"> Marcial Soto </span></a>
+              <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;"><a class="dropdown-item active" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Salir</a></div>
+            </li>
+          </ul>
         </nav>
         <section id="content">
-            <nav class="header">
-                <a id="sidebarCollapse"><i class="ar-arrow-left-top_solid"></i></a>
-                <div class="navbar-header">
-                    <h1 id="brand"><a href="./dashboard.html"><span>Intranet</span></a></h1>
-                </div>
-                <ul class="nav ml-auto">
-                    <li class="nav-item dropdown notifications new">
-                        <a class="nav-link" href="" data-toggle="dropdown" aria-expanded="false">
-                            <i class="far fa-bell"></i>
-                            <sup>
-                                <span class="counter">7</span>
-                            </sup>
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item active" href="#">Link</a>
-                            <a class="dropdown-item" href="#">Link</a>
-                            <a class="dropdown-item" href="#">Link</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-expanded="false">
-                            <i class="far fa-user-circle"></i>
-                            <span class="name"> Marcial Soto </span>
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item active" href="#">Link</a>
-                            <a class="dropdown-item" href="#">Link</a>
-                            <a class="dropdown-item" href="#">Link</a>
-                            <a class="dropdown-item" href="#">Salir</a>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-            <main>
-                <div class="page-header">
-                    <h2>Reponsive iframes</h2>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Library</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Data</li>
-                        </ol>
-                    </nav>
-                </div>
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe allowtransparency=true frameborder=0 id=rf sandbox="allow-same-origin allow-forms allow-scripts" scrolling=auto src="http://www.elcomercio.pe" style="width:100%;height:100%"></iframe>
-                </div>
-            </main>
+          <nav class="main-nav" id="sidebar">
+            <div class="user-profile">
+              <div class="profile-img"><img src="dist/images/foto.png" alt="user"></div>
+              <div class="profile-menu">
+                <h5>Marcial Soto</h5><small>OA-UTI</small>
+                <nav class="nav justify-content-around"><a class="nav-link" href="#" data-toggle="tooltip" title="" data-original-title="Detalles"><i class="fas fa-cog"></i></a><a class="nav-link" href="#" data-toggle="tooltip" title="" data-original-title="Correo"><i class="fas fa-envelope"></i></a><a class="nav-link" href="#" data-toggle="tooltip" title="" data-original-title="Salir"><i class="fas fa-power-off"></i></a></nav>
+              </div>
+            </div>
+                        <ul class="nav flex-column components">   
+                          <li class="nav-item"><a class="nav-link" href="./dashboard.html" title="Inicio"><i class="fas fa-home"></i><span>Inicio</span></a>
+                          </li>
+                          <li class="nav-item"><a class="nav-link active" href="#contenido" title="Contenido" data-toggle="collapse" aria-expanded="true" aria-controls="Contenido"><i class="fas fa-edit"></i><span>Contenido</span></a>
+                            <ul class="collapse list-unstyled show" id="contenido">
+                              <li><a href="./buttons.html" title="Botones">Botones</a>
+                              </li>
+                              <li><a href="./charts.html" title="Gráficas">Gráficas</a>
+                              </li>
+                              <li><a href="./forms.html" title="Formularios">Formularios</a>
+                              </li>
+                              <li><a href="./icons.html" title="Íconos">Íconos</a>
+                              </li>
+                              <li><a class="active" href="./iframe.html" title="Iframe">Iframe</a>
+                              </li>
+                              <li><a href="./index.html" title="Login">Login</a>
+                              </li>
+                              <li><a href="./modals.html" title="Modales">Modales</a>
+                              </li>
+                              <li><a href="./spinners.html" title="Spinners">Spinners</a>
+                              </li>
+                              <li><a href="./tables.html" title="Tablas">Tablas</a>
+                              </li>
+                              <li><a href="./typo.html" title="Tipografía">Tipografía</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="nav-item"><a class="nav-link" href="#" title="Sistemas"><i class="fab fa-app-store"></i><span>Sistemas</span></a>
+                          </li>
+                        </ul>
+          </nav>
+          <main>
+            <div class="page-header">
+              <h2>Iframe</h2>
+                            <nav aria-label="breadcrumb">
+                              <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a class="breadcrumb-item" href="./dashboard.html">Inicio</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Iframe</li>
+                              </ol>
+                            </nav>
+            </div>
+            <section class="row">
+              <div class="col-sm-12">
+                              <div class="card mb-5">
+                                <div class="card-block card-body">
+                                  <h4 class="card-title">Responsive iframe</h4>
+                                  <pre><code>&lt;iframe allowtransparency=true frameborder=0 id=rf sandbox=&quot;allow-same-origin allow-forms allow-scripts&quot; scrolling=auto src=&quot;http://localhost/&quot; style=&quot;width:100%;height:100%&quot;&gt;&lt;/iframe&gt;</code></pre>
+                                  <iframe id="rf" allowtransparency="true" frameborder="0" sandbox="allow-same-origin allow-forms allow-scripts" scrolling="auto" src="http://elcomercio.pe" style="width:100%;height:500px;"></iframe>
+                                </div>
+                              </div>
+              </div>
+            </section>
+          </main>
         </section>
-    </div>
-    <script src="dist/scripts/vendor.js"></script>
-</body>
-
+      </div>
+      <script src="dist/scripts/vendor.js"></script>
+    </body>
+  </head>
 </html>

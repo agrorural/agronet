@@ -1,216 +1,158 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <title>Uso de botones</title>
+  <head>
+    <title>Botones</title>
+    <!-- Required meta tags-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Favicons -->
+    <!-- Favicons-->
     <link rel="apple-touch-icon" href="dist/images/apple-touch-icon.png" sizes="180x180">
     <link rel="icon" href="dist/images/favicon-32x32.png" sizes="32x32" type="image/png">
     <link rel="icon" href="dist/images/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="dist/images/favicon.ico">
-    <link rel="stylesheet" type="text/css" media="screen" href="dist/styles/app.css" />
-</head>
-
-<body>
-    <div id="wrapper">
-        <nav id="sidebar" class="main-nav">
-            <div class="media dropdown">
-                <a href="#"><img class="" src="dist/images/foto.png" width="48" height="48" /></a>
-                <div class="media-body">
-                    <a class="dropdown-toggle" role="button" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Marcial Soto
-                    </a>
-                    <p><small>OA - UTI</small></p>
-                    <div class="dropdown-menu dropdown-menu-left" aria-labelledby="dLabel">
-                        <h6 class="dropdown-header">Mi perfil</h6>
-                        <a class="dropdown-item" href="#">Legajo</a>
-                        <a class="dropdown-item" href="#">Tardanzas</a>
-                        <a class="dropdown-item" href="#">Papeletas</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="./index.html"><i class="fas fa-power-off"></i> <span>Salir</span></a>
-                    </div>
-                </div>
-
-
-            </div>
-            <ul class="nav flex-column components">
-                <li class="nav-item">
-                    <a href="./dashboard.html" class="nav-link"><i class="fas fa-home"></i> <span>Inicio</span></a>
-                </li>
-                <li class="nav-item">
-                    <a href="#homeSubmenu" class="nav-link active" data-toggle="collapse" aria-expanded="true" aria-controls="homeSubmenu">
-                        <i class="fas fa-edit"></i>
-                        <span>Contenido</span>
-                    </a>
-                    <ul class="collapse list-unstyled show" id="homeSubmenu">
-                        <li><a href="./buttons.html" class="active">Botones</a></li>
-                        <li><a href="./charts.html">Charts</a></li>
-                        <li><a href="./forms.html">Forms</a></li>
-                        <li><a href="./icons.html">Icons</a></li>
-                        <li><a href="./index.html">Login</a></li>
-                        <li><a href="./modal.html">Modales</a></li>
-                        <li><a href="./tables.html">Tablas</a></li>
-                        <li><a href="./typo.html">Tipografía</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link"><i class="fab fa-app-store"></i> <span>Sistemas</span></a>
-                </li>
-            </ul>
-
+    <link rel="stylesheet" type="text/css" media="screen" href="dist/styles/app.css">
+    <body id="page">
+      <div id="wrapper">
+        <nav class="header">
+          <div class="navbar-header">
+            <h1 id="brand"><a href="./dashboard.html"><span>Intranet</span></a></h1>
+          </div><a class="btn btn-link sidebartoggler" id="sidebartoggler"><i class="fas fa-bars"></i></a>
+          <ul class="nav ml-auto">
+            <li class="nav-item dropdown notifications new"><a class="nav-link" href="" data-toggle="dropdown" aria-expanded="false"><i class="far fa-bell"></i><sup><span class="counter">7</span></sup></a>
+              <div class="dropdown-menu"><a class="dropdown-item active" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Link</a></div>
+            </li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-expanded="false"><i class="far fa-user-circle"></i><span class="name"> Marcial Soto </span></a>
+              <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;"><a class="dropdown-item active" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Salir</a></div>
+            </li>
+          </ul>
         </nav>
         <section id="content">
-            <nav class="header">
-                <a id="sidebarCollapse"><i class="ar-arrow-left-top_solid"></i></a>
-                <div class="navbar-header">
-                    <h1 id="brand"><a href="./dashboard.html"><span>Intranet</span></a></h1>
-                </div>
-                <ul class="nav ml-auto">
-                    <li class="nav-item dropdown notifications new">
-                        <a class="nav-link" href="" data-toggle="dropdown" aria-expanded="false">
-                            <i class="far fa-bell"></i>
-                            <sup>
-                                <span class="counter">7</span>
-                            </sup>
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item active" href="#">Link</a>
-                            <a class="dropdown-item" href="#">Link</a>
-                            <a class="dropdown-item" href="#">Link</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-expanded="false">
-                            <i class="far fa-user-circle"></i>
-                            <span class="name"> Marcial Soto </span>
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item active" href="#">Link</a>
-                            <a class="dropdown-item" href="#">Link</a>
-                            <a class="dropdown-item" href="#">Link</a>
-                            <a class="dropdown-item" href="#">Salir</a>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-            <main>
-                <article>
-                    <div id="post-content">
-                        <header class="page-header">
-                            <h2 class="title">Botones</h2>
+          <nav class="main-nav" id="sidebar">
+            <div class="user-profile">
+              <div class="profile-img"><img src="dist/images/foto.png" alt="user"></div>
+              <div class="profile-menu">
+                <h5>Marcial Soto</h5><small>OA-UTI</small>
+                <nav class="nav justify-content-around"><a class="nav-link" href="#" data-toggle="tooltip" title="" data-original-title="Detalles"><i class="fas fa-cog"></i></a><a class="nav-link" href="#" data-toggle="tooltip" title="" data-original-title="Correo"><i class="fas fa-envelope"></i></a><a class="nav-link" href="#" data-toggle="tooltip" title="" data-original-title="Salir"><i class="fas fa-power-off"></i></a></nav>
+              </div>
+            </div>
+                        <ul class="nav flex-column components">   
+                          <li class="nav-item"><a class="nav-link" href="./dashboard.html" title="Inicio"><i class="fas fa-home"></i><span>Inicio</span></a>
+                          </li>
+                          <li class="nav-item"><a class="nav-link active" href="#contenido" title="Contenido" data-toggle="collapse" aria-expanded="true" aria-controls="Contenido"><i class="fas fa-edit"></i><span>Contenido</span></a>
+                            <ul class="collapse list-unstyled show" id="contenido">
+                              <li><a class="active" href="./buttons.html" title="Botones">Botones</a>
+                              </li>
+                              <li><a href="./charts.html" title="Gráficas">Gráficas</a>
+                              </li>
+                              <li><a href="./forms.html" title="Formularios">Formularios</a>
+                              </li>
+                              <li><a href="./icons.html" title="Íconos">Íconos</a>
+                              </li>
+                              <li><a href="./iframe.html" title="Iframe">Iframe</a>
+                              </li>
+                              <li><a href="./index.html" title="Login">Login</a>
+                              </li>
+                              <li><a href="./modals.html" title="Modales">Modales</a>
+                              </li>
+                              <li><a href="./spinners.html" title="Spinners">Spinners</a>
+                              </li>
+                              <li><a href="./tables.html" title="Tablas">Tablas</a>
+                              </li>
+                              <li><a href="./typo.html" title="Tipografía">Tipografía</a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="nav-item"><a class="nav-link" href="#" title="Sistemas"><i class="fab fa-app-store"></i><span>Sistemas</span></a>
+                          </li>
+                        </ul>
+          </nav>
+          <main>
+            <div class="page-header">
+              <h2>Botones</h2>
                             <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Botones</li>
-                                </ol>
+                              <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a class="breadcrumb-item" href="./dashboard.html">Inicio</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Botones</li>
+                              </ol>
                             </nav>
-                        </header>
-
-                        <h4 class="mb-2 mt-4 pl-1 text-muted">Pequeños</h4>
-                        <button type="button" class="btn btn-primary btn-sm">Primary</button>
-                        <button type="button" class="btn btn-secondary btn-sm">Secondary</button>
-                        <button type="button" class="btn btn-success btn-sm">Success</button>
-                        <button type="button" class="btn btn-danger btn-sm">Danger</button>
-                        <button type="button" class="btn btn-warning btn-sm">Warning</button>
-                        <button type="button" class="btn btn-info btn-sm">Info</button>
-                        <button type="button" class="btn btn-light btn-sm">Light</button>
-                        <button type="button" class="btn btn-dark btn-sm">Dark</button>
-                        <button type="button" class="btn btn-link btn-sm">Link</button>
-
-                        <pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary btn-sm"</span><span class="nt">&gt;</span>Primary<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-secondary btn-sm"</span><span class="nt">&gt;</span>Secondary<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-success btn-sm"</span><span class="nt">&gt;</span>Success<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-danger btn-sm"</span><span class="nt">&gt;</span>Danger<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-warning btn-sm"</span><span class="nt">&gt;</span>Warning<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-info btn-sm"</span><span class="nt">&gt;</span>Info<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-light btn-sm"</span><span class="nt">&gt;</span>Light<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-dark btn-sm"</span><span class="nt">&gt;</span>Dark<span class="nt">&lt;/button&gt;</span>
-
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-link"</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/button&gt;</span></code></pre>
-
-                        <h4 class="mb-2 mt-4 pl-1 text-muted">
-                            Default
-                        </h4>
-
-                        <button type="button" class="btn btn-primary">Primary</button>
-                        <button type="button" class="btn btn-secondary">Secondary</button>
-                        <button type="button" class="btn btn-success">Success</button>
-                        <button type="button" class="btn btn-danger">Danger</button>
-                        <button type="button" class="btn btn-warning">Warning</button>
-                        <button type="button" class="btn btn-info">Info</button>
-                        <button type="button" class="btn btn-light">Light</button>
-                        <button type="button" class="btn btn-dark">Dark</button>
-                        <button type="button" class="btn btn-link">Link</button>
-                        <pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Primary<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-secondary"</span><span class="nt">&gt;</span>Secondary<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-success"</span><span class="nt">&gt;</span>Success<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-danger"</span><span class="nt">&gt;</span>Danger<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-warning"</span><span class="nt">&gt;</span>Warning<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-info"</span><span class="nt">&gt;</span>Info<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-light"</span><span class="nt">&gt;</span>Light<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-dark"</span><span class="nt">&gt;</span>Dark<span class="nt">&lt;/button&gt;</span>
-
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-link"</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/button&gt;</span></code></pre>
-                        <h4 class="mb-2 mt-4 pl-1 text-muted">Large</h4>
-
-                        <button type="button" class="btn btn-primary btn-lg">Primary</button>
-                        <button type="button" class="btn btn-secondary btn-lg">Secondary</button>
-                        <button type="button" class="btn btn-success btn-lg">Success</button>
-                        <button type="button" class="btn btn-danger btn-lg">Danger</button>
-                        <button type="button" class="btn btn-warning btn-lg">Warning</button>
-                        <button type="button" class="btn btn-info btn-lg">Info</button>
-                        <button type="button" class="btn btn-light btn-lg">Light</button>
-                        <button type="button" class="btn btn-dark btn-lg">Dark</button>
-                        <button type="button" class="btn btn-link btn-lg">Link</button>
-
-                        <pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary btn-lg"</span><span class="nt">&gt;</span>Primary<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-secondary btn-lg"</span><span class="nt">&gt;</span>Secondary<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-success btn-lg"</span><span class="nt">&gt;</span>Success<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-danger btn-lg"</span><span class="nt">&gt;</span>Danger<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-warning btn-lg"</span><span class="nt">&gt;</span>Warning<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-info btn-lg"</span><span class="nt">&gt;</span>Info<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-light btn-lg"</span><span class="nt">&gt;</span>Light<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-dark btn-lg"</span><span class="nt">&gt;</span>Dark<span class="nt">&lt;/button&gt;</span>
-
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-link"</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/button&gt;</span></code></pre>
-
-                        <h4 class="mb-2 mt-4 pl-1 text-muted">Outline</h4>
-
-                        <button type="button" class="btn btn-outline-primary">Primary</button>
-                        <button type="button" class="btn btn-outline-secondary">Secondary</button>
-                        <button type="button" class="btn btn-outline-success">Success</button>
-                        <button type="button" class="btn btn-outline-danger">Danger</button>
-                        <button type="button" class="btn btn-outline-warning">Warning</button>
-                        <button type="button" class="btn btn-outline-info">Info</button>
-                        <button type="button" class="btn btn-outline-light">Light</button>
-                        <button type="button" class="btn btn-outline-dark">Dark</button>
-
-                        <pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-outline-primary"</span><span class="nt">&gt;</span>Primary<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-outline-secondary"</span><span class="nt">&gt;</span>Secondary<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-outline-success"</span><span class="nt">&gt;</span>Success<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-outline-danger"</span><span class="nt">&gt;</span>Danger<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-outline-warning"</span><span class="nt">&gt;</span>Warning<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-outline-info"</span><span class="nt">&gt;</span>Info<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-outline-light"</span><span class="nt">&gt;</span>Light<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-outline-dark"</span><span class="nt">&gt;</span>Dark<span class="nt">&lt;/button&gt;</span>
-
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-outline-link"</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/button&gt;</span></code></pre>
-
-                        <h4 class="mb-2 mt-4 pl-1 text-muted">Block</h4>
-
-                        <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
-                        <button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button>
-
-                        <pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary btn-lg btn-block"</span><span class="nt">&gt;</span>Block level button<span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-secondary btn-lg btn-block"</span><span class="nt">&gt;</span>Block level button<span class="nt">&lt;/button&gt;</span></code></pre>
-                    </div>
-                </article>
-            </main>
+            </div>
+            <section class="row">
+              <div class="col-md-12">
+                              <div class="card mb-5">
+                                <div class="card-block card-body">
+                                  <h4 class="card-title">Pequeños</h4>
+                                  <button class="btn btn-primary btn-sm" type="button">Primary</button>
+                                  <button class="btn btn-secondary btn-sm" type="button">Secondary</button>
+                                  <button class="btn btn-success btn-sm" type="button">Success</button>
+                                  <button class="btn btn-danger btn-sm" type="button">Danger</button>
+                                  <button class="btn btn-warning btn-sm" type="button">Warning</button>
+                                  <button class="btn btn-info btn-sm" type="button">Info</button>
+                                  <button class="btn btn-light btn-sm" type="button">Light</button>
+                                  <button class="btn btn-dark btn-sm" type="button">Dark</button>
+                                  <button class="btn btn-link btn-sm" type="button">Link</button>
+                                  <pre><code>&lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-sm&quot;&gt;Primary&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-secondary btn-sm&quot;&gt;Secondary&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-success btn-sm&quot;&gt;Success&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-danger btn-sm&quot;&gt;Danger&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-warning btn-sm&quot;&gt;Warning&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-info btn-sm&quot;&gt;Info&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-light btn-sm&quot;&gt;Light&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-dark btn-sm&quot;&gt;Dark&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-link btn-sm&quot;&gt;Link&lt;/button&gt;</code></pre>
+                                </div>
+                              </div>
+                              <div class="card mb-5">
+                                <div class="card-block card-body">
+                                  <h4 class="card-title">Medianos (por defecto)</h4>
+                                  <button class="btn btn-primary" type="button">Primary</button>
+                                  <button class="btn btn-secondary" type="button">Secondary</button>
+                                  <button class="btn btn-success" type="button">Success</button>
+                                  <button class="btn btn-danger" type="button">Danger</button>
+                                  <button class="btn btn-warning" type="button">Warning</button>
+                                  <button class="btn btn-info" type="button">Info</button>
+                                  <button class="btn btn-light" type="button">Light</button>
+                                  <button class="btn btn-dark" type="button">Dark</button>
+                                  <button class="btn btn-link" type="button">Link</button>
+                                  <pre><code>&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Primary&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot;&gt;Secondary&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot;&gt;Success&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-danger&quot;&gt;Danger&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-warning&quot;&gt;Warning&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-info&quot;&gt;Info&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-light&quot;&gt;Light&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-dark&quot;&gt;Dark&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-link&quot;&gt;Link&lt;/button&gt;</code></pre>
+                                </div>
+                              </div>
+                              <div class="card mb-5">
+                                <div class="card-block card-body">
+                                  <h4 class="card-title">Largos</h4>
+                                  <button class="btn btn-primary btn-lg" type="button">Primary</button>
+                                  <button class="btn btn-secondary btn-lg" type="button">Secondary</button>
+                                  <button class="btn btn-success btn-lg" type="button">Success</button>
+                                  <button class="btn btn-danger btn-lg" type="button">Danger</button>
+                                  <button class="btn btn-warning btn-lg" type="button">Warning</button>
+                                  <button class="btn btn-info btn-lg" type="button">Info</button>
+                                  <button class="btn btn-light btn-lg" type="button">Light</button>
+                                  <button class="btn btn-dark btn-lg" type="button">Dark</button>
+                                  <button class="btn btn-link btn-lg" type="button">Link</button>
+                                  <pre><code>&lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-lg&quot;&gt;Primary&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-secondary btn-lg&quot;&gt;Secondary&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-success btn-lg&quot;&gt;Success&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-danger btn-lg&quot;&gt;Danger&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-warning btn-lg&quot;&gt;Warning&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-info btn-lg&quot;&gt;Info&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-light btn-lg&quot;&gt;Light&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-dark btn-lg&quot;&gt;Dark&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-link btn-lg&quot;&gt;Link&lt;/button&gt;</code></pre>
+                                </div>
+                              </div>
+              </div>
+            </section>
+          </main>
         </section>
-    </div>
-    <script src="dist/scripts/vendor.js"></script>
-</body>
-
+      </div>
+      <script src="dist/scripts/vendor.js"></script>
+    </body>
+  </head>
 </html>

@@ -18,6 +18,8 @@ const babelify = require('babelify');
 const source = require('vinyl-source-stream');
 const browserify = require('browserify');
 const gutil = require('gulp-util');
+const plumber = require('gulp-plumber');
+const plumberNotifier = require('gulp-plumber-notifier');
 
 let config = {
     dist: 'dist/',
@@ -98,6 +100,8 @@ gulp.task('imagemin', function() {
 // pug
 gulp.task('pug', function() {
     return gulp.src(config.pug.source)
+        .pipe(plumber())
+        .pipe(plumberNotifier())
         .pipe(pug({
             pretty: true
         }))

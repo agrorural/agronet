@@ -59,42 +59,42 @@ html(lang="en")
                                 a.nav-link(href="#" data-toggle="tooltip" title="" data-original-title="Salir")
                                     i.fas.fa-power-off
                     mixin mainmenu(activeItem, activeItemChild)
-                        -var menuItems = [{vName: 'Inicio', vUrl: './index.html', vIcon: 'fas fa-home', hasChild: null}, {vName: 'Contenido', vUrl :'contenido', vIcon: 'fas fa-edit', hasChild: [{vName: 'Botones', vUrl: './buttons.html', hasChild: null}, {vName: 'Gráficas', vUrl: './charts.html', hasChild: null}, {vName: 'Formularios', vUrl: './forms.html', hasChild: null}, {vName: 'Iconos', vUrl: './icons.html', hasChild: null}, {vName: 'Login', vUrl: './index.html', hasChild: null}, {vName: 'Modales', vUrl: './modals.html', hasChild: null}, {vName: 'Tablas', vUrl: './tables.html', hasChild: null}, {vName: 'Tipografía', vUrl: './typo.html', hasChild: null}]}, {vName: 'Sistemas', vUrl: '#', vIcon: 'fab fa-app-store', hasChild: null}]
+                        -var menuItems = [{name: 'Inicio', href: './dashboard.html', icon: 'fas fa-home', isActive: false, child: null}, {name: 'Contenido', href :'contenido', icon: 'fas fa-edit', isActive: false, child: [{name: 'Botones', href: './buttons.html', isActive: false, child: null}, {name: 'Gráficas', href: './charts.html', isActive: false, child: null}, {name: 'Formularios', href: './forms.html', isActive: false, child: null}, {name: 'Íconos', href: './icons.html', isActive: false, child: null}, {name: 'Iframe', href: './iframe.html', isActive: false, child: null}, {name: 'Login', href: './index.html', isActive: false, child: null}, {name: 'Modales', href: './modals.html', isActive: false, child: null}, {name: 'Spinners', href: './spinners.html', isActive: false, child: null}, {name: 'Tablas', href: './tables.html', isActive: false, child: null}, {name: 'Tipografía', href: './typo.html', isActive: false, child: null}]}, {name: 'Sistemas', href: '#', icon: 'fab fa-app-store', isActive: false, child: null}]
 
                         ul.nav.flex-column.components    
                             each val, index in menuItems
                                 li.nav-item
-                                    if menuItems[index].vName === activeItem
-                                        if val.hasChild == null
-                                            a.nav-link.active(href=val.vUrl, title=val.vName)
-                                                i(class=val.vIcon)
-                                                span= val.vName
+                                    if menuItems[index].name === activeItem
+                                        if val.child == null
+                                            a.nav-link.active(href=val.href, title=val.name)
+                                                i(class=val.icon)
+                                                span= val.name
                                         else
-                                            a.nav-link.active(href='#' + val.vUrl, title=val.vName, data-toggle='collapse', aria-expanded='true', aria-controls=val.vName)
-                                                i(class=val.vIcon)
-                                                span= val.vName
-                                            ul(class='collapse list-unstyled show' id=val.vUrl)
-                                                each value, index in val.hasChild
+                                            a.nav-link.active(href='#' + val.href, title=val.name, data-toggle='collapse', aria-expanded='true', aria-controls=val.name)
+                                                i(class=val.icon)
+                                                span= val.name
+                                            ul(class='collapse list-unstyled show' id=val.href)
+                                                each value, index in val.child
                                                     li
-                                                        if value.vName === activeItemChild
-                                                            a.active(href=value.vUrl, title=value.vName)= value.vName
+                                                        if value.name === activeItemChild
+                                                            a.active(href=value.href, title=value.name)= value.name
                                                         else
-                                                            a(href=value.vUrl, title=value.vName)= value.vName
+                                                            a(href=value.href, title=value.name)= value.name
                                     else
-                                        if val.hasChild == null
-                                            a.nav-link(href=val.vUrl, title=val.vName)
-                                                i(class=val.vIcon)
-                                                span= val.vName
+                                        if val.child == null
+                                            a.nav-link(href=val.href, title=val.name)
+                                                i(class=val.icon)
+                                                span= val.name
                                         else
-                                            a.nav-link(href='#' + val.vUrl, title=val.vName, data-toggle='collapse', aria-expanded='false', aria-controls=val.vName)
-                                                i(class=val.vIcon)
-                                                span= val.vName
-                                            ul(class='collapse list-unstyled' id=val.vUrl)
-                                                each value in val.hasChild
+                                            a.nav-link(href='#' + val.href, title=val.name, data-toggle='collapse', aria-expanded='false', aria-controls=val.name)
+                                                i(class=val.icon)
+                                                span= val.name
+                                            ul(class='collapse list-unstyled' id=val.href)
+                                                each value in val.child
                                                     li
-                                                        a(href=value.vUrl, title=value.vName)= value.vName
+                                                        a(href=value.href, title=value.name)= value.name
                                 
-                    block sidebarmenu
+                    block mainmenu
                         +mainmenu('Inicio','')
                 block main
                     main
@@ -116,17 +116,22 @@ html(lang="en")
                             mixin card(card_title, card_subtitle, href)
                                 .card.mb-5
                                     .card-block.card-body
-                                        h3.card-title= card_title
-                                        .dropdown.card-config
-                                            a.btn.btn-light.btn-sm(href= href)
-                                                em.fa.fa-list-ul
-                                                |  Ver todo
-                                        h6.card-subtitle.mb-2.text-muted= card_subtitle
-                                        .canvas-wrapper
-                                            #multiple-line.chart
+                                        if card_title
+                                            h4.card-title= card_title
+                                        if href
+                                            .dropdown.card-config
+                                                a.btn.btn-light.btn-sm(href= href)
+                                                    em.fa.fa-list-ul
+                                                    |  Ver todo
+                                        if card_subtitle
+                                            h6.card-subtitle.mb-2.text-muted= card_subtitle
+                                        if block
+                                            block
+                                        else
+                                            p Ingrese contenido del card.
                             block content
                                 .col-md-12.col-lg-8
-                                    +card('Mi titulo va aqui')
+                                    +card('Título del card')
                                 
         block scripts
             script(src='dist/scripts/vendor.js')

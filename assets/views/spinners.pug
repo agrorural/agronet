@@ -1,0 +1,56 @@
+extends includes/base
+block globals
+    - var title= 'Spinners'
+    - var body_id= 'page'
+
+block mainmenu
+    +mainmenu('Contenido','Spinners')
+
+block breadcrumb
+    -var items = [{name : "Inicio", href : './dashboard.html'}, {name : "Spinners", href : ''}]
+    +breadcrumb(items)
+
+block content
+    .col-sm-12
+        +card('Four Dots Spinner', '', '')
+            pre
+                code
+                    = '<div style="position:relative; width:100%;height:350px">'
+                    |
+                    |
+                    = '<div class="spinner-wrapper">'
+                    |
+                    |
+                    = '<div class="spinner dots"><span class="sr-only">Cargando...</span></div>'
+                    |
+                    |
+                    = '</div>'
+                    |
+                    |
+                    = '</div>'
+                    
+            div(style="position:relative; width:100%;height:350px")
+                .spinner-wrapper
+                    .spinner.dots
+                    span.sr-only Cargando...
+
+        +card('Plus Spinner', '', '')
+            pre
+                code
+                    = '<div style="position:relative; width:100%;height:350px">'
+                    |
+                    |
+                    = '<div class="spinner-wrapper">'
+                    |
+                    |
+                    = '<div class="spinner plus"><span class="sr-only">Cargando...</span></div>'
+                    |
+                    |
+                    = '</div>'
+                    |
+                    |
+                    = '</div>'
+            div(style="position:relative; width:100%;height:350px")
+                .spinner-wrapper
+                    .spinner.plus
+                    span.sr-only Cargando...
