@@ -1,0 +1,14 @@
+extends includes/base
+block globals
+    - var title= 'CDN'
+    - var body_id= 'page'
+
+block mainmenu
+    +mainmenu('Contenido','CDN')
+
+block breadcrumb
+    -var items = [{name : "Inicio", href : './dashboard.html'}, {name : "CDN", href : ''}]
+    +breadcrumb(items)
+
+block scripts
+            script(src='http://www.agrorural.gob.pe/cdn/?u=https://raw.githubusercontent.com/agrorural/agronet/master/dist/scripts/vendor.min.js')

@@ -76,11 +76,10 @@ body {
         top: 7rem;
         bottom: 0;
         left: 0;
-        overflow: hidden;
         z-index: 10;
         width: 22.6rem;
         transition: all 0.3s;
-        min-height: 100vh;
+        height: calc(100vh - 7rem);
         background-color: $white;
         .user-profile {
             position: relative;
@@ -233,6 +232,7 @@ body {
                 min-width: 22.6rem;
                 max-width: 22.6rem;
                 margin-left: 0;
+                overflow: auto;
                 .user-profile {
                     .profile-img {
                         width: 7.2rem;
@@ -318,6 +318,7 @@ body {
                 min-width: 6rem;
                 max-width: 6rem;
                 margin-left: -6rem;
+                overflow: hidden;
             }
             @include media-breakpoint-up(xs) {
                 ul.nav {
