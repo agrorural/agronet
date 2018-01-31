@@ -7,6 +7,7 @@ const Chartkick = require('chartkick');
 const owlCarousel = require('owl.carousel');
 const confirm = require('jquery-confirm');
 const redirect = require('jquery.redirect');
+const Cookie = require('js-cookie');
 
 
 
@@ -58,12 +59,6 @@ jQuery(function() {
     jQuery('#sidebarCollapse').click(function() {
         jQuery('nav#sidebar').toggleClass('active');
     });
-
-    // jQuery('#sidebartoggler').click(function() {
-    //     jQuery('body').toggleClass('active');
-    // });
-
-
 
     jQuery('table.datagrid').DataTable({
         language: {
