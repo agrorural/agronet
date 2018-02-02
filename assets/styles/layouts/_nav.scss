@@ -121,7 +121,7 @@ body {
             margin-bottom: 2rem;
             &::after {
                 content: "";
-                background: url(../images/profile__bg--2.jpg);
+                background: url(http://www.agrorural.gob.pe/cdn/dist/images/profile__bg--2.jpg);
                 opacity: 0.35;
                 top: 0;
                 left: 0;
@@ -178,14 +178,14 @@ body {
                     width: 6rem;
                     #brand {
                         @include img-replace(40, 40);
-                        background-image: url(../images/agronet__logo--color--xs.png);
+                        background-image: url(http://www.agrorural.gob.pe/cdn/dist/images/agronet__logo--color--xs.png);
                     }
                 }
                 @include media-breakpoint-up(sm) {
                     width: 22.5rem;
                     #brand {
                         @include img-replace(135, 40);
-                        background-image: url(../images/agronet__logo--color--sm--horizontal.png);
+                        background-image: url(http://www.agrorural.gob.pe/cdn/dist/images/agronet__logo--color--sm--horizontal.png);
                     }
                 }
             }
@@ -298,7 +298,7 @@ body {
                     width: 6rem;
                     #brand {
                         @include img-replace(40, 40);
-                        background-image: url(../images/agronet__logo--color--xs.png);
+                        background-image: url(http://www.agrorural.gob.pe/cdn/dist/images/agronet__logo--color--xs.png);
                     }
                 }
             }
