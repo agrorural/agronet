@@ -201,7 +201,31 @@
         let Chartkick = require('chartkick');
         let owlCarousel = require('owl.carousel');
         let Cookie = require('js-cookie');
-        let typeahead = require('typeahead.js');
+        
+        var typeahead = require("typeahead.js-browserify");
+        typeahead.loadjQueryPlugin();
+        
+        var Bloodhound = require("typeahead.js-browserify").Bloodhound
+        var engine = new Bloodhound({
+          queryTokenizer: Bloodhound.tokenizers.whitespace,
+          datumTokenizer: Bloodhound.tokenizers.whitespace,
+          prefetch: 'https://twitter.github.io/typeahead.js/data/films/post_1960.json',
+          remote: {
+              url: 'https://twitter.github.io/typeahead.js/data/films/queries/%QUERY.json',
+              wildcard: '%QUERY'
+          }
+        });
+        
+        $('.typeahead').typeahead({
+          hint: true,
+          highlight: true,
+          minLength: 1
+          },
+          {
+          name: 'states',
+          display: 'value',
+          source: engine
+        });
         
         $(document).ready(function() {
           $('.owl-carousel').owlCarousel();
@@ -233,43 +257,6 @@
           }
           }]
         );
-        
-        var substringMatcher = function(strs) {
-          return function findMatches(q, cb) {
-              var matches, substringRegex;
-              matches = [];
-              substrRegex = new RegExp(q, 'i');
-              $.each(strs, function(i, str) {
-              if (substrRegex.test(str)) {
-                  matches.push(str);
-              }
-              });
-              cb(matches);
-          };
-        };
-        
-        var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
-          'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
-          'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
-          'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
-          'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
-          'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-          'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
-          'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
-          'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-        ];
-        
-        $('.typeahead').typeahead({
-          hint: true,
-          highlight: true,
-          minLength: 1
-          },
-          {
-          name: 'states',
-          source: substringMatcher(states)
-        });
-        
-        console.log(states);
       </script>
     </body>
   </head>

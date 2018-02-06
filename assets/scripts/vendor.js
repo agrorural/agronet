@@ -8,8 +8,17 @@ const owlCarousel = require('owl.carousel');
 const confirm = require('jquery-confirm');
 const redirect = require('jquery.redirect');
 const Cookie = require('js-cookie');
-const typeahead = require('typeahead.js');
 
+var Bloodhound = require("typeahead.js-browserify").Bloodhound
+var engine = new Bloodhound({
+    local: ['dog', 'pig', 'moose'],
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    datumTokenizer: Bloodhound.tokenizers.whitespace
+});
+
+var jQuery = require("jquery");
+var typeahead = require("typeahead.js-browserify");
+typeahead.loadjQueryPlugin();
 
 Chartkick.options = {
     colors: ['#7daf28', '#f5d269', '#8c6437', '#b48caf', '#3ccdcd']

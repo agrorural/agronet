@@ -697,6 +697,9 @@
                     cursor: pointer;
                     background-color: $lime;
                 }
+                &.tt-cursor {
+                    background-color: $lime;
+                }
             }
         }
     }
