@@ -263,6 +263,7 @@
             border-radius: $border-radius;
             border: 1px solid $gray-400;
             padding: 10px;
+            margin-bottom: 2rem;
             legend {
                 @include font-size(11);
                 color: $black-200;
@@ -282,6 +283,7 @@
                 color: $gray-700;
                 @include font-size(11,
                 16);
+                transition: all 0.3s;
             }
             .form-control {
                 @include font-size(13);
@@ -317,6 +319,7 @@
                     @include font-size(14,
                     14);
                     top: 20px;
+                    left: 15px;
                 }
                 &.not-empty,
                 &.placeholder {
@@ -348,12 +351,17 @@
                 }
                 input {
                     &:disabled,
-                    &[type="date"] {
+                    &[type="date"],
+                    &[type="file"] {
                         ~label {
                             top: 0;
                             @include font-size(11,
                             11);
                         }
+                    }
+                    &[type="file"] {
+                        position: absolute;
+                        bottom: 0;
                     }
                     &:disabled {
                         cursor: not-allowed;

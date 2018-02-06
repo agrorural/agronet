@@ -46,6 +46,8 @@
                               </li>
                               <li><a href="./forms.html" title="Formularios">Formularios</a>
                               </li>
+                              <li><a href="./forms-2.html" title="Formularios 2">Formularios 2</a>
+                              </li>
                               <li><a href="./icons.html" title="Íconos">Íconos</a>
                               </li>
                               <li><a href="./iframe.html" title="Iframe">Iframe</a>
@@ -111,12 +113,40 @@ Launch demo modal
                                   <!-- Modal-->
                                   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
-                                      <div class="modal-content">
+                                      <div class="modal-content modal-lg">
                                         <div class="modal-header">
                                           <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                                           <button class="close" type="button" data-dismiss="modal" aria-label="Close"></button><span aria-hidden="true">×</span>
                                         </div>
-                                        <div class="modal-body">...</div>
+                                        <div class="modal-body">
+                                          <form>
+                                            <fieldset>
+                                              <legend>Esta es la leyenda</legend>
+                                              <div class="row">
+                                                <div class="form-group input-field col-lg-6">
+                                                  <input class="form-control" type="text">
+                                                  <label>Buscar por SNIP</label>
+                                                </div>
+                                                <div class="form-group input-group col-lg-6">
+                                                  <select class="custom-select" id="inputGroupSelect04">
+                                                    <option selected="">Choose...</option>
+                                                    <option value="1">One</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                  </select>
+                                                  <label>Buscar por descripción de SNIP</label>
+                                                  <div class="input-group-append">
+                                                    <button class="btn btn-light" type="button">Buscar</button>
+                                                  </div>
+                                                </div>
+                                                <div class="form-group input-field col-lg-3">
+                                                  <input class="form-control" type="date">
+                                                  <label>Fecha de entrega</label>
+                                                </div>
+                                              </div>
+                                            </fieldset>
+                                          </form>
+                                        </div>
                                         <div class="modal-footer">
                                           <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
                                           <button class="btn btn-primary" type="button">Save changes</button>
