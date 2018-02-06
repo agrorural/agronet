@@ -8,7 +8,7 @@ const owlCarousel = require('owl.carousel');
 const confirm = require('jquery-confirm');
 const redirect = require('jquery.redirect');
 const Cookie = require('js-cookie');
-
+const typeahead = require('typeahead.js');
 
 
 Chartkick.options = {
@@ -20,7 +20,6 @@ const dt = require('datatables.net-responsive-bs4')();
 jQuery(function() {
     jQuery('[data-toggle="popover"]').popover();
     jQuery('[data-toggle="tooltip"]').tooltip();
-
 
     // media query event handler
     if (matchMedia) {
