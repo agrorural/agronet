@@ -8,6 +8,7 @@ const owlCarousel = require('owl.carousel');
 const confirm = require('jquery-confirm');
 const redirect = require('jquery.redirect');
 const Cookie = require('js-cookie');
+const flatpickr = require("flatpickr");
 
 var Bloodhound = require("typeahead.js-browserify").Bloodhound
 var engine = new Bloodhound({
@@ -29,6 +30,11 @@ const dt = require('datatables.net-responsive-bs4')();
 jQuery(function() {
     jQuery('[data-toggle="popover"]').popover();
     jQuery('[data-toggle="tooltip"]').tooltip();
+
+    jQuery(".flatpickr").flatpickr({
+            enableTime: true,
+            dateFormat: "Y-m-d H:i",
+    });
 
     // media query event handler
     if (matchMedia) {

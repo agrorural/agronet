@@ -14,9 +14,12 @@ block breadcrumb
 block content
     .col-md-12.col-lg-8
         +card('Typeahead', 'de Twitter', '')
-            input.typeahead(type="text" placeholder="States of USA")
+            input.typeahead(type="text", placeholder="States of USA")
             btn(class="btn btn-primary") Boton primario
             btn(class="btn btn-secondary") Boton secundario
+    .col-md-12.col-lg-8
+        +card('flatpickr', 'JS plugin for datepicker. Ejemplos: https://flatpickr.js.org/examples/', '')
+            input.flatpickr.form-control(type="text",  placeholder="Seleccionar una fecha") 
     .col-md-12.col-lg-8
         +card('', '', '')
             .owl-carousel.owl-theme
