@@ -2,6 +2,7 @@ extends includes/base
 block globals
     - var title= 'Bienvenido de nuevo a la Intranet'
     - var body_id= 'index'
+    - var body_class= 'theme-purple'
 
 block mainmenu
     +mainmenu('Inicio','')
@@ -14,6 +15,8 @@ block content
     .col-md-12.col-lg-8
         +card('Typeahead', 'de Twitter', '')
             input.typeahead(type="text" placeholder="States of USA")
+            btn(class="btn btn-primary") Boton primario
+            btn(class="btn btn-secondary") Boton secundario
     .col-md-12.col-lg-8
         +card('', '', '')
             .owl-carousel.owl-theme

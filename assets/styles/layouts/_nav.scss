@@ -135,20 +135,13 @@ body {
             li {
                 a {
                     text-align: left;
-                    i {
-                        color: $primary;
-                    }
                     span {
                         @include font-family('ubuntu', 'medium');
-                        color: $black-200;
                         margin-left: .5rem;
                         display: none;
                     }
                     &.active {
                         background-color: $gray-100;
-                        span {
-                            color: $primary;
-                        }
                     }
                 }
                 ul.collapse,
@@ -158,13 +151,6 @@ body {
                         a {
                             text-align: left;
                             @include font-size(12);
-                            color: $black-200;
-                            &.active {
-                                color: $primary;
-                            }
-                            &:hover {
-                                color: $primary;
-                            }
                         }
                     }
                 }
@@ -172,24 +158,55 @@ body {
         }
     }
     &.sidebar-expand {
-        .header {
-            .navbar-header {
-                @include media-breakpoint-only(xs) {
-                    width: 6rem;
-                    #brand {
-                        @include img-replace(40, 40);
-                        background-image: url(http://www.agrorural.gob.pe/cdn/dist/images/agronet__logo--color--xs.png);
+        &.theme-green, &.theme-default{
+            .header {         
+                .navbar-header {
+                    @include media-breakpoint-only(xs) {
+                        width: 6rem;
+                        #brand {
+                            @include img-replace(40, 40);
+                            background-image: url(http://www.agrorural.gob.pe/cdn/dist/images/agronet__logo--color--xs.png);
+                            
+                        }
                     }
-                }
-                @include media-breakpoint-up(sm) {
-                    width: 22.5rem;
-                    #brand {
-                        @include img-replace(135, 40);
-                        background-image: url(http://www.agrorural.gob.pe/cdn/dist/images/agronet__logo--color--sm--horizontal.png);
+                    @include media-breakpoint-up(sm) {
+                        width: 22.5rem;
+                        #brand {
+                            @include img-replace(135, 40);
+                            background-image: url(http://www.agrorural.gob.pe/cdn/dist/images/agronet__logo--color--sm--horizontal.png);
+                            background-position: center;
+                            margin: 1.5rem auto;
+                            
+                        }
                     }
                 }
             }
         }
+        &.theme-purple{
+            .header {         
+                .navbar-header {
+                    @include media-breakpoint-only(xs) {
+                        width: 6rem;
+                        #brand {
+                            @include img-replace(40, 40);
+                            background-image: url(http://www.agrorural.gob.pe/cdn/dist/images/peruanisima__logo--color--xs.png);
+                            
+                        }
+                    }
+                    @include media-breakpoint-up(sm) {
+                        width: 22.5rem;
+                        #brand {
+                            @include img-replace(225, 70);
+                            background-image: url(http://www.agrorural.gob.pe/cdn/dist/images/peruanisima____logo--color--sm--horizontal.png);
+                            background-position: center;
+                            margin: auto;
+                            
+                        }
+                    }
+                }
+            }
+        }
+        
         #content {
             @include media-breakpoint-only(xs) {
                 margin-left: 6rem;
@@ -290,19 +307,35 @@ body {
         }
     }
     &.sidebar-collapse {
-        .header {
-            background-color: $primary;
-            height: 7rem;
-            .navbar-header {
-                @include media-breakpoint-up(xs) {
-                    width: 6rem;
-                    #brand {
-                        @include img-replace(40, 40);
-                        background-image: url(http://www.agrorural.gob.pe/cdn/dist/images/agronet__logo--color--xs.png);
+        &.theme-green, &.theme-default{
+            .header {
+                height: 7rem;
+                .navbar-header {
+                    @include media-breakpoint-up(xs) {
+                        width: 6rem;
+                        #brand {
+                            @include img-replace(40, 40);
+                            background-image: url(http://www.agrorural.gob.pe/cdn/dist/images/agronet__logo--color--xs.png);
+                        }
                     }
                 }
             }
         }
+        &.theme-purple{
+            .header {
+                height: 7rem;
+                .navbar-header {
+                    @include media-breakpoint-up(xs) {
+                        width: 6rem;
+                        #brand {
+                            @include img-replace(40, 40);
+                            background-image: url(http://www.agrorural.gob.pe/cdn/dist/images/peruanisima__logo--color--xs.png);
+                        }
+                    }
+                }
+            }
+        }
+        
         #content {
             @include media-breakpoint-only(xs) {
                 margin-left: 0;

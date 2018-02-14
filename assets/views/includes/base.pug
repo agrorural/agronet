@@ -15,7 +15,7 @@ html(lang="en")
     block styles
         link(rel="stylesheet" type="text/css" media="screen" href="dist/styles/app.css")
 
-    body(id=(body_id || 'default-page'))
+    body(id=(body_id || 'default-page'), class=(body_class || 'theme-default'))
         div#wrapper
             nav.header
                 .navbar-header

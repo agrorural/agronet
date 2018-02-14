@@ -2,6 +2,7 @@
 @import "common/_variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "common/_mixins";
+@include theme(theme-purple, $purple-200, $orange-200);
 @import "common/_global";
 @import "components/compass-mixins/animate";
 @import "components/font-awesome/fontawesome";
@@ -14,13 +15,6 @@
 @import "components/confirm/jquery-confirm";
 @import "../../node_modules/owl.carousel/src/scss/owl.carousel";
 @import "../../node_modules/owl.carousel/src/scss/owl.theme.default";
-// // @import "layouts/_header";
 @import "layouts/_nav";
-// // @import "layouts/_masshead";
-// // @import "layouts/_section";
-// // @import "layouts/_page";
-// // @import "layouts/_aside";
-// // @import "layouts/_footer";
-// //@import "layouts/_home";
 @import "components/_login";
 @import "components/_article";

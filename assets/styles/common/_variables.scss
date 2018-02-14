@@ -43,6 +43,74 @@ $lavender-200: #370541;
 $purple-100: #b48caf;
 $purple-200: #690a55;
 //System
+@mixin theme($name, $primary-color: $green-100, $secondary-color: $orange-200) {
+    // Define colors in your theme
+    $theme-colors: (
+        "primary": $primary-color,
+        "secondary": $secondary-color
+    );
+    $primary: map-get($theme-colors, primary);
+    $secondary: map-get($theme-colors, secondary);
+    // Add your classes with css colors added
+    $link-color: $primary;
+    $link-hover-color: lighten($link-color, 5%);
+    .#{$name} {
+        a:not(.btn) {
+        color: $link-color;
+            &:hover{
+                color: $link-hover-color;
+            }
+        }
+        @each $color, $value in $theme-colors {
+            .btn-#{$color} {
+                @include button-variant($value, $value);
+            }
+            .badge-#{$color} {
+                @include badge-variant($value);
+              }
+        }
+        .header{
+            background-color: $primary;
+            border-bottom: 1px solid $primary;
+            .navbar-header{
+                background-color: $secondary;
+            }
+        }
+        .main-nav{
+            ul{
+                li{
+                    a{
+                        span{
+                            color: $gray-600;
+                        }
+                        i{
+                            color: $primary;
+                        }
+                        &.active{
+                            span{
+                                color: $primary;
+                            }
+                        }
+                    }
+                    ul.collapse,
+                    ul.collapsing {
+                        li {
+                            a {
+                                color: $black-200;
+                                &.active {
+                                    color: $primary;
+                                }
+                                &:hover {
+                                    color: $primary;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+  }
 $primary: $green-100;
 $secondary: $yellow-300;
 $success: $green-light-100;
@@ -83,4 +151,4 @@ $dropdown-padding-y: .75rem;
 $dropdown-item-padding-y: .75rem;
 $dropdown-item-padding-x: 1.75rem;
 // Navs
-$nav-link-padding-y: .75rem !default;
+$nav-link-padding-y: .75rem;

@@ -11,7 +11,7 @@
     <link rel="icon" href="dist/images/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="dist/images/favicon.ico">
     <link rel="stylesheet" type="text/css" media="screen" href="dist/styles/app.css">
-    <body id="page">
+    <body class="theme-default" id="page">
       <div id="wrapper">
         <nav class="header">
           <div class="navbar-header">
@@ -88,8 +88,8 @@
                                       <legend>Sobre el Proyecto</legend>
                                       <div class="row">
                                         <div class="form-group input-field col-lg-3">
-                                          <input class="form-control" type="text">
-                                          <label>Buscar por SNIP</label>
+                                          <input class="form-control" id="txtDNI" type="text">
+                                          <label for="txtDNI">Buscar por SNIP</label>
                                         </div>
                                         <div class="form-group input-group col-lg-3">
                                           <select class="custom-select" id="inputGroupSelect04">
@@ -104,8 +104,8 @@
                                           </div>
                                         </div>
                                         <div class="form-group input-field col-lg-3">
-                                          <input class="form-control" type="date">
-                                          <label>Fecha de entrega</label>
+                                          <input class="form-control" id="date-end" type="date">
+                                          <label class="date-end">Fecha de entrega</label>
                                         </div>
                                         <div class="form-group input-field col-lg-3">
                                           <input class="form-control" type="text" value="2018" disabled="disabled">
@@ -148,23 +148,23 @@
                                       <legend>Sobre el Beneficiario</legend>
                                       <div class="row">
                                         <div class="form-group input-group col-lg-3 input-field">
-                                          <input class="form-control" type="text">
-                                          <label>Consultar DNI</label>
+                                          <input class="form-control" id="txtDNISearch" type="text">
+                                          <label for="txtDNISearch">Consultar DNI</label>
                                           <div class="input-group-append">
                                             <button class="btn btn-light" type="button">Buscar</button>
                                           </div>
                                         </div>
                                         <div class="form-group input-field col-lg-3">
-                                          <input class="form-control" type="text">
-                                          <label>Apellido Paterno</label>
+                                          <input class="form-control" id="txtApePat" type="text">
+                                          <label for="txtApePat">Apellido Paterno</label>
                                         </div>
                                         <div class="form-group input-field col-lg-3">
-                                          <input class="form-control" type="text">
-                                          <label>Apellido Materno</label>
+                                          <input class="form-control" id="txtApeMat" type="text">
+                                          <label for="txtApeMat">Apellido Materno</label>
                                         </div>
                                         <div class="form-group input-field col-lg-3">
-                                          <input class="form-control" type="text">
-                                          <label>Nombre(s)</label>
+                                          <input class="form-control" id="txtNombre" type="text">
+                                          <label for="txtNombre">Nombre(s)</label>
                                         </div>
                                       </div>
                                       <div class="row">
