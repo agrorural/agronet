@@ -99,7 +99,6 @@ html(lang="en")
                 block main
                     main
                         .page-header
-                            h2 #{title}
                             mixin breadcrumb(params)
                                 nav(aria-label='breadcrumb')
                                     ol(class='breadcrumb')
@@ -110,8 +109,13 @@ html(lang="en")
                                             else
                                                 li(class='breadcrumb-item active', aria-current='page')= param.name
                             block breadcrumb
-                                -var items = [{name : "Inicio", href : './dashboard.html'},{name : "Contenido", href : ''}]
+                                -var items = [{name : "Inicio", href : './dashboard.html'}]
                                 +breadcrumb(items)
+                            section.page-action
+                                h2 #{title}
+                                block action
+                                    button(type="button", class="btn btn-sm btn-outline-primary") Agregar nuevo +
+                        
                         section.row
                             mixin card(card_title, card_subtitle, href)
                                 .card.mb-5

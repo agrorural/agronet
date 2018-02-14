@@ -205,30 +205,37 @@
     //
     .page-header {
         @extend .card;
-        @extend .d-flex;
-        @extend .flex-row;
-        @extend .justify-content-between;
-        @extend .align-items-center;
         @extend .mb-5;
-        padding: 1.5rem 3rem;
-        h2 {
-            @extend .card-title;
-            @include font-size(24);
-            line-height: 1;
-            margin: 0;
-            padding: 0;
-        }
-        .breadcrumb {
-            margin-bottom: 0;
+        position: sticky;
+        top: 7rem;
+        z-index: 1020;
+        .page-action{
+            padding: .95rem 3rem;
+            @extend .d-flex;
+            @extend .flex-row;
+            @extend .justify-content-between;
+            @extend .align-items-center;
+            h2 {
+                @extend .card-title;
+                @include font-size(24);
+                line-height: 1;
+                margin: 0;
+                padding: 0;
+            }
         }
     }
-    
+
+nav[aria-label="breadcrumb"]{
+    background-color: $gray-100;
     .breadcrumb {
-        padding: 0;
+        padding: 0 3rem 0;
         background-color: transparent;
         @extend .rounded-0;
         font-size: 75%;
+        margin-bottom: 0;
     }
+}
+ 
     
     //
     // Forms
