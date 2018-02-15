@@ -135,7 +135,8 @@ body#login {
                     fieldset{
                         padding: 0;
                         .brand{
-                            margin-bottom: 2rem;
+                            margin: 0 auto 2rem;
+                            text-align: center;
                         }
                         .form-group{
                             .form-control{
