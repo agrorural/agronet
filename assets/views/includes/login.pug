@@ -13,7 +13,7 @@ html(lang="en")
     link(rel="icon" href="dist/images/favicon.ico")
     block styles
         link(rel="stylesheet" type="text/css" media="screen" href="dist/styles/app.css")
-    body(id='login')
+    body(id=(body_id || 'login'), class=(body_class || 'theme-default'))
         block content
         block scripts
             script(src='dist/scripts/vendor.js')

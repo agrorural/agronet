@@ -74,7 +74,6 @@ body#login {
                             height: 60px;
                             margin-bottom: 2rem;
                             label {
-                                left: 0;
                                 transition: all 0.3s;
                                 color: $gray-100;
                             }
@@ -117,6 +116,72 @@ body#login {
         a {
             width: 185px !important;
             height: 125px !important;
+        }
+    }
+    &.theme-purple{
+        background-color: $purple-200;
+        .container{
+            width: 36rem;
+            .form-signin{
+                background-color: $white;
+                border-radius: 1.5rem;
+                #brand{
+                    margin: 1.5rem auto;
+                    width: 185px;
+                    height: 185px;
+                    background-image: url(http://www.agrorural.gob.pe/cdn/dist/images/papa__logo.png);
+                }
+                form{
+                    fieldset{
+                        padding: 0;
+                        .brand{
+                            margin-bottom: 2rem;
+                        }
+                        .form-group{
+                            .form-control{
+                                color: black;
+                                &:focus{
+                                    border-bottom: 1px solid $purple-200;
+                                }
+                            }
+                            &.not-empty {
+                                input {
+                                    // color: $lime;
+                                    border-bottom: 1px solid $purple-200;
+                                    color: black;
+                                }
+                                label {
+                                    color: $purple-200;
+                                }
+                            }
+                            label{
+                                color: black;
+                            }
+                        }
+                        .btn{
+                            margin-top: 2rem;
+                        }
+                        .recover{
+                            margin-top: 1rem;
+                            a{
+                                color: $purple-200;
+                                &:hover{
+                                    color: lighten($purple-200, 15%);
+                                }
+                            }
+                        }
+                    }
+                }        
+            }
+            .more-links{
+                margin-top: 1rem;
+                a{
+                    color: $secondary;
+                    &:href{
+                        color: lighten($secondary,15%);
+                    }
+                }
+            }
         }
     }
 }
