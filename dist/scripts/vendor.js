@@ -80,9 +80,11 @@ jQuery(function () {
         if (tmpval == '') {
             jQuery(this).addClass('is-invalid');
             jQuery(this).removeClass('is-valid');
+            console.log(tmpval);
         } else {
             jQuery(this).addClass('is-valid');
             jQuery(this).removeClass('is-invalid');
+            console.log(tmpval);
         }
     });
 
