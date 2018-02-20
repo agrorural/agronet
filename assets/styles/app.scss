@@ -3,6 +3,7 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "common/_mixins";
 @include theme(theme-purple, $purple-200, $orange-200);
+@include theme(theme-default, $green-100, $orange-200);
 @import "common/_global";
 @import "components/compass-mixins/animate";
 @import "components/font-awesome/fontawesome";

@@ -61,6 +61,35 @@ $purple-200: #690a55;
                 color: $link-hover-color;
             }
         }
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            -webkit-animation: autofill 0s forwards;
+            animation: autofill 0s forwards;
+            border-color: $primary !important;
+            ~label {
+                color: $primary !important;
+                font-size: 11px !important;
+                line-height: 11px !important;
+                top: 0 !important;
+            }
+            
+        }
+        
+        @keyframes autofill {
+            100% {
+                background: transparent;
+                color: inherit;
+            }
+        }
+        
+        @-webkit-keyframes autofill {
+            100% {
+                background: transparent;
+                color: inherit;
+            }
+        }
         input:not([type]),
         input[type=text]:not(.browser-default),
         input[type=password]:not(.browser-default),
