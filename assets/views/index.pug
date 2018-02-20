@@ -27,13 +27,17 @@ block content
             h2 Accede
             include includes/menu
             fieldset
-              .form-group.input-field
-                input#txtUser.form-control(type="text" required="" value="")
-                label(for="txtUser") Usuario
-                .invalid-feedback
-                  | Ingrese usuario.
-              .form-group.input-field
-                input#txtPassword.form-control(type="password" required="")
-                label(for="txtPassword") Contraseña
-              a.btn.btn-secondary.btn-lg.btn-block(href="./dashboard.html") Ingresar
-            a(href="#" data-toggle="popover" title="Ha perdido su contraseña" data-placement="top" data-content="Puede comunicarse al anexo 4198 y solicitar una nueva.") Olvide mi contraseña
+              .row
+                .form-group.input-field.col-sm-12
+                  input#txtUser.form-control(type="text" required="" value="")
+                  label(for="txtUser") Usuario
+                  .invalid-feedback
+                    | Ingrese usuario.
+                .form-group.input-field.col-sm-12
+                  input#txtPassword.form-control(type="password" required="")
+                  label(for="txtPassword") Contraseña
+                .col-sm-12
+                  a.btn.btn-secondary.btn-lg.btn-block(href="./dashboard.html") Ingresar
+                .col-sm-12.recover
+                  p 
+                    a(href="#" data-toggle="popover" title="Ha perdido su contraseña" data-placement="top" data-content="Puede comunicarse al anexo 4198 y solicitar una nueva.") Olvide mi contraseña

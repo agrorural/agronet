@@ -118,8 +118,53 @@ body#login {
             height: 125px !important;
         }
     }
+
+    .recover{
+        margin-top: 1rem;
+    }
+
+    &.theme-default{
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            border-color: $success !important;
+            ~label {
+                color: $success !important;
+            }
+            
+        }
+
+        @keyframes autofill-theme-default {
+            100% {
+                background: transparent;
+                color: $white;
+            }
+        }
+        
+        @-webkit-keyframes autofill-theme-default {
+            100% {
+                background: transparent;
+                color: $white;
+            }
+        }
+    }
     &.theme-purple{
         background-color: $purple-200;
+
+        @keyframes autofill-theme-purple {
+            100% {
+                background: transparent;
+                color: $black-200;
+            }
+        }
+        
+        @-webkit-keyframes autofill-theme-purple {
+            100% {
+                background: transparent;
+                color: $black-200;
+            }
+        }
         .container{
             width: 36rem;
             .form-signin{

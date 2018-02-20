@@ -50,6 +50,7 @@
         "gulp-uglify-es": "^0.2.0",
         "gulp-util": "^3.0.8",
         "gulp-watch": "^5.0.0",
+        "hamburgers": "^0.9.3",
         "imagemin-pngquant": "^5.0.1",
         "jquery-confirm": "^3.3.2",
         "jquery.redirect": "^1.1.1",

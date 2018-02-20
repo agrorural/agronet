@@ -1,6 +1,7 @@
 @import "common/_sintax";
 @import "common/_variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
 @import "common/_mixins";
 @include theme(theme-purple, $purple-200, $orange-200);
 @include theme(theme-default, $green-100, $orange-200);

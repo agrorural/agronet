@@ -61,6 +61,7 @@ jQuery(function () {
 
     jQuery('.sidebartoggler').click(function () {
         jQuery('body').toggleClass('sidebar-expand sidebar-collapse');
+        jQuery('.sidebartoggler').toggleClass('is-active');
     });
 
     jQuery('input.form-control').blur(function () {

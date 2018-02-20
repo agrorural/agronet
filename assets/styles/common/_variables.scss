@@ -65,8 +65,8 @@ $purple-200: #690a55;
         input:-webkit-autofill:hover,
         input:-webkit-autofill:focus,
         input:-webkit-autofill:active {
-            -webkit-animation: autofill 0s forwards;
-            animation: autofill 0s forwards;
+            -webkit-animation: autofill-#{$name} 0s forwards;
+            animation: autofill-#{$name} 0s forwards;
             border-color: $primary !important;
             ~label {
                 color: $primary !important;
@@ -77,14 +77,14 @@ $purple-200: #690a55;
             
         }
         
-        @keyframes autofill {
+        @keyframes autofill-#{$name} {
             100% {
                 background: transparent;
                 color: inherit;
             }
         }
         
-        @-webkit-keyframes autofill {
+        @-webkit-keyframes autofill-#{$name} {
             100% {
                 background: transparent;
                 color: inherit;
@@ -203,3 +203,16 @@ $dropdown-item-padding-y: .75rem;
 $dropdown-item-padding-x: 1.75rem;
 // Navs
 $nav-link-padding-y: .75rem;
+
+// Settings for HamburgersJS
+// ==================================================
+$hamburger-padding-x                       : 15px !default;
+$hamburger-padding-y                       : 15px !default;
+$hamburger-layer-width                     : 32px;
+$hamburger-layer-height                    : 3px;
+$hamburger-layer-spacing                   : 6px !default;
+$hamburger-layer-color                     : $gray-100;
+$hamburger-layer-border-radius             : 4px !default;
+$hamburger-hover-opacity                   : 0.7 !default;
+$hamburger-hover-transition-duration       : 0.15s !default;
+$hamburger-hover-transition-timing-function: linear !default;

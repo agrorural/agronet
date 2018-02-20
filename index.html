@@ -23,16 +23,22 @@
             <form>
               <h2>Accede</h2>
               <fieldset>
-                <div class="form-group input-field">
-                  <input class="form-control" id="txtUser" type="text" required="" value="">
-                  <label for="txtUser">Usuario</label>
-                  <div class="invalid-feedback">Ingrese usuario.</div>
+                <div class="row">
+                  <div class="form-group input-field col-sm-12">
+                    <input class="form-control" id="txtUser" type="text" required="" value="">
+                    <label for="txtUser">Usuario</label>
+                    <div class="invalid-feedback">Ingrese usuario.</div>
+                  </div>
+                  <div class="form-group input-field col-sm-12">
+                    <input class="form-control" id="txtPassword" type="password" required="">
+                    <label for="txtPassword">Contraseña</label>
+                  </div>
+                  <div class="col-sm-12"><a class="btn btn-secondary btn-lg btn-block" href="./dashboard.html">Ingresar</a></div>
+                  <div class="col-sm-12 recover">
+                    <p> <a href="#" data-toggle="popover" title="Ha perdido su contraseña" data-placement="top" data-content="Puede comunicarse al anexo 4198 y solicitar una nueva.">Olvide mi contraseña</a></p>
+                  </div>
                 </div>
-                <div class="form-group input-field">
-                  <input class="form-control" id="txtPassword" type="password" required="">
-                  <label for="txtPassword">Contraseña</label>
-                </div><a class="btn btn-secondary btn-lg btn-block" href="./dashboard.html">Ingresar</a>
-              </fieldset><a href="#" data-toggle="popover" title="Ha perdido su contraseña" data-placement="top" data-content="Puede comunicarse al anexo 4198 y solicitar una nueva.">Olvide mi contraseña</a>
+              </fieldset>
             </form>
           </div>
         </div>
