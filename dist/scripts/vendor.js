@@ -74,6 +74,31 @@ jQuery(function () {
             jQuery(this).parent('.form-group').removeClass('empty');
         }
     });
+
+    jQuery('input:required').blur(function () {
+        var tmpval = jQuery(this).val();
+        if (tmpval == '') {
+            jQuery(this).addClass('is-invalid');
+            jQuery(this).removeClass('is-valid');
+        } else {
+            jQuery(this).addClass('is-valid');
+            jQuery(this).removeClass('is-invalid');
+        }
+    });
+
+    jQuery(".custom-select:required").change(function () {
+        var value = jQuery(this).val();
+        if (value == "0" || value == "") {
+            jQuery(this).addClass('is-invalid');
+            jQuery(this).removeClass('is-valid');
+            console.log(value);
+        } else {
+            jQuery(this).addClass('is-valid');
+            jQuery(this).removeClass('is-invalid');
+            console.log(value);
+        }
+    });
+
     jQuery('#sidebarCollapse').click(function () {
         jQuery('nav#sidebar').toggleClass('active');
     });

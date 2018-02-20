@@ -61,6 +61,10 @@ $purple-200: #690a55;
                 color: $link-hover-color;
             }
         }
+        .page-item.active .page-link {
+            background-color: $primary;
+            border-color: $primary;
+        }
         input:-webkit-autofill,
         input:-webkit-autofill:hover,
         input:-webkit-autofill:focus,
@@ -126,6 +130,17 @@ $purple-200: #690a55;
             .navbar-header{
                 background-color: $secondary;
             }
+            .nav{
+                li{
+                    >a{
+                        color: $white;
+                        &:hover{
+                            opacity: .85;
+                        }
+                    }
+                }
+            }
+            
         }
         .main-nav{
             ul{
