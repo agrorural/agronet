@@ -295,6 +295,20 @@ nav[aria-label="breadcrumb"]{
                             top: 0;
                         }
                     }
+                    &:required{
+                        ~label {
+                            width: 100%;
+                            &::after{
+                                opacity: 1;
+                                @extend .fas;
+                                content: '\f069';
+                                @include font-size(7,7);
+                                position: absolute;
+                                right: 3rem;
+                                transition:opacity 0.5s linear;
+                            }
+                        }
+                    }
                 }
                 textarea {
                     background-color: transparent;
@@ -313,6 +327,26 @@ nav[aria-label="breadcrumb"]{
                         top: 0;
                         @include font-size(11,
                         11);
+                    }
+                }
+                &.empty{
+                    input:required{
+                        border-color: $danger;
+                        ~label {
+                            color: $danger;
+                        }
+                    }
+                }
+                &.not-empty{
+                    input:required{
+                        border-color: $primary;
+                        ~label {
+                            color: $primary;
+                            &::after{
+                                opacity: 0;
+                                transition:opacity 0.5s linear;
+                            }
+                        }
                     }
                 }
                 input.is-valid,
@@ -345,6 +379,7 @@ nav[aria-label="breadcrumb"]{
                             11);
                         }
                     }
+                    
                     &[type="file"] {
                         position: absolute;
                         bottom: 0;
