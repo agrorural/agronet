@@ -17,7 +17,16 @@ body {
             background-color: $white;
             transition: all 0.3s;
             #brand {
-                margin: 1.5rem auto;
+                margin: auto;
+                a{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 7rem;
+                    .brand-xs, .brand-sm{
+                        position: absolute;
+                    }
+                }
             }
         }
         .sidebartoggler {
@@ -159,24 +168,51 @@ body {
         }
     }
     &.sidebar-expand {
-        &.theme-green, &.theme-default{
+        &.theme-purple, &.theme-default{
             .header {         
                 .navbar-header {
                     @include media-breakpoint-only(xs) {
                         width: 6rem;
                         #brand {
-                            @include img-replace(40, 40);
-                            background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--xs.png');
-                            
+                            // @include img-replace(40, 40);
+                            // background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--xs.png');
+                            .brand-xs{
+                                display: block;
+                                @include invisible(visible);
+                                opacity: 1;
+                                z-index: 1;
+                            }
+                            .brand-sm{
+                                display: none;
+                                @include invisible(hidden);
+                                opacity: 0;
+                                height: 0;
+                                width: 0;
+                                z-index: -1;
+                            }
                         }
                     }
                     @include media-breakpoint-up(sm) {
                         width: 22.5rem;
                         #brand {
-                            @include img-replace(135, 40);
-                            background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--sm--horizontal.png');
+                            .brand-xs{
+                                display: none;
+                                @include invisible(hidden);
+                                opacity: 0;
+                                height: 0;
+                                width: 0;
+                                z-index: -1;
+                            }
+                            .brand-sm{
+                                display: block;
+                                @include invisible(visible);
+                                opacity: 1;
+                                z-index: 1;
+                            }
+                            // @include img-replace(135, 40);
+                            // background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--sm--horizontal.png');
                             background-position: center;
-                            margin: 1.5rem auto;
+                            margin: auto;
                             
                         }
                     }
@@ -189,17 +225,17 @@ body {
                     @include media-breakpoint-only(xs) {
                         width: 6rem;
                         #brand {
-                            @include img-replace(40, 40);
-                            background-image: url('#{$cdn-dist-path}/images/peruanisima__logo--color--xs.png');
+                            // @include img-replace(40, 40);
+                            // background-image: url('#{$cdn-dist-path}/images/peruanisima__logo--color--xs.png');
                             
                         }
                     }
                     @include media-breakpoint-up(sm) {
                         width: 22.5rem;
                         #brand {
-                            @include img-replace(225, 70);
-                            background-image: url('#{$cdn-dist-path}/images/peruanisima____logo--color--sm--horizontal.png');
-                            background-position: center;
+                            // @include img-replace(225, 70);
+                            // background-image: url('#{$cdn-dist-path}/images/peruanisima____logo--color--sm--horizontal.png');
+                            // background-position: center;
                             margin: auto;
                             
                         }
@@ -308,29 +344,41 @@ body {
         }
     }
     &.sidebar-collapse {
-        &.theme-green, &.theme-default{
+        &.theme-purple, &.theme-default{
             .header {
                 height: 7rem;
                 .navbar-header {
                     @include media-breakpoint-up(xs) {
                         width: 6rem;
                         #brand {
-                            @include img-replace(40, 40);
-                            background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--xs.png');
+                            .brand-xs{
+                                display: block;
+                            }
+                            .brand-sm{
+                                display: none;
+                            }
+                            // @include img-replace(40, 40);
+                            // background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--xs.png');
                         }
                     }
                 }
             }
         }
-        &.theme-purple{
+        &.theme-purple, &.theme-default{
             .header {
                 height: 7rem;
                 .navbar-header {
                     @include media-breakpoint-up(xs) {
                         width: 6rem;
                         #brand {
-                            @include img-replace(40, 40);
-                            background-image: url('#{$cdn-dist-path}/images/peruanisima__logo--color--xs.png');
+                            .brand-xs{
+                                display: block;
+                            }
+                            .brand-sm{
+                                display: none;
+                            }
+                            // @include img-replace(40, 40);
+                            // background-image: url('#{$cdn-dist-path}/images/peruanisima__logo--color--xs.png');
                         }
                     }
                 }

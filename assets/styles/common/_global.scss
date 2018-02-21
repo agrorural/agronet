@@ -538,9 +538,9 @@ nav[aria-label="breadcrumb"]{
     // Brand
     //
     #brand {
-        @include img-replace(185,
-        125);
-        background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--sm.png');
+        // @include img-replace(185,
+        // 125);
+        // background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--sm.png');
         margin: 0 auto;
         a {
             position: relative;
@@ -628,19 +628,19 @@ nav[aria-label="breadcrumb"]{
     // Brand
     //
     h1#brand {
-        @include img-replace(135,
-        40);
-        background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--sm--horizontal.png');
-        background-position: left center;
+        // @include img-replace(135,
+        // 40);
+        // background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--sm--horizontal.png');
+        // background-position: left center;
         margin: 0;
-        width: 135px;
-        height: 40px;
+        // width: 135px;
+        // height: 40px;
         @include media-breakpoint-down(sm) {
-            @include img-replace(40,
-            40);
-            background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--xs.png');
-            width: 40px;
-            height: 40px;
+            // @include img-replace(40,
+            // 40);
+            // background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--xs.png');
+            // width: 40px;
+            // height: 40px;
         }
     }
     

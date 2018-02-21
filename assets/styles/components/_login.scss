@@ -116,6 +116,9 @@ body#login {
         a {
             width: 185px !important;
             height: 125px !important;
+            span{
+                @include text-hide();
+            }
         }
     }
 
@@ -197,6 +200,7 @@ body#login {
                         .brand{
                             margin: 0 auto 2rem;
                             text-align: center;
+                            
                         }
                         .form-group{
                             .form-control{
