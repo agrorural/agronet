@@ -210,21 +210,26 @@ table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before 
     top: 8px;
     height: 14px;
     width: 14px;
-    color: $orange-200;
+    color: $black-200;
     border: 0 none;
     box-shadow: none;
-    font-family: 'agroruralicon';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
     line-height: 14px;
-    content: '\e9f6';
+    content: '\f0d7';
 }
-
-table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"].parent>td:first-child:before {
-    color: $orange-300;
-    content: '\e9e2';
+table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before, table.dataTable.dtr-inline.collapsed > tbody > tr.parent > th:first-child:before{
+    font-family: 'Font Awesome 5 Free';
+    color: $black-100;
+    content: '\f0d8';
 }
 
 div.dataTables_wrapper div.dataTables_paginate ul.pagination {
     @include media-breakpoint-down(sm) {
         justify-content: center;
     }
+}
+
+table.dataTable{
+    width: 100% !important;
 }

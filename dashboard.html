@@ -67,6 +67,7 @@
                           <li class="nav-item"><a class="nav-link" href="#contenido" title="Contenido" data-toggle="collapse" aria-expanded="false" aria-controls="Contenido"><i class="fas fa-edit"></i><span>Contenido</span></a>
                             <ul class="collapse list-unstyled" id="contenido">
                               <li><a href="./buttons.html" title="Botones">Botones</a></li>
+                              <li><a href="./cdn.html" title="Content Delivery Network">Content Delivery Network</a></li>
                               <li><a href="./charts.html" title="Gráficas">Gráficas</a></li>
                               <li><a href="./forms.html" title="Formularios">Formularios</a></li>
                               <li><a href="./forms-2.html" title="Formularios 2">Formularios 2</a></li>
@@ -101,9 +102,20 @@
                                 <div class="card-block card-body">
                                   <h4 class="card-title">Typeahead</h4>
                                   <h6 class="card-subtitle mb-2 text-muted">de Twitter</h6>
-                                  <input class="typeahead" type="text" placeholder="States of USA">
-                                  <btn class="btn btn-primary">Boton primario</btn>
-                                  <btn class="btn btn-secondary">Boton secundario</btn>
+                                  <form>
+                                    <div class="row">
+                                      <div class="form-group input-field col-lg-12">
+                                        <input class="typeahead form-control" id="example" type="text">
+                                        <label for="example">Ejemplo de label</label>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-lg-8">
+                                        <btn class="btn btn-primary">Boton primario</btn>
+                                        <btn class="btn btn-light">Boton secundario</btn>
+                                      </div>
+                                    </div>
+                                  </form>
                                 </div>
                               </div>
               </div>

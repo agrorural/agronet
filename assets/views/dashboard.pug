@@ -38,9 +38,15 @@ block breadcrumb
 block content
     .col-md-12.col-lg-8
         +card('Typeahead', 'de Twitter', '')
-            input.typeahead(type="text", placeholder="States of USA")
-            btn(class="btn btn-primary") Boton primario
-            btn(class="btn btn-secondary") Boton secundario
+            form
+                .row
+                    .form-group.input-field.col-lg-12
+                        input#example.typeahead.form-control(type="text")
+                        label(for="example") Ejemplo de label
+                .row
+                    .col-lg-8
+                        btn(class="btn btn-primary") Boton primario
+                        btn(class="btn btn-light") Boton secundario
     .col-md-12.col-lg-8
         +card('flatpickr', 'JS plugin for datepicker. Ejemplos: https://flatpickr.js.org/examples/', '')
             input.flatpickr.form-control(type="text",  placeholder="Seleccionar una fecha") 

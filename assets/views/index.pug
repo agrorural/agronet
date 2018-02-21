@@ -32,10 +32,12 @@ block content
                   input#txtUser.form-control(type="text" required="" value="")
                   label(for="txtUser") Usuario
                   .invalid-feedback
-                    | Ingrese usuario.
+                    | Ingrese usuario
                 .form-group.input-field.col-sm-12
                   input#txtPassword.form-control(type="password" required="")
                   label(for="txtPassword") Contraseña
+                  .invalid-feedback
+                    | Ingrese clave
                 .col-sm-12
                   a.btn.btn-secondary.btn-lg.btn-block(href="./dashboard.html") Ingresar
                 .col-sm-12.recover

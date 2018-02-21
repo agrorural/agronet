@@ -110,7 +110,7 @@ body#login {
     }
     #brand {
         margin: 4rem auto;
-        background-image: url(http://www.agrorural.gob.pe/cdn/dist/images/agronet__logo--color--sm.png);
+        background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--sm.png');
         width: 185px;
         height: 125px;
         a {
@@ -124,15 +124,18 @@ body#login {
     }
 
     &.theme-default{
+
         input:-webkit-autofill,
         input:-webkit-autofill:hover,
         input:-webkit-autofill:focus,
         input:-webkit-autofill:active {
-            border-color: $success !important;
+            border-color: $lime !important;
             ~label {
-                color: $success !important;
-            }
-            
+                color: $white;
+                font-size: 11px !important;
+                line-height: 11px !important;
+                top: 0 !important;
+            } 
         }
 
         @keyframes autofill-theme-default {
@@ -151,6 +154,18 @@ body#login {
     }
     &.theme-purple{
         background-color: $purple-200;
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            ~label {
+                color: $purple-200 !important;
+                font-size: 11px !important;
+                line-height: 11px !important;
+                top: 0 !important;
+            } 
+        }
 
         @keyframes autofill-theme-purple {
             100% {
@@ -174,7 +189,7 @@ body#login {
                     margin: 1.5rem auto;
                     width: 185px;
                     height: 185px;
-                    background-image: url(http://www.agrorural.gob.pe/cdn/dist/images/papa__logo.png);
+                    background-image: url('#{$cdn-dist-path}/images/papa__logo.png');
                 }
                 form{
                     fieldset{

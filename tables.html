@@ -43,6 +43,8 @@
                             <ul class="collapse list-unstyled show" id="contenido">
                               <li><a href="./buttons.html" title="Botones">Botones</a>
                               </li>
+                              <li><a href="./cdn.html" title="Content Delivery Network">Content Delivery Network</a>
+                              </li>
                               <li><a href="./charts.html" title="Gráficas">Gráficas</a>
                               </li>
                               <li><a href="./forms.html" title="Formularios">Formularios</a>
@@ -158,13 +160,13 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
-                                  <table class="datagrid">
+                                  <table id="datagrid">
                                     <thead>
                                       <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">First</th>
                                         <th scope="col">Last</th>
-                                        <th scope="col">Handle</th>
+                                        <th scope="col">Acciones</th>
                                       </tr>
                                     </thead>
                                     <tbody>
@@ -172,19 +174,25 @@
                                         <th scope="row">1</th>
                                         <td>Mark</td>
                                         <td>Otto</td>
-                                        <td>@mdo</td>
+                                        <td>
+                                          <nav class="nav-actions"><a href="#" data-toggle="tooltip" data-placement="top" title="Ver"> <i class="fas fa-eye"></i></a><a href="#" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fas fa-edit"></i></a><a class="danger" href="#" data-toggle="tooltip" data-placement="top" title="Eliminar"><i class="fas fa-trash-alt"></i></a></nav>
+                                        </td>
                                       </tr>
                                       <tr>
                                         <th scope="row">2</th>
                                         <td>Jacob</td>
                                         <td>Thornton</td>
-                                        <td>@fat</td>
+                                        <td>
+                                          <nav class="nav-actions"><a href="#" data-toggle="tooltip" data-placement="top" title="Ver"> <i class="fas fa-eye"></i></a><a href="#" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fas fa-edit"></i></a><a class="danger" href="#" data-toggle="tooltip" data-placement="top" title="Eliminar"><i class="fas fa-trash-alt"></i></a></nav>
+                                        </td>
                                       </tr>
                                       <tr>
                                         <th scope="row">3</th>
                                         <td>Larry</td>
                                         <td>the Bird</td>
-                                        <td>@twitter</td>
+                                        <td> 
+                                          <nav class="nav-actions"><a href="#" data-toggle="tooltip" data-placement="top" title="Ver"> <i class="fas fa-eye"></i></a><a href="#" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fas fa-edit"></i></a><a class="danger" href="#" data-toggle="tooltip" data-placement="top" title="Eliminar"><i class="fas fa-trash-alt"></i></a></nav>
+                                        </td>
                                       </tr>
                                     </tbody>
                                   </table>
@@ -202,6 +210,40 @@ $(&quot;table&quot;).DataTable();</code></pre>
         </section>
       </div>
       <script src="dist/scripts/vendor.js"></script>
+      <script>
+        let $ = require('jquery');
+        let DataTable = require('datatables.net-responsive-bs4')();
+        
+        $(document).ready(function() {
+          $('table#datagrid').DataTable({
+              language: {
+                  "sProcessing": "Procesando...",
+                  "sLengthMenu": "Mostrar _MENU_ registros",
+                  "sZeroRecords": "No se encontraron resultados",
+                  "sEmptyTable": "Ningún dato disponible en esta tabla",
+                  "sInfo": "Mostrando del _START_ al _END_ de _TOTAL_ registros",
+                  "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                  "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                  "sInfoPostFix": "",
+                  "sSearch": "Buscar:",
+                  "sUrl": "",
+                  "sInfoThousands": ",",
+                  "sLoadingRecords": "Cargando...",
+                  "oPaginate": {
+                      "sFirst": "Primero",
+                      "sLast": "Último",
+                      "sNext": "Siguiente",
+                      "sPrevious": "Anterior"
+                  },
+                  "oAria": {
+                      "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                      "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                  }
+              },
+              responsive: true
+          });
+        });
+      </script>
     </body>
   </head>
 </html>

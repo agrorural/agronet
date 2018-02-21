@@ -3,57 +3,57 @@
     //
     @font-face {
         font-family: 'vigaregular';
-        src: url('http://www.agrorural.gob.pe/cdn/?u=http://www.agrorural.gob.pe/cdn/dist/fonts/Viga-Regular.woff2') format('woff2'), url('http://www.agrorural.gob.pe/cdn/?u=http://www.agrorural.gob.pe/cdn/dist/fonts/Viga-Regular.woff') format('woff');
+        src: url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Viga-Regular.woff2') format('woff2'), url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Viga-Regular.woff') format('woff');
         font-weight: normal;
         font-style: normal;
     }
     
     @font-face {
         font-family: 'ubuntulight';
-        src: url('http://www.agrorural.gob.pe/cdn/?u=http://www.agrorural.gob.pe/cdn/dist/fonts/Ubuntu-Light.woff2') format('woff2'), url('http://www.agrorural.gob.pe/cdn/?u=http://www.agrorural.gob.pe/cdn/dist/fonts/Ubuntu-Light.woff') format('woff');
+        src: url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Ubuntu-Light.woff2') format('woff2'), url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Ubuntu-Light.woff') format('woff');
         font-weight: normal;
         font-style: normal;
     }
     
     @font-face {
         font-family: 'ubunturegular';
-        src: url('http://www.agrorural.gob.pe/cdn/?u=http://www.agrorural.gob.pe/cdn/dist/fonts/Ubuntu-Regular.woff2') format('woff2'), url('http://www.agrorural.gob.pe/cdn/?u=http://www.agrorural.gob.pe/cdn/dist/fonts/Ubuntu-Regular.woff') format('woff');
+        src: url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Ubuntu-Regular.woff2') format('woff2'), url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Ubuntu-Regular.woff') format('woff');
         font-weight: normal;
         font-style: normal;
     }
     
     @font-face {
         font-family: 'ubuntumedium';
-        src: url('http://www.agrorural.gob.pe/cdn/?u=http://www.agrorural.gob.pe/cdn/dist/fonts/Ubuntu-Medium.woff2') format('woff2'), url('http://www.agrorural.gob.pe/cdn/?u=http://www.agrorural.gob.pe/cdn/dist/fonts/Ubuntu-Medium.woff') format('woff');
+        src: url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Ubuntu-Medium.woff2') format('woff2'), url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Ubuntu-Medium.woff') format('woff');
         font-weight: normal;
         font-style: normal;
     }
     
     @font-face {
         font-family: 'ubuntubold';
-        src: url('http://www.agrorural.gob.pe/cdn/?u=http://www.agrorural.gob.pe/cdn/dist/fonts/Ubuntu-Bold.woff2') format('woff2'), url('http://www.agrorural.gob.pe/cdn/?u=http://www.agrorural.gob.pe/cdn/dist/fonts/Ubuntu-Bold.woff') format('woff');
+        src: url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Ubuntu-Bold.woff2') format('woff2'), url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Ubuntu-Bold.woff') format('woff');
         font-weight: normal;
         font-style: normal;
     }
     
     @font-face {
         font-family: 'ubuntumono';
-        src: url('http://www.agrorural.gob.pe/cdn/?u=http://www.agrorural.gob.pe/cdn/dist/fonts/Ubuntu-Mono.woff2') format('woff2'), url('http://www.agrorural.gob.pe/cdn/?u=http://www.agrorural.gob.pe/cdn/dist/fonts/Ubuntu-Mono.woff') format('woff');
+        src: url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Ubuntu-Mono.woff2') format('woff2'), url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Ubuntu-Mono.woff') format('woff');
         font-weight: normal;
         font-style: normal;
     }
     
     @font-face {
         font-family: 'libre_franklinlight';
-        src: url('http://www.agrorural.gob.pe/cdn/?u=http://www.agrorural.gob.pe/cdn/dist/fonts/Libre_Franklin-Light.woff2') format('woff2'), url('http://www.agrorural.gob.pe/cdn/?u=http://www.agrorural.gob.pe/cdn/dist/fonts/Libre_Franklin-Light.woff') format('woff');
+        src: url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Libre_Franklin-Light.woff2') format('woff2'), url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Libre_Franklin-Light.woff') format('woff');
         font-weight: normal;
         font-style: normal;
     }
     
     @font-face {
         font-family: 'agroruralicon';
-        src: url('http://www.agrorural.gob.pe/cdn/?u=http://www.agrorural.gob.pe/cdn/dist/fonts/Agro-Rural-Icon.eot?cafbxg');
-        src: url('http://www.agrorural.gob.pe/cdn/?u=http://www.agrorural.gob.pe/cdn/dist/fonts/Agro-Rural-Icon.eot?cafbxg#iefix') format('embedded-opentype'), url('http://www.agrorural.gob.pe/cdn/?u=http://www.agrorural.gob.pe/cdn/dist/fonts/Agro-Rural-Icon.ttf?cafbxg') format('truetype'), url('http://www.agrorural.gob.pe/cdn/?u=http://www.agrorural.gob.pe/cdn/dist/fonts/Agro-Rural-Icon.woff?cafbxg') format('woff'), url('http://www.agrorural.gob.pe/cdn/?u=http://www.agrorural.gob.pe/cdn/dist/fonts/Agro-Rural-Icon.svg?cafbxg#icomoon') format('svg');
+        src: url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Agro-Rural-Icon.eot?cafbxg');
+        src: url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Agro-Rural-Icon.eot?cafbxg#iefix') format('embedded-opentype'), url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Agro-Rural-Icon.ttf?cafbxg') format('truetype'), url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Agro-Rural-Icon.woff?cafbxg') format('woff'), url('#{$cdn-prefix}#{$cdn-dist-path}/fonts/Agro-Rural-Icon.svg?cafbxg#icomoon') format('svg');
         font-weight: normal;
         font-style: normal;
     }
@@ -391,6 +391,14 @@ nav[aria-label="breadcrumb"]{
                         color: $black-100;
                     }
                 }
+                //Typeahead
+                &.in-focus{
+                    label {
+                        top: 0;
+                        @include font-size(11,
+                        11);
+                    }
+                }
             }
             .custom-select {
                 @include font-size(13,
@@ -532,7 +540,7 @@ nav[aria-label="breadcrumb"]{
     #brand {
         @include img-replace(185,
         125);
-        background-image: url(http://www.agrorural.gob.pe/cdn/dist/images/agronet__logo--color--sm.png);
+        background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--sm.png');
         margin: 0 auto;
         a {
             position: relative;
@@ -622,7 +630,7 @@ nav[aria-label="breadcrumb"]{
     h1#brand {
         @include img-replace(135,
         40);
-        background-image: url(http://www.agrorural.gob.pe/cdn/dist/images/agronet__logo--color--sm--horizontal.png);
+        background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--sm--horizontal.png');
         background-position: left center;
         margin: 0;
         width: 135px;
@@ -630,7 +638,7 @@ nav[aria-label="breadcrumb"]{
         @include media-breakpoint-down(sm) {
             @include img-replace(40,
             40);
-            background-image: url(http://www.agrorural.gob.pe/cdn/dist/images/agronet__logo--color--xs.png);
+            background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--xs.png');
             width: 40px;
             height: 40px;
         }
@@ -789,7 +797,7 @@ nav[aria-label="breadcrumb"]{
                 overflow: hidden;
                 text-indent: -9999px;
                 /* Hides inner circles outside base circle at safari */
-                -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+                -webkit-mask-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC');
             }
             &.circles:not(:required):before,
             &.circles:not(:required):after {

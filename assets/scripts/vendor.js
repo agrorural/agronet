@@ -61,16 +61,20 @@ jQuery(function() {
         jQuery('.sidebartoggler').toggleClass('is-active');
     });
 
-    jQuery('input.form-control').blur(function() {
+    jQuery('input.form-control').focus(function() {
+        jQuery(this).parents('.form-group').addClass('in-focus');
+    }).blur(function(){
         let tmpval = jQuery(this).val();
+        jQuery(this).parents('.form-group').removeClass('in-focus');
         if (tmpval == '') {
-            jQuery(this).parent('.form-group').addClass('empty');
-            jQuery(this).parent('.form-group').removeClass('not-empty');
+            jQuery(this).parents('.form-group').addClass('empty');
+            jQuery(this).parents('.form-group').removeClass('not-empty');
+            console.log(tmpval);
            
         } else {
-            jQuery(this).parent('.form-group').addClass('not-empty');
-            jQuery(this).parent('.form-group').removeClass('empty');
-           
+            jQuery(this).parents('.form-group').addClass('not-empty');
+            jQuery(this).parents('.form-group').removeClass('empty');
+            console.log(tmpval);
         }
     });
 

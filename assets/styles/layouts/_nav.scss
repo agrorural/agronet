@@ -122,7 +122,7 @@ body {
             margin-bottom: 2rem;
             &::after {
                 content: "";
-                background: url(http://www.agrorural.gob.pe/cdn/dist/images/profile__bg--2.jpg);
+                background: url('#{$cdn-dist-path}/images/profile__bg--2.jpg');
                 opacity: 0.35;
                 top: 0;
                 left: 0;
@@ -166,7 +166,7 @@ body {
                         width: 6rem;
                         #brand {
                             @include img-replace(40, 40);
-                            background-image: url(http://www.agrorural.gob.pe/cdn/dist/images/agronet__logo--color--xs.png);
+                            background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--xs.png');
                             
                         }
                     }
@@ -174,7 +174,7 @@ body {
                         width: 22.5rem;
                         #brand {
                             @include img-replace(135, 40);
-                            background-image: url(http://www.agrorural.gob.pe/cdn/dist/images/agronet__logo--color--sm--horizontal.png);
+                            background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--sm--horizontal.png');
                             background-position: center;
                             margin: 1.5rem auto;
                             
@@ -190,7 +190,7 @@ body {
                         width: 6rem;
                         #brand {
                             @include img-replace(40, 40);
-                            background-image: url(http://www.agrorural.gob.pe/cdn/dist/images/peruanisima__logo--color--xs.png);
+                            background-image: url('#{$cdn-dist-path}/images/peruanisima__logo--color--xs.png');
                             
                         }
                     }
@@ -198,7 +198,7 @@ body {
                         width: 22.5rem;
                         #brand {
                             @include img-replace(225, 70);
-                            background-image: url(http://www.agrorural.gob.pe/cdn/dist/images/peruanisima____logo--color--sm--horizontal.png);
+                            background-image: url('#{$cdn-dist-path}/images/peruanisima____logo--color--sm--horizontal.png');
                             background-position: center;
                             margin: auto;
                             
@@ -316,7 +316,7 @@ body {
                         width: 6rem;
                         #brand {
                             @include img-replace(40, 40);
-                            background-image: url(http://www.agrorural.gob.pe/cdn/dist/images/agronet__logo--color--xs.png);
+                            background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--xs.png');
                         }
                     }
                 }
@@ -330,7 +330,7 @@ body {
                         width: 6rem;
                         #brand {
                             @include img-replace(40, 40);
-                            background-image: url(http://www.agrorural.gob.pe/cdn/dist/images/peruanisima__logo--color--xs.png);
+                            background-image: url('#{$cdn-dist-path}/images/peruanisima__logo--color--xs.png');
                         }
                     }
                 }
@@ -384,6 +384,26 @@ body {
                             background-color: $gray-100;
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+nav{
+    &.nav-actions{
+        @extend .nav;
+        a{
+            @extend .nav-link;
+            padding: 0 .75rem;
+            color: $black-100 !important;
+            &:hover{
+                color: $black-200 !important;
+            }
+            &.danger{
+                color: $danger !important;
+                &:hover{
+                    color: darken($danger, 15%) !important;
                 }
             }
         }

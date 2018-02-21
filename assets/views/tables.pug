@@ -140,29 +140,50 @@ block content
                     |
                     = '</table>'
   
-            table(class='datagrid')
+            table(id='datagrid')
                 thead
                     tr
                         th(scope="col") #
                         th(scope="col") First
                         th(scope="col") Last
-                        th(scope="col") Handle
+                        th(scope="col") Acciones
                 tbody
                     tr
                         th(scope="row") 1
                         td Mark
                         td Otto
-                        td @mdo
+                        td
+                            nav.nav-actions
+                                a(href="#", data-toggle="tooltip", data-placement="top", title="Ver") 
+                                    i.fas.fa-eye
+                                a(href="#", data-toggle="tooltip", data-placement="top", title="Editar")
+                                    i.fas.fa-edit
+                                a.danger(href="#", data-toggle="tooltip", data-placement="top", title="Eliminar")
+                                    i.fas.fa-trash-alt
                     tr
                         th(scope="row") 2
                         td Jacob
                         td Thornton
-                        td @fat
+                        td
+                            nav.nav-actions
+                                a(href="#", data-toggle="tooltip", data-placement="top", title="Ver") 
+                                    i.fas.fa-eye
+                                a(href="#", data-toggle="tooltip", data-placement="top", title="Editar")
+                                    i.fas.fa-edit
+                                a.danger(href="#", data-toggle="tooltip", data-placement="top", title="Eliminar")
+                                    i.fas.fa-trash-alt
                     tr
                         th(scope="row") 3
                         td Larry
                         td the Bird
-                        td @twitter
+                        td 
+                            nav.nav-actions
+                                a(href="#", data-toggle="tooltip", data-placement="top", title="Ver") 
+                                    i.fas.fa-eye
+                                a(href="#", data-toggle="tooltip", data-placement="top", title="Editar")
+                                    i.fas.fa-edit
+                                a.danger(href="#", data-toggle="tooltip", data-placement="top", title="Eliminar")
+                                    i.fas.fa-trash-alt
 
             p 
                 | Para un mayor control, se puede usar DataTables, desde JavaScript.
@@ -177,3 +198,40 @@ block content
                     |
                     |
                     = '$("table").DataTable();'
+
+block append scripts
+    script.
+      let $ = require('jquery');
+      let DataTable = require('datatables.net-responsive-bs4')();
+  
+      $(document).ready(function() {
+        $('table#datagrid').DataTable({
+            language: {
+                "sProcessing": "Procesando...",
+                "sLengthMenu": "Mostrar _MENU_ registros",
+                "sZeroRecords": "No se encontraron resultados",
+                "sEmptyTable": "Ningún dato disponible en esta tabla",
+                "sInfo": "Mostrando del _START_ al _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                "sInfoPostFix": "",
+                "sSearch": "Buscar:",
+                "sUrl": "",
+                "sInfoThousands": ",",
+                "sLoadingRecords": "Cargando...",
+                "oPaginate": {
+                    "sFirst": "Primero",
+                    "sLast": "Último",
+                    "sNext": "Siguiente",
+                    "sPrevious": "Anterior"
+                },
+                "oAria": {
+                    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                }
+            },
+            responsive: true
+        });
+      });
+
+

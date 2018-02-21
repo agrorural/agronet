@@ -1,4 +1,10 @@
 //
+// Global
+//
+$cdn-prefix: "http://cdn.agrorural.gob.pe/?u=";
+$cdn-dist-path: "http://cdn.agrorural.gob.pe/apps/dist";
+
+//
 // Color system
 //
 // stylelint-disable
@@ -72,13 +78,6 @@ $purple-200: #690a55;
             -webkit-animation: autofill-#{$name} 0s forwards;
             animation: autofill-#{$name} 0s forwards;
             border-color: $primary !important;
-            ~label {
-                color: $primary !important;
-                font-size: 11px !important;
-                line-height: 11px !important;
-                top: 0 !important;
-            }
-            
         }
         
         @keyframes autofill-#{$name} {
@@ -223,9 +222,9 @@ $nav-link-padding-y: .75rem;
 // ==================================================
 $hamburger-padding-x                       : 15px !default;
 $hamburger-padding-y                       : 15px !default;
-$hamburger-layer-width                     : 32px;
+$hamburger-layer-width                     : 24px;
 $hamburger-layer-height                    : 3px;
-$hamburger-layer-spacing                   : 6px !default;
+$hamburger-layer-spacing                   : 4px;
 $hamburger-layer-color                     : $gray-100;
 $hamburger-layer-border-radius             : 4px !default;
 $hamburger-hover-opacity                   : 0.7 !default;
