@@ -3,6 +3,30 @@ block globals
     - var title= 'Bienvenido de nuevo a la Intranet'
     - var body_id= 'index'
     - var body_class= 'theme-purple'
+block append styles
+    style.
+      .swiper-container {
+        width: 100%;
+        height: 150px;
+      }
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #f1f1f1;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
 
 block mainmenu
     +mainmenu('Inicio','')
@@ -21,15 +45,22 @@ block content
         +card('flatpickr', 'JS plugin for datepicker. Ejemplos: https://flatpickr.js.org/examples/', '')
             input.flatpickr.form-control(type="text",  placeholder="Seleccionar una fecha") 
     .col-md-12.col-lg-8
-        +card('', '', '')
-            .owl-carousel.owl-theme
-                div  Your Content 
-                div  Your Content 
-                div  Your Content 
-                div  Your Content 
-                div  Your Content 
-                div  Your Content 
-                div  Your Content 
+        +card('Swiper', 'Carrusel y slider', 'Info en: http://idangero.us/swiper/demos/')
+            .swiper-container
+                .swiper-wrapper
+                    .swiper-slide Slide 1
+                    .swiper-slide Slide 2
+                    .swiper-slide Slide 3
+                    .swiper-slide Slide 4
+                    .swiper-slide Slide 5
+                    .swiper-slide Slide 6
+                    .swiper-slide Slide 7
+                    .swiper-slide Slide 8
+                    .swiper-slide Slide 9
+                    .swiper-slide Slide 10
+                .swiper-pagination
+                .swiper-button-next
+                .swiper-button-prev 
         +card('Asistencia', 'Último reporte de asistencia', '#')
             .canvas-wrapper
                 #multiple-line.chart
@@ -102,8 +133,8 @@ block append scripts
     script.
       let $ = require('jquery');
       let Chartkick = require('chartkick');
-      let owlCarousel = require('owl.carousel');
       let Cookie = require('js-cookie');
+      let Swiper = require('swiper');
 
       var typeahead = require("typeahead.js-browserify");
       typeahead.loadjQueryPlugin();
@@ -131,7 +162,7 @@ block append scripts
       });
       
       $(document).ready(function() {
-        $('.owl-carousel').owlCarousel();
+        
       });
 
       new Chartkick.LineChart("multiple-line", [{
@@ -160,3 +191,19 @@ block append scripts
         }
         }]
       );
+
+      var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        slidesPerGroup: 3,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+      });

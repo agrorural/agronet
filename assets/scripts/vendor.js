@@ -4,11 +4,11 @@ require('bootstrap')
 
 const Chart = require('chart.js');
 const Chartkick = require('chartkick');
-const owlCarousel = require('owl.carousel');
 const confirm = require('jquery-confirm');
 const redirect = require('jquery.redirect');
 const Cookie = require('js-cookie');
 const flatpickr = require("flatpickr");
+var Swiper = require('swiper');
 
 var Bloodhound = require("typeahead.js-browserify").Bloodhound
 var engine = new Bloodhound({
