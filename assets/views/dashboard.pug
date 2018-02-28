@@ -4,6 +4,9 @@ block globals
     - var body_id= 'index'
     - var body_class= 'theme-purple'
 block append styles
+    link(rel="stylesheet" type="text/css" media="screen" href="http://cdn.agrorural.gob.pe/apps/dist/styles/default.css")
+    link(rel="stylesheet" type="text/css" media="screen" href="http://cdn.agrorural.gob.pe/apps/dist/styles/default.date.css")
+    link(rel="stylesheet" type="text/css" media="screen" href="http://cdn.agrorural.gob.pe/apps/dist/styles/default.time.css")
     style.
       .swiper-container {
         width: 100%;
@@ -50,6 +53,10 @@ block content
     .col-md-12.col-lg-8
         +card('flatpickr', 'JS plugin for datepicker. Ejemplos: https://flatpickr.js.org/examples/', '')
             input.flatpickr.form-control(type="text",  placeholder="Seleccionar una fecha") 
+    .col-md-12.col-lg-8
+        +card('PICKADATE', 'JS plugin for datepicker. Ejemplos: http://amsul.ca/pickadate.js/', 'http://amsul.ca/pickadate.js/')
+            input.datepicker.form-control(type="text",  placeholder="Seleccionar una fecha") 
+            input.timepicker.form-control(type="text",  placeholder="Seleccionar una hora") 
     .col-md-12.col-lg-8
         +card('Swiper', 'Carrusel y slider', 'Info en: http://idangero.us/swiper/demos/')
             .swiper-container
@@ -136,6 +143,9 @@ block content
                     a(href="#") RESOLUCION DIRECTORAL N° 023-2018-MINAGRI-DVDIAR-AGRO RURAL-DE
 
 block append scripts
+    script(src='http://cdn.agrorural.gob.pe/apps/dist/scripts/picker.js')
+    script(src='http://cdn.agrorural.gob.pe/apps/dist/scripts/picker.date.js')
+    script(src='http://cdn.agrorural.gob.pe/apps/dist/scripts/picker.time.js')
     script.
       let $ = require('jquery');
       let Chartkick = require('chartkick');
@@ -168,7 +178,8 @@ block append scripts
       });
       
       $(document).ready(function() {
-        
+        $('.datepicker').pickadate();
+        $('.timepicker').pickatime();
       });
 
       new Chartkick.LineChart("multiple-line", [{

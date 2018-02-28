@@ -11,6 +11,9 @@
     <link rel="icon" href="dist/images/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="dist/images/favicon.ico">
     <link rel="stylesheet" type="text/css" media="screen" href="dist/styles/app.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://cdn.agrorural.gob.pe/apps/dist/styles/default.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://cdn.agrorural.gob.pe/apps/dist/styles/default.date.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="http://cdn.agrorural.gob.pe/apps/dist/styles/default.time.css">
     <style>
       .swiper-container {
         width: 100%;
@@ -125,6 +128,17 @@
                                   <h4 class="card-title">flatpickr</h4>
                                   <h6 class="card-subtitle mb-2 text-muted">JS plugin for datepicker. Ejemplos: https://flatpickr.js.org/examples/</h6>
                                   <input class="flatpickr form-control" type="text" placeholder="Seleccionar una fecha">
+                                </div>
+                              </div>
+              </div>
+              <div class="col-md-12 col-lg-8">
+                              <div class="card mb-5">
+                                <div class="card-block card-body">
+                                  <h4 class="card-title">PICKADATE</h4>
+                                  <div class="dropdown card-config"><a class="btn btn-light btn-sm" href="http://amsul.ca/pickadate.js/"><em class="fa fa-list-ul"></em> Ver todo</a></div>
+                                  <h6 class="card-subtitle mb-2 text-muted">JS plugin for datepicker. Ejemplos: http://amsul.ca/pickadate.js/</h6>
+                                  <input class="datepicker form-control" type="text" placeholder="Seleccionar una fecha">
+                                  <input class="timepicker form-control" type="text" placeholder="Seleccionar una hora">
                                 </div>
                               </div>
               </div>
@@ -259,6 +273,9 @@
         </section>
       </div>
       <script src="dist/scripts/vendor.js"></script>
+      <script src="http://cdn.agrorural.gob.pe/apps/dist/scripts/picker.js"></script>
+      <script src="http://cdn.agrorural.gob.pe/apps/dist/scripts/picker.date.js"></script>
+      <script src="http://cdn.agrorural.gob.pe/apps/dist/scripts/picker.time.js"></script>
       <script>
         let $ = require('jquery');
         let Chartkick = require('chartkick');
@@ -291,7 +308,8 @@
         });
         
         $(document).ready(function() {
-          
+          $('.datepicker').pickadate();
+          $('.timepicker').pickatime();
         });
         
         new Chartkick.LineChart("multiple-line", [{
