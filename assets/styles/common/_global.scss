@@ -305,7 +305,8 @@ nav[aria-label="breadcrumb"]{
                         width: 100%;
                         &::after{
                             opacity: 1;
-                            content: '*';
+                            @extend .fas;
+                            content: '\f069';
                             @include font-size(7,7);
                             position: absolute;
                             right: 3rem;
@@ -419,7 +420,8 @@ nav[aria-label="breadcrumb"]{
                     width: 100%;
                     &::after{
                         opacity: 1;
-                        content: '*';
+                        @extend .fas;
+                        content: '\f069';
                         @include font-size(7,7);
                         position: absolute;
                         right: 3rem;
