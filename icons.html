@@ -95,11 +95,69 @@
                                 </div>
                               </div>
               </div>
+              <div class="col-sm-12">
+                              <div class="card mb-5">
+                                <div class="card-block card-body">
+                                  <h4 class="card-title">FontAwesome</h4>
+                                  <div class="dropdown card-config"><a class="btn btn-light btn-sm" href="https://fontawesome.com/icons"><em class="fa fa-list-ul"></em> Ver todo</a></div>
+                                  <h6 class="card-subtitle mb-2 text-muted">Usando Ajax</h6>
+                                  <p>Puede ver un ejemplo de uso de ícono a través de Ajax aquí.</p>
+                                  <div class="chart__table"></div>
+                                </div>
+                              </div>
+              </div>
             </section>
           </main>
         </section>
       </div>
       <script src="dist/scripts/vendor.js"></script>
+      <script>
+        let $ = require('jquery');
+        let DataTable = require("datatables.net-responsive-bs4");
+        //let tableData = [];
+        
+        $(".chart__table").html(`
+          <table id="starwars" class="dt-responsive" cellspacing="0" width="100%">
+            <thead class="thead-dark">
+              <tr>
+                <th>Planeta</th>
+                <th>Diametro</th>
+                <th>Población</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        `);
+        
+        var t = $('#starwars').DataTable();
+        
+        $.ajax({
+          url: "https://swapi.co/api/planets/",
+          dataType: "json",
+          success: function( data ) {
+            let arr = data.results;
+        
+            for(var i = 0; i < arr.length; i++ ){
+              t.row.add( [
+                arr[i].name,
+                arr[i].diameter,
+                arr[i].population,
+                '<nav class="nav-actions"><a href="#"><i class="fas fa-eye"></i></a></nav>'
+              ] ).draw( false );
+            }
+          }
+        });
+        
+        //- $(function(){
+          
+        
+        //-   //- $('#starwars').DataTable( {
+        //-   //-     data: tableData,
+        //-   //- } );
+        //- });
+      </script>
     </body>
   </head>
 </html>

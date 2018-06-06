@@ -165,6 +165,6 @@ gulp.task('production', ['sass', 'js', 'imagemin', 'fonts', 'misc'], function() 
         .pipe(gulp.dest(config.sass.dist));
 });
 
-gulp.task('prod', ['clean'], function() {
+gulp.task('build', ['clean'], function() {
     gulp.start('production');
 });

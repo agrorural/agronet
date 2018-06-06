@@ -242,173 +242,63 @@ nav[aria-label="breadcrumb"]{
         }
     }
     
+
     form {
-        fieldset {
-            border-radius: $border-radius;
+      
+      fieldset {
+        border-radius: $border-radius;
+        border: 1px solid $gray-400;
+        padding: 10px;
+        margin-bottom: 2rem;
+     
+      legend {
+            @include font-size(11);
+            color: $black-200;
+            background-color: $gray-400;
             border: 1px solid $gray-400;
-            padding: 10px;
-            margin-bottom: 2rem;
-            legend {
-                @include font-size(11);
-                color: $black-200;
-                background-color: $gray-400;
-                border: 1px solid $gray-400;
-                width: auto;
-                padding-left: 3px;
-                padding-right: 3px;
+            width: auto;
+            padding-left: 3px;
+            padding-right: 3px;
+        }
+      }
+    }
+
+    .form-group {
+        position: relative;
+        margin-bottom: 2rem;
+        @include font-size(13);
+        label {
+            z-index: 12;
+            color: $gray-700;
+            @include font-size(11,
+            16);
+            transition: all 0.3s;
+        }
+        .form-control {
+            @include font-size(13);
+        }
+        &.form-check {
+            label {
+                padding-left: 1.5rem;
+                input {
+                    margin-left: -1.5rem;
+                }
             }
         }
-        .form-group {
-            position: relative;
-            margin-bottom: 2rem;
-            @include font-size(13);
-            label {
-                z-index: 12;
-                color: $gray-700;
-                @include font-size(11,
-                16);
-                transition: all 0.3s;
-            }
-            .form-control {
-                @include font-size(13);
-            }
-            &.form-check {
-                label {
-                    padding-left: 1.5rem;
-                    input {
-                        margin-left: -1.5rem;
-                    }
-                }
-            }
-            &.input-field {
-                height: 46px;
-                cursor: text;
-                input,
-                textarea {
-                    &:focus {
-                        border-bottom: 1px solid $primary;
-                        z-index: 11;
-                        ~label {
-                            color: $primary;
-                            @include font-size(11,
-                            11);
-                            top: 0;
-                        }
-                    }
-                    &:required{
-                        ~label {
-                            width: 100%;
-                            &::after{
-                                opacity: 1;
-                                @extend .fas;
-                                content: '\f069';
-                                @include font-size(7,7);
-                                position: absolute;
-                                right: 3rem;
-                                transition:opacity 0.5s linear;
-                            }
-                        }
-                    }
-                }
-                textarea {
-                    background-color: transparent;
-                }
-                label {
-                    position: absolute;
-                    @include font-size(14,
-                    14);
-                    top: 20px;
-                    left: 15px;
-                    cursor: text;
-                }
-                &.not-empty,
-                &.placeholder {
-                    label {
-                        top: 0;
-                        @include font-size(11,
-                        11);
-                    }
-                }
-                &.empty{
-                    input:required{
-                        border-color: $danger;
-                        ~label {
-                            color: $danger;
-                        }
-                    }
-                }
-                &.not-empty{
-                    input:required{
-                        border-color: $primary;
-                        ~label {
-                            color: $primary;
-                            &::after{
-                                opacity: 0;
-                                transition:opacity 0.5s linear;
-                            }
-                        }
-                    }
-                }
-                input.is-valid,
-                input.is-invalid {
-                    ~label {
-                        @include font-size(11,
-                        11);
-                        top: 0;
-                    }
-                }
-                input.is-valid {
+        &.input-field {
+            height: 46px;
+            cursor: text;
+            input,
+            textarea {
+                &:focus {
                     border-bottom: 1px solid $primary;
+                    z-index: 11;
                     ~label {
                         color: $primary;
-                    }
-                }
-                input.is-invalid {
-                    border-bottom: 1px solid $danger;
-                    ~label {
-                        color: $danger;
-                    }
-                }
-                input {
-                    &:disabled,
-                    &[type="date"],
-                    &[type="file"] {
-                        ~label {
-                            top: 0;
-                            @include font-size(11,
-                            11);
-                        }
-                    }
-                    
-                    &[type="file"] {
-                        position: absolute;
-                        bottom: 0;
-                    }
-                    &:disabled {
-                        cursor: not-allowed;
-                        border-bottom: $input-btn-border-width dashed darken($input-border-color, 15%);
-                        background-color: $gray-100;
-                        color: $black-100;
-                    }
-                }
-                //Typeahead
-                &.in-focus{
-                    label {
-                        top: 0;
                         @include font-size(11,
                         11);
+                        top: 0;
                     }
-                }
-            }
-            .custom-select {
-                @include font-size(13,
-                13);
-                ~label {
-                    position: absolute;
-                    top: 0;
-                    left: 15px;
-                    @include font-size(11,
-                    11);
                 }
                 &:required{
                     ~label {
@@ -423,21 +313,135 @@ nav[aria-label="breadcrumb"]{
                             transition:opacity 0.5s linear;
                         }
                     }
-                    &.is-valid{
-                        ~label {
-                            color: $success;
+                }
+            }
+            textarea {
+                background-color: transparent;
+            }
+            label {
+                position: absolute;
+                @include font-size(14,
+                14);
+                top: 20px;
+                left: 15px;
+                cursor: text;
+            }
+            &.not-empty,
+            &.placeholder {
+                label {
+                    top: 0;
+                    @include font-size(11,
+                    11);
+                }
+            }
+            &.empty{
+                input:required{
+                    border-color: $danger;
+                    ~label {
+                        color: $danger;
+                    }
+                }
+            }
+            &.not-empty{
+                input:required{
+                    border-color: $primary;
+                    ~label {
+                        color: $primary;
+                        &::after{
+                            opacity: 0;
+                            transition:opacity 0.5s linear;
                         }
                     }
-                    &.is-invalid{
-                        ~label {
-                            color: $danger;
-                        }
+                }
+            }
+            input.is-valid,
+            input.is-invalid {
+                ~label {
+                    @include font-size(11,
+                    11);
+                    top: 0;
+                }
+            }
+            input.is-valid {
+                border-bottom: 1px solid $primary;
+                ~label {
+                    color: $primary;
+                }
+            }
+            input.is-invalid {
+                border-bottom: 1px solid $danger;
+                ~label {
+                    color: $danger;
+                }
+            }
+            input {
+                &:disabled,
+                &[type="date"],
+                &[type="file"] {
+                    ~label {
+                        top: 0;
+                        @include font-size(11,
+                        11);
+                    }
+                }
+                
+                &[type="file"] {
+                    position: absolute;
+                    bottom: 0;
+                }
+                &:disabled {
+                    cursor: not-allowed;
+                    border-bottom: $input-btn-border-width dashed darken($input-border-color, 15%);
+                    background-color: $gray-100;
+                    color: $black-100;
+                }
+            }
+            //Typeahead
+            &.in-focus{
+                label {
+                    top: 0;
+                    @include font-size(11,
+                    11);
+                }
+            }
+        }
+        .custom-select {
+            @include font-size(13,
+            13);
+            ~label {
+                position: absolute;
+                top: 0;
+                left: 15px;
+                @include font-size(11,
+                11);
+            }
+            &:required{
+                ~label {
+                    width: 100%;
+                    &::after{
+                        opacity: 1;
+                        @extend .fas;
+                        content: '\f069';
+                        @include font-size(7,7);
+                        position: absolute;
+                        right: 3rem;
+                        transition:opacity 0.5s linear;
+                    }
+                }
+                &.is-valid{
+                    ~label {
+                        color: $success;
+                    }
+                }
+                &.is-invalid{
+                    ~label {
+                        color: $danger;
                     }
                 }
             }
         }
     }
-    
+
     .custom-file {
         font-size: 100% !important;
     }

@@ -219,3 +219,36 @@ block content
                         input#archivos.form-control-file(type="file" multiple="")
                 button.btn.btn-primary(type="submit") Agregar papeleta
                 button.btn.btn-light(type="submit") Cancelar
+
+    .col-sm-12
+        +card('Formulario sin <form>', '', '')
+          .row
+              .col-sm-3.form-group.input-field
+                  input.form-control(type="text" disabled="")
+                  label(for="") Nº Papeleta
+              .col-sm-3.form-group
+                  select#exampleFormControlSelect1.custom-select
+                      option Categoría 1
+                      option Categoría 2
+                      option Categoría 3
+                      option Categoría 4
+                      option Categoría 5
+                  label(for="exampleFormControlSelect1") Categoría
+              .col-sm-3.form-group
+                  select#cbTipo.custom-select
+                      option Tipo 1
+                      option Tipo 2
+                      option Tipo 3
+                      option Tipo 4
+                      option Tipo 5
+                  label(for="cbTipo") Tipo
+              .col-sm-3.form-group
+                  select#cbTipo.custom-select
+                      option Detalle 1
+                      option Detalle 2
+                      option Detalle 3
+                      option Detalle 4
+                      option Detalle 5
+                  label(for="cbTipo") Detalle
+
+          button.btn.btn-light(type="submit") Cancelar

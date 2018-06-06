@@ -56,6 +56,7 @@
         "jquery.redirect": "^1.1.1",
         "js-cookie": "^2.2.0",
         "jshint": "^2.9.5",
+        "pickadate": "^3.5.6",
         "swiper": "^4.1.6",
         "typeahead.js": "^0.11.1",
         "typeahead.js-browserify": "^1.0.7",
