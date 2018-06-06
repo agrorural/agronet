@@ -2,6 +2,13 @@ window.jQuery = require('jquery')
 window.Popper = require('popper.js')
 require('bootstrap')
 
+import fontawesome from '@fortawesome/fontawesome';
+import brands from '@fortawesome/fontawesome-free-brands';
+import solid from '@fortawesome/fontawesome-free-solid';
+import regular from '@fortawesome/fontawesome-free-regular';
+
+fontawesome.library.add(brands, solid, regular)
+
 const Chart = require('chart.js');
 const Chartkick = require('chartkick');
 const confirm = require('jquery-confirm');
