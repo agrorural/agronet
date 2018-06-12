@@ -19,12 +19,14 @@ require( 'datatables.net-buttons/js/buttons.html5.js' )( window, $ );
 require( 'datatables.net-buttons/js/buttons.print.js' )( window, $ );
 require( 'datatables.net-responsive-bs4' )( window, $ );  
 
-// import fontawesome from '@fortawesome/fontawesome';
-// import brands from '@fortawesome/fontawesome-free-brands';
-// import solid from '@fortawesome/fontawesome-free-solid';
-// import regular from '@fortawesome/fontawesome-free-regular';
+FontAwesomeConfig = { searchPseudoElements: true };
 
-// fontawesome.library.add(brands, solid, regular)
+import fontawesome from '@fortawesome/fontawesome';
+import brands from '@fortawesome/fontawesome-free-brands';
+import solid from '@fortawesome/fontawesome-free-solid';
+import regular from '@fortawesome/fontawesome-free-regular';
+
+fontawesome.library.add(brands, solid, regular)
 
 const Chart = require('chart.js');
 const Chartkick = require('chartkick');

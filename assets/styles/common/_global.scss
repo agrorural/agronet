@@ -57,19 +57,6 @@
         font-weight: normal;
         font-style: normal;
     }
-    /* Mozilla based browsers */
-    
-     ::-moz-selection {
-        background-color: $lime;
-        color: $gray-800;
-    }
-    /* Works in Safari */
-    
-     ::selection {
-        background-color: $lime;
-        color: $gray-800;
-    }
-    /* Change Autocomplete styles in Chrome*/
     
     html {
         font-size: 62.5%;
@@ -79,7 +66,7 @@
         @include font-family('libre_franklin',
         'light');
         @include font-size(14);
-        background-color: $gray-200;
+        background-color: $gray-100;
     }
     
     h1,
@@ -128,8 +115,20 @@
         }
     }
     //
-    // DataTables 
+    // Profile 
     //
+
+    .profile-img {
+      border-radius: 100%;
+
+      img {
+          max-width: 100%;
+          height: auto;
+          width: 100%;
+          border: 1px solid rgba($black-200, 0.15);
+          border-radius: 100%;
+      }    
+    }
     
     //
     // Cards
@@ -307,10 +306,10 @@ nav[aria-label="breadcrumb"]{
                     ~label {
                         width: 100%;
                         &::after{
-                            opacity: 1;
-                            @extend .fas;
-                            content: '\f069';
                             @include font-size(7,7);
+                            
+                            opacity: 1;
+                            content: '*';
                             position: absolute;
                             right: 3rem;
                             transition:opacity 0.5s linear;
@@ -422,10 +421,10 @@ nav[aria-label="breadcrumb"]{
                 ~label {
                     width: 100%;
                     &::after{
-                        opacity: 1;
-                        @extend .fas;
-                        content: '\f069';
                         @include font-size(7,7);
+                        
+                        opacity: 1;
+                        content: '*';
                         position: absolute;
                         right: 3rem;
                         transition:opacity 0.5s linear;

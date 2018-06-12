@@ -16,14 +16,15 @@
       <div id="wrapper">
         <nav class="header">
           <div class="navbar-header">
-            <h1 id="brand"><a href="./dashboard.html"><img class="brand-sm" src="dist/images/la_peruanisima__logo--sm.png" alt=""><img class="brand-xs" src="dist/images/la_peruanisima__logo--xs.png" alt=""></a></h1>
+            <h1 id="brand"><a href="./dashboard.html"></a></h1>
           </div>
           <button class="btn btn-link sidebartoggler hamburger hamburger--spin" id="sidebartoggler" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
           <ul class="nav ml-auto">
             <li class="nav-item dropdown notifications new"><a class="nav-link" href="" data-toggle="dropdown" aria-expanded="false"><i class="far fa-bell"></i><sup><span class="counter">7</span></sup></a>
               <div class="dropdown-menu"><a class="dropdown-item active" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Link</a></div>
             </li>
-            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-expanded="false"><i class="far fa-user-circle"></i><span class="name"> Marcial Soto </span></a>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-expanded="false">
+                <div class="profile-img"><img src="dist/images/foto.png" alt="user"></div><span class="name"> Marcial Soto </span></a>
               <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;"><a class="dropdown-item active" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Link</a><a class="dropdown-item" href="#">Salir</a></div>
             </li>
           </ul>
@@ -34,13 +35,12 @@
               <div class="profile-img"><img src="dist/images/foto.png" alt="user"></div>
               <div class="profile-menu">
                 <h5>Marcial Soto</h5><small>OA-UTI</small>
-                <nav class="nav justify-content-around"><a class="nav-link" href="#" data-toggle="tooltip" title="" data-original-title="Detalles"><i class="fas fa-cog"></i></a><a class="nav-link" href="#" data-toggle="tooltip" title="" data-original-title="Correo"><i class="fas fa-envelope"></i></a><a class="nav-link" href="#" data-toggle="tooltip" title="" data-original-title="Salir"><i class="fas fa-power-off"></i></a></nav>
               </div>
             </div>
                         <ul class="nav flex-column components">   
                           <li class="nav-item"><a class="nav-link" href="./dashboard.html" title="Inicio"><i class="fas fa-home"></i><span>Inicio</span></a>
                           </li>
-                          <li class="nav-item"><a class="nav-link active" href="#contenido" title="Contenido" data-toggle="collapse" aria-expanded="true" aria-controls="Contenido"><i class="fas fa-edit"></i><span>Contenido</span></a>
+                          <li class="nav-item"><a class="nav-link dropdown-toggle active" href="#contenido" title="Contenido" data-toggle="collapse" aria-expanded="true" aria-controls="Contenido"><i class="fas fa-edit"></i><span>Contenido</span></a>
                             <ul class="collapse list-unstyled show" id="contenido">
                               <li><a href="./buttons.html" title="Botones">Botones</a>
                               </li>

@@ -36,6 +36,7 @@ $brown-400: #41230a;
 $yellow-100: #faf5b9;
 $yellow-200: #f5e66e;
 $yellow-300: #f0e11e;
+$cream:     #ececeb;
 //Blues
 $blue-100: #1491a0;
 $blue-200: #0f5f69;
@@ -49,110 +50,152 @@ $lavender-200: #370541;
 $purple-100: #b48caf;
 $purple-200: #690a55;
 //System
-@mixin theme($name, $primary-color: $green-100, $secondary-color: $orange-200) {
+
+@mixin theme($name, $primary-color: $green-100, $analog-color: $cream, $accent-color: $yellow-300) {
     // Define colors in your theme
     $theme-colors: (
         "primary": $primary-color,
-        "secondary": $secondary-color
+        "secondary": $accent-color,
+        "analog": $analog-color
     );
+
     $primary: map-get($theme-colors, primary);
     $secondary: map-get($theme-colors, secondary);
+    $analog: map-get($theme-colors, analog);
+
     // Add your classes with css colors added
     $link-color: $primary;
-    $link-hover-color: lighten($link-color, 5%);
+    $link-hover-color: rgba($primary, 0.5);
+    
     .#{$name} {
-        a:not(.btn) {
+      ::-moz-selection {
+        background-color: $secondary;
+        color: color-yiq($secondary);
+      }
+        /* Works in Safari */
+        
+      ::selection {
+        background-color: $secondary;
+        color: color-yiq($secondary);
+      }
+
+      a {
         color: $link-color;
-            &:hover{
-                color: $link-hover-color;
-            }
+        
+        &:hover{
+          color: $link-hover-color;
         }
+      }
 
-        .dt-buttons {
-          button, 
-          button {
-            color: $primary !important;
-            background-color: transparent;
-            border-color: rgba(color-yiq($white), 0.1);
+      .dropdown-item.active {
+        background-color: $primary;
+      }
 
-            &:hover {
-              border-color: rgba($primary, 0.5) !important;
-              background-color: transparent !important;
-            }
+      .dt-buttons {
+        button, 
+        button {
+          color: $primary !important;
+          background-color: transparent;
+          border-color: rgba(color-yiq($white), 0.1);
 
-            &:active {
-              border-color: rgba($primary, 0.75) !important;
-              background-color: transparent !important;
-            }
+          &:hover {
+            border-color: rgba($primary, 0.5) !important;
+            background-color: transparent !important;
+          }
+
+          &:active {
+            border-color: rgba($primary, 0.75) !important;
+            background-color: transparent !important;
           }
         }
+      }
 
-        .page-item.active .page-link {
-            background-color: $primary;
-            border-color: $primary;
-        }
-        input:-webkit-autofill,
-        input:-webkit-autofill:hover,
-        input:-webkit-autofill:focus,
-        input:-webkit-autofill:active {
-            -webkit-animation: autofill-#{$name} 0s forwards;
-            animation: autofill-#{$name} 0s forwards;
-            border-color: $primary !important;
-        }
+      .page-item.active .page-link {
+          background-color: $primary;
+          border-color: $primary;
+      }
+
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus,
+      input:-webkit-autofill:active {
+        -webkit-animation: autofill-#{$name} 0s forwards;
+        animation: autofill-#{$name} 0s forwards;
+        border-color: $primary !important;
+      }
         
-        @keyframes autofill-#{$name} {
-            100% {
-                background: transparent;
-                color: inherit;
-            }
+      @keyframes autofill-#{$name} {
+        100% {
+            background: transparent;
+            color: inherit;
         }
+      }
         
-        @-webkit-keyframes autofill-#{$name} {
-            100% {
-                background: transparent;
-                color: inherit;
-            }
+      @-webkit-keyframes autofill-#{$name} {
+        100% {
+            background: transparent;
+            color: inherit;
         }
-        input:not([type]),
-        input[type=text]:not(.browser-default),
-        input[type=password]:not(.browser-default),
-        input[type=email]:not(.browser-default),
-        input[type=url]:not(.browser-default),
-        input[type=time]:not(.browser-default),
-        input[type=date]:not(.browser-default),
-        input[type=datetime]:not(.browser-default),
-        input[type=datetime-local]:not(.browser-default),
-        input[type=tel]:not(.browser-default),
-        input[type=number]:not(.browser-default),
-        input[type=search]:not(.browser-default),
-        textarea,.custom-select {
-            &:focus:not([readonly]) {
-                border-bottom: 1px solid $primary;
-                box-shadow: 0 1px 0 0 $primary;
-            }
-            // Focused label style
-            &:focus:not([readonly])+label {
-                color: $primary;
-            }
-        }
+      }
+
+      input:not([type]),
+      input[type=text]:not(.browser-default),
+      input[type=password]:not(.browser-default),
+      input[type=email]:not(.browser-default),
+      input[type=url]:not(.browser-default),
+      input[type=time]:not(.browser-default),
+      input[type=date]:not(.browser-default),
+      input[type=datetime]:not(.browser-default),
+      input[type=datetime-local]:not(.browser-default),
+      input[type=tel]:not(.browser-default),
+      input[type=number]:not(.browser-default),
+      input[type=search]:not(.browser-default),
+      textarea,.custom-select {
+          &:focus:not([readonly]) {
+              border-bottom: 1px solid $primary;
+              box-shadow: 0 1px 0 0 $primary;
+          }
+          // Focused label style
+          &:focus:not([readonly])+label {
+              color: $primary;
+          }
+      }
+
         @each $color, $value in $theme-colors {
             .btn-#{$color} {
                 @include button-variant($value, $value);
             }
-            .badge-#{$color} {
-                @include badge-variant($value);
-              }
-        }
-        .header{
-            background-color: $primary;
-            border-bottom: 1px solid $primary;
-            .navbar-header{
-                background-color: $secondary;
+
+            .btn-outline-#{$color} {
+              @include button-outline-variant($value);
             }
-            .nav{
-                li{
-                    >a{
-                        color: $white;
+
+            .badge-#{$color} {
+              @include badge-variant($value);
+            }
+        }
+
+        .header {
+            background-color: $analog;
+            border-bottom: 1px solid $analog;
+
+            .navbar-header {
+              background-color: $analog;
+
+              a {
+                color: color-yiq($analog);
+
+                &:hover{
+                  opacity: .85;
+                }
+              }
+            }
+
+            .nav {
+                li {
+                    > a{
+                      color: color-yiq($analog);
+
                         &:hover{
                             opacity: .85;
                         }
@@ -162,40 +205,92 @@ $purple-200: #690a55;
             
         }
         .main-nav{
+          background-color: rgba($primary, 0.95);
+  
+          .profile-img {
+            .svg-inline--fa{
+              color: $analog;
+            }
+          }
+  
+          .profile-menu {
+            h5,
+            small {
+              color: color-yiq($primary);
+            }
+          }
+  
             ul{
                 li{
                     a{
-                        span{
-                            color: $gray-600;
+                      span{
+                        color: color-yiq($primary);
+                      }
+  
+                      .svg-inline--fa{
+                        color: $analog;
+                      }
+  
+                      &:hover{
+                        .svg-inline--fa,
+                        span {
+                            color: $secondary;
                         }
-                        i{
-                            color: $primary;
+                      }
+  
+                      &.dropdown-toggle {
+                        &::after{
+                          color: $analog;
                         }
-                        &.active{
-                            span{
-                                color: $primary;
-                            }
+                      }
+  
+                      &.active{
+                        background-color: $primary;
+                        border-left: 1px solid $secondary;
+  
+                        .svg-inline--fa,
+                        span {
+                            color: $secondary;
                         }
+  
+                        &.dropdown-toggle {
+                          &::after{
+                            color: $secondary;
+                          }
+                        }
+                      }
+  
+                      &[aria-expanded="true"] {
+                        background-color: $primary;
+                      }
                     }
+  
                     ul.collapse,
                     ul.collapsing {
+                      background-color: $primary;
+  
                         li {
                             a {
-                                color: $black-200;
+                                color: $analog;
+  
                                 &.active {
-                                    color: $primary;
+                                  color: color-yiq($primary);
                                 }
+  
                                 &:hover {
-                                    color: $primary;
+                                    color: color-yiq($primary);
                                 }
                             }
                         }
                     }
                 }
             }
+
+            
         }
     }
-  }
+}
+
 $primary: $green-100;
 $secondary: $yellow-300;
 $success: $green-100;
@@ -235,6 +330,7 @@ $input-btn-padding-x-lg: 2.25rem;
 $dropdown-padding-y: .75rem;
 $dropdown-item-padding-y: .75rem;
 $dropdown-item-padding-x: 1.75rem;
+
 // Navs
 $nav-link-padding-y: .75rem;
 
@@ -250,3 +346,196 @@ $hamburger-layer-border-radius             : 4px !default;
 $hamburger-hover-opacity                   : 0.7 !default;
 $hamburger-hover-transition-duration       : 0.15s !default;
 $hamburger-hover-transition-timing-function: linear !default;
+
+
+// @mixin theme($name, $primary-color: $blue-200, $analog-color: $blue-sky-100, $accent-color: $green-light-100) {
+//   // Define colors in your theme
+//   $theme-colors: (
+//       "primary": $primary-color,
+//       "secondary": $accent-color,
+//       "analog": $analog-color
+//   );
+
+//   $primary: map-get($theme-colors, primary);
+//   $secondary: map-get($theme-colors, secondary);
+//   $analog: map-get($theme-colors, analog);
+
+//   $link-color: $primary;
+
+//   .#{$name} {
+//       a:not(.btn) {
+//       color: $link-color;
+//           &:hover{
+//               opacity: 0.85;
+//           }
+//       }
+
+//       #controlpk__logo {
+//           .ontrol {
+//             fill: color-yiq($primary);
+//           }
+
+//           .iso,
+//           .pk {
+//             fill: $accent-color;
+//           }
+//         }
+
+//       .simplebar-scrollbar::before {
+//           background: color-yiq($primary);
+//       }
+
+//       .page-item.active .page-link {
+//           background-color: $primary;
+//           border-color: $primary;
+//       }
+
+//       input:-webkit-autofill,
+//       input:-webkit-autofill:hover,
+//       input:-webkit-autofill:focus,
+//       input:-webkit-autofill:active {
+//           -webkit-animation: autofill-#{$name} 0s forwards;
+//           animation: autofill-#{$name} 0s forwards;
+//           border-color: $analog !important;
+//       }
+      
+//       @keyframes autofill-#{$name} {
+//           100% {
+//               background: transparent;
+//               color: inherit;
+//           }
+//       }
+      
+//       @-webkit-keyframes autofill-#{$name} {
+//           100% {
+//               background: transparent;
+//               color: inherit;
+//           }
+//       }
+
+//       @each $color, $value in $theme-colors {
+//           .btn-#{$color} {
+//               @include button-variant($value, $value);
+//           }
+//           .badge-#{$color} {
+//               @include badge-variant($value);
+//           }
+//       }
+
+//       .header{
+//           background-color: $analog;
+//           border-bottom: 1px solid $analog;
+
+//           .navbar-header{
+//               background-color: $primary;
+
+//               a {
+//                 color: color-yiq($primary);
+
+//                 &:hover{
+//                   opacity: .85;
+//                 }
+//               }
+//           }
+
+//         .sidebartoggler {
+//           .hamburger-inner, 
+//           .hamburger-inner::before,
+//           .hamburger-inner::after{
+//               background-color: color-yiq($primary);
+//             } 
+
+//             &:hover {
+//               .hamburger-inner, 
+//               .hamburger-inner::before,
+//               .hamburger-inner::after{
+//                   background-color:$secondary;
+//                 } 
+//             }
+//           }
+//       }
+
+//       .main-nav{
+//         background-color: rgba($primary, 0.95);
+
+//         .profile-img {
+//           .svg-inline--fa{
+//             color: $analog;
+//           }
+//         }
+
+//         .profile-menu {
+//           h5,
+//           small {
+//             color: color-yiq($primary);
+//           }
+//         }
+
+//           ul{
+//               li{
+//                   a{
+//                     span{
+//                       color: color-yiq($primary);
+//                     }
+
+//                     .svg-inline--fa{
+//                       color: $analog;
+//                     }
+
+//                     &:hover{
+//                       .svg-inline--fa,
+//                       span {
+//                           color: $secondary;
+//                       }
+//                     }
+
+//                     &.dropdown-toggle {
+//                       &::after{
+//                         color: $analog;
+//                       }
+//                     }
+
+//                     &.active{
+//                       background-color: $primary;
+//                       border-left: 1px solid $secondary;
+
+//                       .svg-inline--fa,
+//                       span {
+//                           color: $secondary;
+//                       }
+
+//                       &.dropdown-toggle {
+//                         &::after{
+//                           color: $secondary;
+//                         }
+//                       }
+//                     }
+
+//                     &[aria-expanded="true"] {
+//                       background-color: $primary;
+//                     }
+//                   }
+
+//                   ul.collapse,
+//                   ul.collapsing {
+//                     background-color: $primary;
+
+//                       li {
+//                           a {
+//                               color: $analog;
+
+//                               &.active {
+//                                 color: color-yiq($primary);
+//                               }
+
+//                               &:hover {
+//                                   color: color-yiq($primary);
+//                               }
+//                           }
+//                       }
+//                   }
+//               }
+//           }
+//       }
+//   }
+// }

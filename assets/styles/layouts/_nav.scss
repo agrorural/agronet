@@ -1,459 +1,935 @@
 body {
-    .header {
-        @extend .d-flex;
-        @extend .flex-row;
-        @extend .flex-wrap;
-        @extend .align-items-center;
-        position: fixed;
-        left: 0;
-        right: 0;
-        transition: all 0.3s;
-        height: 7rem;
-        z-index: 20;
-        background-color: $primary;
-        .navbar-header {
-            width: 22.5rem;
-            height: 7rem;
-            background-color: $white;
-            transition: all 0.3s;
-            #brand {
-                margin: auto;
-                a{
+  .header {
+      @extend .d-flex;
+      @extend .flex-row;
+      @extend .flex-wrap;
+      @extend .align-items-center;
+      
+      position: fixed;
+      left: 0;
+      right: 0;
+      height: 5rem;
+      z-index: $zindex-fixed;
+      background-color: $primary;
+      padding: 0;        
+      
+      .navbar-header {
+          width: 22.5rem;
+          height: 5rem;
+          background-color: $white;
+          transition: all 0.3s ease;
+
+          nav {
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+
+              .sidebartoggler  {
+                  padding-left:3rem;
+              }
+
+              .navbarMobileToggler {
+                  padding-right:3rem;
+              }
+
+              .brand {
+                  padding: 0;
+                  margin: 0 auto 0 0;
+                  
+                  @include media-breakpoint-up(sm) {
+                      margin: 0 auto;
+                  }
+              }
+
+              h1 {
+                  margin-bottom: 0;
+                  line-height: 5rem;
+              }
+          }
+
+          #brand {
+              margin: auto;
+
+              a{
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  height: 5rem;
+                  .brand-xs, .brand-sm{
+                      position: absolute;
+                  }
+              }
+          }
+      }
+
+      .nav {
+        .profile-img {
+          width: 1.4rem;
+        }
+      }
+
+      #navbar-mobile {
+          form {
+              padding: 1rem 3rem;
+          }
+
+          .nav {
+              padding-top: 0.5rem;
+          }
+
+          &.show, 
+          &.collapsing {
+              background-color: $white;
+          }
+      }
+
+      ul {
+          position: fixed;
+          right: 0;
+          margin-right: 5rem;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          @include media-breakpoint-up(sm) {
+              position: relative;
+              margin-right: 3rem;
+          }
+
+          li {
+              position: relative;
+              a {
+                  &.nav-link {
+                      color: $white;
+
+                      @include media-breakpoint-up(sm) {
+                          color: $primary;
+                      }
+                  }
+
+                  &.dropdown-toggle {
                     display: flex;
+                    flex-direction: row;
                     align-items: center;
-                    justify-content: center;
-                    height: 7rem;
-                    .brand-xs, .brand-sm{
-                        position: absolute;
-                    }
-                }
-            }
-        }
-        .sidebartoggler {
-            margin-left: 1.3rem;
-            color: $white;
-            opacity: 0.75;
-            &:hover {
-                color: $white;
-                opacity: 1;
-            }
-        }
-        ul {
-            margin-right: 3rem;
-            li {
-                position: relative;
-                a {
-                    &.nav-link {
-                        color: $white;
-                    }
-                    &.dropdown-toggle {
-                        picture {
-                            display: inline-block;
-                            width: 22px;
-                            line-height: 22px;
-                            border-radius: 4px;
-                            margin-right: 10px;
-                            vertical-align: middle;
-                            img {
-                                @extend .img-fluid;
-                                border-radius: 4px;
-                            }
-                        }
-                        span {
-                            display: none;
-                            @include media-breakpoint-up(md) {
-                                display: inline-block;
-                            }
+
+                    picture {
+                      padding-right: 0.5rem;
+
+                        img {
+                            @extend .rounded-circle;
                         }
                     }
-                }
-                .dropdown-menu {
-                    left: auto;
-                    right: 0;
-                    @include font-size(12);
-                    .dropdown-item {
-                        &.active {
-                            color: $black-200;
-                            background-color: $yellow-300;
-                        }
-                    }
-                }
-            }
+                  }
+              }
+
+              .dropdown-menu {
+                  left: auto;
+                  right: 0;
+                  @include font-size(12);
+              }
+          }
+      }
+  }
+
+  #sidebar {
+      position: fixed;
+      top: 5rem;
+      bottom: 0;
+      left: 0;
+      z-index: $zindex-fixed;
+      width: 22.5rem;
+      transition: all 0.3s ease;
+      height: calc(100vh - 5rem);
+
+      .user-profile {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+        position: relative;
+        height: 7rem;
+        margin-bottom: 2rem;
+
+        .profile-img {
+          width: 4.8rem;
+          height: 4.8rem;
+
+          img {
+              max-width: 100%;
+              height: auto;
+              width: 100%;
+              border: 1px solid rgba($black-200, 0.15);
+              border-radius: 100%;
+          }
+
+          .svg-inline--fa{
+            @include font-size(48,48);
+          }    
         }
-    }
-    #sidebar {
-        position: fixed;
-        top: 7rem;
-        bottom: 0;
-        left: 0;
-        z-index: 10;
-        width: 22.6rem;
-        transition: all 0.3s;
-        height: calc(100vh - 7rem);
-        background-color: $white;
-        .user-profile {
+
+        .profile-menu {
+            display: none;
             position: relative;
-            background-size: cover;
-            .profile-img {
-                width: 4.8rem;
-                margin: 0 auto;
-                padding: 10px 0 5px 0;
-                border-radius: 100%;
-                img {
-                    width: 100%;
-                    padding: 5px;
-                    border: 1px solid rgba(120, 130, 140, 0.13);
-                    border-radius: 100%;
-                }
-            }
-            .profile-menu {
-                display: none;
-                position: relative;
-                text-align: center;
-                h5 {
-                    @include font-size(18);
-                    margin-bottom: 0;
-                }
-                nav {
-                    margin-top: 1.5rem;
-                    padding: .5rem 2.5rem;
-                    background-color: rgba($black-200, .35);
-                    a {
-                        color: $white;
-                        opacity: 0.75;
-                        &:hover {
-                            opacity: 1;
-                        }
-                    }
-                }
-            }
-            border-bottom: 1px solid rgba($white, .35);
-            margin-bottom: 2rem;
-            &::after {
-                content: "";
-                background: url('#{$cdn-dist-path}/images/profile__bg--2.jpg');
-                opacity: 0.35;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                right: 0;
-                position: absolute;
-                z-index: -1;
+
+            h5 {
+                @include font-size(14);
+                @include font-family('ubuntu', 'medium');
+
+                margin-bottom: 0;
             }
         }
-        ul.nav {
-            li {
-                a {
-                    text-align: left;
-                    span {
-                        @include font-family('ubuntu', 'medium');
-                        margin-left: .5rem;
-                        display: none;
-                    }
-                    &.active {
-                        background-color: $gray-100;
-                    }
-                }
-                ul.collapse,
-                ul.collapsing {
-                    background-color: $gray-100;
-                    li {
-                        a {
-                            text-align: left;
-                            @include font-size(12);
-                        }
-                    }
-                }
-            }
-        }
-    }
-    &.sidebar-expand {
-        &.theme-purple, &.theme-default{
-            .header {         
-                .navbar-header {
-                    @include media-breakpoint-only(xs) {
-                        width: 6rem;
-                        #brand {
-                            // @include img-replace(40, 40);
-                            // background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--xs.png');
-                            .brand-xs{
-                                display: block;
-                                @include invisible(visible);
-                                opacity: 1;
-                                z-index: 1;
-                            }
-                            .brand-sm{
-                                display: none;
-                                @include invisible(hidden);
-                                opacity: 0;
-                                height: 0;
-                                width: 0;
-                                z-index: -1;
-                            }
-                        }
-                    }
-                    @include media-breakpoint-up(sm) {
-                        width: 22.5rem;
-                        #brand {
-                            .brand-xs{
-                                display: none;
-                                @include invisible(hidden);
-                                opacity: 0;
-                                height: 0;
-                                width: 0;
-                                z-index: -1;
-                            }
-                            .brand-sm{
-                                display: block;
-                                @include invisible(visible);
-                                opacity: 1;
-                                z-index: 1;
-                            }
-                            // @include img-replace(135, 40);
-                            // background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--sm--horizontal.png');
-                            background-position: center;
-                            margin: auto;
-                            
-                        }
-                    }
-                }
-            }
-        }
-        &.theme-purple{
-            .header {         
-                .navbar-header {
-                    @include media-breakpoint-only(xs) {
-                        width: 6rem;
-                        #brand {
-                            // @include img-replace(40, 40);
-                            // background-image: url('#{$cdn-dist-path}/images/peruanisima__logo--color--xs.png');
-                            
-                        }
-                    }
-                    @include media-breakpoint-up(sm) {
-                        width: 22.5rem;
-                        #brand {
-                            // @include img-replace(225, 70);
-                            // background-image: url('#{$cdn-dist-path}/images/peruanisima____logo--color--sm--horizontal.png');
-                            // background-position: center;
-                            margin: auto;
-                            
-                        }
-                    }
-                }
-            }
-        }
-        
-        #content {
-            @include media-breakpoint-only(xs) {
-                margin-left: 6rem;
-                width: calc(100% - 6rem);
-            }
-            @include media-breakpoint-up(sm) {
-                margin-left: 22.5rem;
-                width: calc(100% - 22.5rem);
-            }
-        }
-        #sidebar {
-            @include media-breakpoint-only(xs) {
-                min-width: 6rem;
-                max-width: 6rem;
-                margin-left: 0;
-                overflow: visible;
-                ul.nav {
-                    li {
-                        position: relative;
-                        a {
-                            text-align: center;
-                            &[aria-expanded="true"] {
-                                background-color: $gray-100;
-                            }
-                            span {
-                                display: none !important;
-                            }
-                        }
-                        .show,
-                        .collapsing {
-                            position: absolute;
-                            top: 0;
-                            left: 6rem;
-                            background-color: $gray-100;
-                        }
-                    }
-                }
-            }
-            @include media-breakpoint-up(sm) {
-                min-width: 22.6rem;
-                max-width: 22.6rem;
-                margin-left: 0;
-                overflow: auto;
-                .user-profile {
-                    .profile-img {
-                        width: 7.2rem;
-                    }
-                    .profile-menu {
-                        display: block;
-                    }
-                }
-                ul.nav {
-                    li {
-                        >a {
-                            padding-left: 2rem;
-                            padding-right: 2rem;
-                        }
-                        a {
-                            &[data-toggle="collapse"] {
-                                position: relative;
-                            }
-                            &[aria-expanded="false"],
-                            &[aria-expanded="true"] {
-                                &::before {
-                                    font-family: 'Font Awesome 5 Free';
-                                    position: absolute;
-                                    font-weight: 900;
-                                    @include font-size(14);
-                                    content: '\f0d7';
-                                    display: block;
-                                    right: 2rem;
-                                    line-height: inherit !important;
-                                    transition: transform .3s ease;
-                                    color: $black-100;
-                                }
-                            }
-                            &[aria-expanded="true"] {
-                                background-color: $gray-100;
-                                &::before {
-                                    transform: rotate(180deg);
-                                }
-                            }
-                            span {
-                                display: inline-block;
-                            }
-                        }
-                        .show,
-                        .collapsing {
-                            li {
-                                a {
-                                    text-indent: 2rem;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    &.sidebar-collapse {
-        &.theme-purple, &.theme-default{
-            .header {
-                height: 7rem;
-                .navbar-header {
-                    @include media-breakpoint-up(xs) {
-                        width: 6rem;
-                        #brand {
-                            .brand-xs{
-                                display: block;
-                            }
-                            .brand-sm{
-                                display: none;
-                            }
-                            // @include img-replace(40, 40);
-                            // background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--xs.png');
-                        }
-                    }
-                }
-            }
-        }
-        &.theme-purple, &.theme-default{
-            .header {
-                height: 7rem;
-                .navbar-header {
-                    @include media-breakpoint-up(xs) {
-                        width: 6rem;
-                        #brand {
-                            .brand-xs{
-                                display: block;
-                            }
-                            .brand-sm{
-                                display: none;
-                            }
-                            // @include img-replace(40, 40);
-                            // background-image: url('#{$cdn-dist-path}/images/peruanisima__logo--color--xs.png');
-                        }
-                    }
-                }
-            }
-        }
-        
-        #content {
-            @include media-breakpoint-only(xs) {
-                margin-left: 0;
-                width: 100%;
-            }
-            @include media-breakpoint-up(sm) {
-                margin-left: 6rem;
-                width: calc(100% - 6rem);
-            }
-        }
-        #sidebar {
-            @include media-breakpoint-only(xs) {
-                min-width: 6rem;
-                max-width: 6rem;
-                margin-left: -6rem;
-                overflow: hidden;
-            }
-            @include media-breakpoint-up(xs) {
-                ul.nav {
-                    li {
-                        a {
-                            text-align: center;
-                        }
-                    }
-                }
-            }
-            @include media-breakpoint-up(sm) {
-                min-width: 6rem;
-                max-width: 6rem;
-                margin-left: 0;
-                overflow: visible;
-                ul.nav {
-                    li {
-                        position: relative;
-                        a {
-                            &[aria-expanded="true"] {
-                                background-color: $gray-100;
-                            }
-                        }
-                        .show,
-                        .collapsing {
-                            position: absolute;
-                            top: 0;
-                            left: 6rem;
-                            background-color: $gray-100;
-                        }
-                    }
-                }
-            }
-        }
-    }
+      }
+
+      ul.nav {
+          li {
+              a {
+                  span {
+                      @include font-family('ubuntu', 'medium');
+
+                      margin-left: .5rem;
+                  }
+              }
+              ul.collapse,
+              ul.collapsing {
+                  li {
+                      a {
+                          @include font-size(12);
+                      }
+                  }
+              }
+          }
+      }
+  }
+
+  &.sidebar-expand {
+      &.theme-default{
+          .header {         
+              .navbar-header {
+                  @include media-breakpoint-only(xs) {
+                      width: 100%;
+                  }
+
+                  @include media-breakpoint-up(sm) {
+                      width: 100%;
+                  }
+
+                  @include media-breakpoint-up(md) {
+                      width: 22.5rem;
+                  }
+              }
+          }
+      }
+      @include media-breakpoint-up(md) {
+          #content {
+              margin-left: 22.5rem;
+              width: calc(100% - 22.5rem);
+          }
+      }
+
+      #sidebar {
+          width: 22.5rem;
+          margin-left: 0;
+
+              .user-profile {
+                margin: 0 2rem;
+
+                  .profile-img {
+                      width: 4.8rem;
+                      margin-right: 1rem;
+                  }
+
+                  .profile-menu {
+                      display: block;
+                  }
+              }
+
+              ul.nav {
+                  li {
+                      >a {
+                          padding-left: 2rem;
+                          padding-right: 2rem;
+                      }
+                      a {
+                          &[data-toggle="collapse"] {
+                              position: relative;
+                          }
+                          &[aria-expanded="false"],
+                          &[aria-expanded="true"] {
+                              &::after {
+                                @include font-size(14);
+                                  position: absolute;
+                                  top: 1.8rem;
+                                  right: 2rem;
+                                  line-height: inherit !important;
+                                  transition: transform 0.3s ease;
+                              }
+                          }
+                          &[aria-expanded="true"] {
+                              &::after {
+                                  transform: rotate(180deg);
+                              }
+                          }
+                          span {
+                              display: inline-block;
+                          }
+                      }
+                      .show,
+                      .collapsing {
+                          li {
+                              a {
+                                  text-indent: 2rem;
+                              }
+                          }
+                      }
+                  }
+              }
+      }
+  }
+
+  &.sidebar-collapse {
+      &.theme-purple, &.theme-default{
+          .header {
+              height: 5rem;
+
+              .navbar-header {
+                  @include media-breakpoint-up(xs) {
+                      width: 100%;
+
+                      nav {
+                          display: flex;
+                          align-items: center;
+                          justify-content: space-between;
+                      }
+                      
+                  }
+
+                  @include media-breakpoint-up(sm) {
+                      min-width: 6rem;
+                      max-width: 6rem;
+                  }
+              }
+          }
+      }
+
+      &.theme-purple, &.theme-default{
+          .header {
+              height: 5rem;
+
+              .navbar-header {
+                  @include media-breakpoint-up(xs) {
+                      width: 100%;
+                      
+                      #brand {
+                          .brand-xs{
+                              display: block;
+                          }
+
+                          .brand-sm{
+                              display: none;
+                          }
+                      }
+                  }
+              }
+          }
+      }
+      
+      #content {
+          @include media-breakpoint-only(xs) {
+              margin-left: 0;
+              width: 100%;
+          }
+          @include media-breakpoint-up(sm) {
+              margin-left: 6rem;
+              width: calc(100% - 6rem);
+          }
+      }
+
+      #sidebar {
+          @include media-breakpoint-only(xs) {
+              width: 6rem;
+              margin-left: -6rem;
+
+              a.dropdown-toggle::after {
+                  display: none;
+              }
+          }
+
+          @include media-breakpoint-up(xs) {
+              a {
+                  text-align: center;
+              }
+
+              .dropdown-toggle::after {
+                  display: none;
+              }
+
+              &:hover {
+                  a {
+                      text-align: left;
+                  }
+
+                  .dropdown-toggle::after {
+                      display: inline-block;
+                  }
+
+                  width: 22.5rem;
+                  margin-left: 0;
+
+                  .user-profile {
+                      margin: 0 2rem;
+
+                      .profile-img {
+                          width: 4.8rem;
+                          margin-right: 1rem;
+                      }
+                      
+                      .profile-menu {
+                          display: block;
+                      }
+                  }
+                  
+                  ul.nav {
+                      li {
+                          > a {
+                              padding-left: 2rem;
+                              padding-right: 2rem;
+                          }
+                          a {
+                              &[data-toggle="collapse"] {
+                                  position: relative;
+                              }
+
+                              &[aria-expanded="false"],
+                              &[aria-expanded="true"] {
+                                  &::after {
+                                  @include font-size(14);
+                                      position: absolute;
+                                      top: 1.8rem;
+                                      right: 2rem;
+                                      line-height: inherit !important;
+                                      transition: transform 0.3s ease;
+                                  }
+                              }
+
+                              &[aria-expanded="true"] {
+                                  &::after {
+                                      transform: rotate(180deg);
+                                  }
+                              }
+
+                              span {
+                                  display: inline-block;
+                              }
+                          }
+                          .show,
+                          .collapsing {
+                              li {
+                                  a {
+                                      text-indent: 2rem;
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+
+              ul.nav {
+                  li {
+                      a {
+                          span {
+                              display: none;
+                          }
+                      }
+                  }
+              }
+          }
+          
+          @include media-breakpoint-up(sm) {
+              width: 6rem;
+              margin-left: 0;
+              
+              ul.nav {
+                  li {
+                      .show,
+                      .collapsing {
+                          text-align: center;
+                      }
+                  }
+              }
+
+              &:hover {
+                  ul.nav {
+                      li {
+                          .show,
+                          .collapsing {
+                              text-align: left;
+                          }
+                      }
+                  }
+              }
+          }
+      }
+  }
 }
 
-nav{
-    &.nav-actions{
-        @extend .nav;
-        a{
-            @extend .nav-link;
-            padding: 0 .75rem;
-            color: $black-100 !important;
-            &:hover{
-                color: $black-200 !important;
-            }
-            &.danger{
-                color: $danger !important;
-                &:hover{
-                    color: darken($danger, 15%) !important;
-                }
-            }
-        }
-    }
-}
+
+// body {
+//     .header {
+//         @extend .d-flex;
+//         @extend .flex-row;
+//         @extend .flex-wrap;
+//         @extend .align-items-center;
+//         position: fixed;
+//         left: 0;
+//         right: 0;
+//         transition: all 0.3s;
+//         height: 7rem;
+//         z-index: 20;
+//         background-color: $primary;
+//         .navbar-header {
+//             width: 22.5rem;
+//             height: 7rem;
+//             background-color: $white;
+//             transition: all 0.3s;
+//             #brand {
+//                 margin: auto;
+//                 a{
+//                     display: flex;
+//                     align-items: center;
+//                     justify-content: center;
+//                     height: 7rem;
+//                     .brand-xs, .brand-sm{
+//                         position: absolute;
+//                     }
+//                 }
+//             }
+//         }
+//         .sidebartoggler {
+//             margin-left: 1.3rem;
+//             color: $white;
+//             opacity: 0.75;
+//             &:hover {
+//                 color: $white;
+//                 opacity: 1;
+//             }
+//         }
+//         ul {
+//             margin-right: 3rem;
+//             li {
+//                 position: relative;
+//                 a {
+//                     &.nav-link {
+//                         color: $white;
+//                     }
+//                     &.dropdown-toggle {
+//                         picture {
+//                             display: inline-block;
+//                             width: 22px;
+//                             line-height: 22px;
+//                             border-radius: 4px;
+//                             margin-right: 10px;
+//                             vertical-align: middle;
+//                             img {
+//                                 @extend .img-fluid;
+//                                 border-radius: 4px;
+//                             }
+//                         }
+//                         span {
+//                             display: none;
+//                             @include media-breakpoint-up(md) {
+//                                 display: inline-block;
+//                             }
+//                         }
+//                     }
+//                 }
+//                 .dropdown-menu {
+//                     left: auto;
+//                     right: 0;
+//                     @include font-size(12);
+//                     .dropdown-item {
+//                         &.active {
+//                             color: $black-200;
+//                             background-color: $yellow-300;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     #sidebar {
+//         position: fixed;
+//         top: 7rem;
+//         bottom: 0;
+//         left: 0;
+//         z-index: 10;
+//         width: 22.5rem;
+//         transition: all 0.3s;
+//         height: calc(100vh - 7rem);
+//         background-color: $white;
+//         .user-profile {
+//             position: relative;
+//             background-size: cover;
+//             .profile-img {
+//                 width: 4.8rem;
+//                 margin: 0 auto;
+//                 padding: 10px 0 5px 0;
+//                 border-radius: 100%;
+//                 img {
+//                     width: 100%;
+//                     padding: 5px;
+//                     border: 1px solid rgba(120, 130, 140, 0.13);
+//                     border-radius: 100%;
+//                 }
+//             }
+//             .profile-menu {
+//                 display: none;
+//                 position: relative;
+//                 text-align: center;
+//                 h5 {
+//                     @include font-size(18);
+//                     margin-bottom: 0;
+//                 }
+//                 nav {
+//                     margin-top: 1.5rem;
+//                     padding: .5rem 2.5rem;
+//                     background-color: rgba($black-200, .35);
+//                     a {
+//                         color: $white;
+//                         opacity: 0.75;
+//                         &:hover {
+//                             opacity: 1;
+//                         }
+//                     }
+//                 }
+//             }
+//             border-bottom: 1px solid rgba($white, .35);
+//             margin-bottom: 2rem;
+//             &::after {
+//                 content: "";
+//                 background: url('#{$cdn-dist-path}/images/profile__bg--2.jpg');
+//                 opacity: 0.35;
+//                 top: 0;
+//                 left: 0;
+//                 bottom: 0;
+//                 right: 0;
+//                 position: absolute;
+//                 z-index: -1;
+//             }
+//         }
+//         ul.nav {
+//             li {
+//                 a {
+//                     text-align: left;
+//                     span {
+//                         @include font-family('ubuntu', 'medium');
+//                         margin-left: .5rem;
+//                         display: none;
+//                     }
+//                     &.active {
+//                         background-color: $gray-100;
+//                     }
+//                 }
+//                 ul.collapse,
+//                 ul.collapsing {
+//                     background-color: $gray-100;
+//                     li {
+//                         a {
+//                             text-align: left;
+//                             @include font-size(12);
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     &.sidebar-expand {
+//         &.theme-purple, &.theme-default{
+//             .header {         
+//                 .navbar-header {
+//                     @include media-breakpoint-only(xs) {
+//                         width: 6rem;
+//                         #brand {
+//                             // @include img-replace(40, 40);
+//                             // background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--xs.png');
+//                             .brand-xs{
+//                                 display: block;
+//                                 @include invisible(visible);
+//                                 opacity: 1;
+//                                 z-index: 1;
+//                             }
+//                             .brand-sm{
+//                                 display: none;
+//                                 @include invisible(hidden);
+//                                 opacity: 0;
+//                                 height: 0;
+//                                 width: 0;
+//                                 z-index: -1;
+//                             }
+//                         }
+//                     }
+//                     @include media-breakpoint-up(sm) {
+//                         width: 22.5rem;
+//                         #brand {
+//                             .brand-xs{
+//                                 display: none;
+//                                 @include invisible(hidden);
+//                                 opacity: 0;
+//                                 height: 0;
+//                                 width: 0;
+//                                 z-index: -1;
+//                             }
+//                             .brand-sm{
+//                                 display: block;
+//                                 @include invisible(visible);
+//                                 opacity: 1;
+//                                 z-index: 1;
+//                             }
+//                             // @include img-replace(135, 40);
+//                             // background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--sm--horizontal.png');
+//                             background-position: center;
+//                             margin: auto;
+                            
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//         &.theme-purple{
+//             .header {         
+//                 .navbar-header {
+//                     @include media-breakpoint-only(xs) {
+//                         width: 6rem;
+//                         #brand {
+//                             // @include img-replace(40, 40);
+//                             // background-image: url('#{$cdn-dist-path}/images/peruanisima__logo--color--xs.png');
+                            
+//                         }
+//                     }
+//                     @include media-breakpoint-up(sm) {
+//                         width: 22.5rem;
+//                         #brand {
+//                             // @include img-replace(225, 70);
+//                             // background-image: url('#{$cdn-dist-path}/images/peruanisima____logo--color--sm--horizontal.png');
+//                             // background-position: center;
+//                             margin: auto;
+                            
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+        
+//         #content {
+//             @include media-breakpoint-only(xs) {
+//                 margin-left: 6rem;
+//                 width: calc(100% - 6rem);
+//             }
+//             @include media-breakpoint-up(sm) {
+//                 margin-left: 22.5rem;
+//                 width: calc(100% - 22.5rem);
+//             }
+//         }
+//         #sidebar {
+//             @include media-breakpoint-only(xs) {
+//                 min-width: 6rem;
+//                 max-width: 6rem;
+//                 margin-left: 0;
+//                 overflow: visible;
+//                 ul.nav {
+//                     li {
+//                         position: relative;
+//                         a {
+//                             text-align: center;
+//                             &[aria-expanded="true"] {
+//                                 background-color: $gray-100;
+//                             }
+//                             span {
+//                                 display: none !important;
+//                             }
+//                         }
+//                         .show,
+//                         .collapsing {
+//                             position: absolute;
+//                             top: 0;
+//                             left: 6rem;
+//                             background-color: $gray-100;
+//                         }
+//                     }
+//                 }
+//             }
+//             @include media-breakpoint-up(sm) {
+//                 min-width: 22.5rem;
+//                 max-width: 22.5rem;
+//                 margin-left: 0;
+//                 overflow: auto;
+//                 .user-profile {
+//                     .profile-img {
+//                         width: 7.2rem;
+//                     }
+//                     .profile-menu {
+//                         display: block;
+//                     }
+//                 }
+//                 ul.nav {
+//                     li {
+//                         >a {
+//                             padding-left: 2rem;
+//                             padding-right: 2rem;
+//                         }
+//                         a {
+//                             &[data-toggle="collapse"] {
+//                                 position: relative;
+//                             }
+//                             &[aria-expanded="false"],
+//                             &[aria-expanded="true"] {
+//                                 &::before {
+//                                     font-family: 'Font Awesome 5 Free';
+//                                     position: absolute;
+//                                     font-weight: 900;
+//                                     @include font-size(14);
+//                                     content: '\f0d7';
+//                                     display: block;
+//                                     right: 2rem;
+//                                     line-height: inherit !important;
+//                                     transition: transform .3s ease;
+//                                     color: $black-100;
+//                                 }
+//                             }
+//                             &[aria-expanded="true"] {
+//                                 background-color: $gray-100;
+//                                 &::before {
+//                                     transform: rotate(180deg);
+//                                 }
+//                             }
+//                             span {
+//                                 display: inline-block;
+//                             }
+//                         }
+//                         .show,
+//                         .collapsing {
+//                             li {
+//                                 a {
+//                                     text-indent: 2rem;
+//                                 }
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     &.sidebar-collapse {
+//         &.theme-purple, &.theme-default{
+//             .header {
+//                 height: 7rem;
+//                 .navbar-header {
+//                     @include media-breakpoint-up(xs) {
+//                         width: 6rem;
+//                         #brand {
+//                             .brand-xs{
+//                                 display: block;
+//                             }
+//                             .brand-sm{
+//                                 display: none;
+//                             }
+//                             // @include img-replace(40, 40);
+//                             // background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--xs.png');
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//         &.theme-purple, &.theme-default{
+//             .header {
+//                 height: 7rem;
+//                 .navbar-header {
+//                     @include media-breakpoint-up(xs) {
+//                         width: 6rem;
+//                         #brand {
+//                             .brand-xs{
+//                                 display: block;
+//                             }
+//                             .brand-sm{
+//                                 display: none;
+//                             }
+//                             // @include img-replace(40, 40);
+//                             // background-image: url('#{$cdn-dist-path}/images/peruanisima__logo--color--xs.png');
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+        
+//         #content {
+//             @include media-breakpoint-only(xs) {
+//                 margin-left: 0;
+//                 width: 100%;
+//             }
+//             @include media-breakpoint-up(sm) {
+//                 margin-left: 6rem;
+//                 width: calc(100% - 6rem);
+//             }
+//         }
+//         #sidebar {
+//             @include media-breakpoint-only(xs) {
+//                 min-width: 6rem;
+//                 max-width: 6rem;
+//                 margin-left: -6rem;
+//                 overflow: hidden;
+//             }
+//             @include media-breakpoint-up(xs) {
+//                 ul.nav {
+//                     li {
+//                         a {
+//                             text-align: center;
+//                         }
+//                     }
+//                 }
+//             }
+//             @include media-breakpoint-up(sm) {
+//                 min-width: 6rem;
+//                 max-width: 6rem;
+//                 margin-left: 0;
+//                 overflow: visible;
+//                 ul.nav {
+//                     li {
+//                         position: relative;
+//                         a {
+//                             &[aria-expanded="true"] {
+//                                 background-color: $gray-100;
+//                             }
+//                         }
+//                         .show,
+//                         .collapsing {
+//                             position: absolute;
+//                             top: 0;
+//                             left: 6rem;
+//                             background-color: $gray-100;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// nav{
+//     &.nav-actions{
+//         @extend .nav;
+//         a{
+//             @extend .nav-link;
+//             padding: 0 .75rem;
+//             color: $black-100 !important;
+//             &:hover{
+//                 color: $black-200 !important;
+//             }
+//             &.danger{
+//                 color: $danger !important;
+//                 &:hover{
+//                     color: darken($danger, 15%) !important;
+//                 }
+//             }
+//         }
+//     }
+// }
