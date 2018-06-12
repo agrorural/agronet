@@ -11,6 +11,7 @@
     <link rel="icon" href="dist/images/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="dist/images/favicon.ico">
     <link rel="stylesheet" type="text/css" media="screen" href="dist/styles/app.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css">
     <body class="theme-default" id="page">
       <div id="wrapper">
         <nav class="header">
@@ -131,7 +132,14 @@
           </table>
         `);
         
-        var t = $('#starwars').DataTable();
+        var t = $('#starwars').DataTable(
+           {
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ],
+          } 
+        );
         
         $.ajax({
           url: "https://swapi.co/api/planets/",

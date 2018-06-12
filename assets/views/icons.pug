@@ -44,7 +44,14 @@ block append scripts
       </table>
     `);
 
-    var t = $('#starwars').DataTable();
+    var t = $('#starwars').DataTable(
+       {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ],
+      } 
+    );
     
     $.ajax({
       url: "https://swapi.co/api/planets/",

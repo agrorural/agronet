@@ -1,6 +1,23 @@
-window.jQuery = require('jquery')
-window.Popper = require('popper.js')
-require('bootstrap')
+var $ = require('jquery');
+window.jQuery = require('jquery');
+window.Popper = require('popper.js');
+require('bootstrap');
+
+// require("jszip");
+// require('jszip-utils');
+
+import pdfMake from "pdfmake/build/pdfmake";
+import pdfFonts from "pdfmake/build/vfs_fonts";
+
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
+require( 'datatables.net-bs4' )( window, $ );
+require( 'datatables.net-buttons-bs4' )( window, $ );
+require( 'datatables.net-buttons/js/buttons.colVis.js' )( window, $ );
+require( 'datatables.net-buttons/js/buttons.flash.js' )( window, $ );
+require( 'datatables.net-buttons/js/buttons.html5.js' )( window, $ );
+require( 'datatables.net-buttons/js/buttons.print.js' )( window, $ );
+require( 'datatables.net-responsive-bs4' )( window, $ );  
 
 // import fontawesome from '@fortawesome/fontawesome';
 // import brands from '@fortawesome/fontawesome-free-brands';
@@ -24,7 +41,6 @@ var engine = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.whitespace
 });
 
-var jQuery = require("jquery");
 var typeahead = require("typeahead.js-browserify");
 typeahead.loadjQueryPlugin();
 
@@ -32,13 +48,11 @@ Chartkick.options = {
     colors: ['#7daf28', '#f5d269', '#8c6437', '#b48caf', '#3ccdcd']
 }
 
-const dt = require('datatables.net-responsive-bs4')();
+$(function() {
+    $('[data-toggle="popover"]').popover();
+    $('[data-toggle="tooltip"]').tooltip();
 
-jQuery(function() {
-    jQuery('[data-toggle="popover"]').popover();
-    jQuery('[data-toggle="tooltip"]').tooltip();
-
-    jQuery(".flatpickr").flatpickr({
+    $(".flatpickr").flatpickr({
             enableTime: true,
             dateFormat: "Y-m-d H:i",
     });
@@ -53,72 +67,72 @@ jQuery(function() {
     // media query change
     function WidthChange(mq) {
         if (mq.matches) {
-            jQuery('body').addClass('sidebar-expand');
-            jQuery('body').removeClass('sidebar-collapse');
+            $('body').addClass('sidebar-expand');
+            $('body').removeClass('sidebar-collapse');
             console.log("window width is at least 768px");
         } else {
-            jQuery('body').removeClass('sidebar-expand');
-            jQuery('body').addClass('sidebar-collapse');
+            $('body').removeClass('sidebar-expand');
+            $('body').addClass('sidebar-collapse');
             console.log("window width is less than 768px");
         }
     }
 
-    jQuery('.sidebartoggler').click(function() {
-        jQuery('body').toggleClass('sidebar-expand sidebar-collapse');
-        jQuery('.sidebartoggler').toggleClass('is-active');
+    $('.sidebartoggler').click(function() {
+        $('body').toggleClass('sidebar-expand sidebar-collapse');
+        $('.sidebartoggler').toggleClass('is-active');
     });
 
-    jQuery('input.form-control').focus(function() {
-        jQuery(this).parents('.form-group').addClass('in-focus');
+    $('input.form-control').focus(function() {
+        $(this).parents('.form-group').addClass('in-focus');
     }).blur(function(){
-        let tmpval = jQuery(this).val();
-        jQuery(this).parents('.form-group').removeClass('in-focus');
+        let tmpval = $(this).val();
+        $(this).parents('.form-group').removeClass('in-focus');
         if (tmpval == '') {
-            jQuery(this).parents('.form-group').addClass('empty');
-            jQuery(this).parents('.form-group').removeClass('not-empty');
+            $(this).parents('.form-group').addClass('empty');
+            $(this).parents('.form-group').removeClass('not-empty');
             console.log(tmpval);
            
         } else {
-            jQuery(this).parents('.form-group').addClass('not-empty');
-            jQuery(this).parents('.form-group').removeClass('empty');
+            $(this).parents('.form-group').addClass('not-empty');
+            $(this).parents('.form-group').removeClass('empty');
             console.log(tmpval);
         }
     });
 
-    jQuery('input:required').blur(function() {
-        let tmpval = jQuery(this).val();
+    $('input:required').blur(function() {
+        let tmpval = $(this).val();
         if (tmpval == '') {
-            jQuery(this).addClass('is-invalid');
-            jQuery(this).removeClass('is-valid');
+            $(this).addClass('is-invalid');
+            $(this).removeClass('is-valid');
             console.log(tmpval);
         }else{
-            jQuery(this).addClass('is-valid');
-            jQuery(this).removeClass('is-invalid');
+            $(this).addClass('is-valid');
+            $(this).removeClass('is-invalid');
             console.log(tmpval);
         }
     });
 
-    jQuery(".custom-select:required").change(function(){
-        let value = jQuery(this).val();
+    $(".custom-select:required").change(function(){
+        let value = $(this).val();
         if(value == "0" || value == "")
          {
-            jQuery(this).addClass('is-invalid');
-            jQuery(this).removeClass('is-valid');
+            $(this).addClass('is-invalid');
+            $(this).removeClass('is-valid');
             console.log(value);
          }
          else
          {
-            jQuery(this).addClass('is-valid');
-            jQuery(this).removeClass('is-invalid');
+            $(this).addClass('is-valid');
+            $(this).removeClass('is-invalid');
             console.log(value);
          }
        });
     
-    jQuery('#sidebarCollapse').click(function() {
-        jQuery('nav#sidebar').toggleClass('active');
+    $('#sidebarCollapse').click(function() {
+        $('nav#sidebar').toggleClass('active');
     });
 
-    jQuery('table.datagrid').DataTable({
+    $('table.datagrid').DataTable({
         language: {
             "sProcessing": "Procesando...",
             "sLengthMenu": "Mostrar _MENU_ registros",

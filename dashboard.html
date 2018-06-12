@@ -11,6 +11,7 @@
     <link rel="icon" href="dist/images/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="dist/images/favicon.ico">
     <link rel="stylesheet" type="text/css" media="screen" href="dist/styles/app.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="http://cdn.agrorural.gob.pe/apps/dist/styles/default.css">
     <link rel="stylesheet" type="text/css" media="screen" href="http://cdn.agrorural.gob.pe/apps/dist/styles/default.date.css">
     <link rel="stylesheet" type="text/css" media="screen" href="http://cdn.agrorural.gob.pe/apps/dist/styles/default.time.css">
@@ -183,7 +184,7 @@
                                   <div class="dropdown card-config"><a class="btn btn-light btn-sm" href="#"><em class="fa fa-list-ul"></em> Ver todo</a></div>
                                   <h6 class="card-subtitle mb-2 text-muted">Del personal</h6>
                                   <div class="table-responsive">
-                                    <table class="datagrid">
+                                    <table id="datagrid">
                                       <thead>
                                         <tr>
                                           <th>Order #</th>
@@ -282,6 +283,8 @@
         let Cookie = require('js-cookie');
         let Swiper = require('swiper');
         
+        
+        
         var typeahead = require("typeahead.js-browserify");
         typeahead.loadjQueryPlugin();
         
@@ -310,6 +313,16 @@
         $(document).ready(function() {
           $('.datepicker').pickadate();
           $('.timepicker').pickatime();
+        
+          $('#datagrid').DataTable( {
+          dom: 'Bfrtip',
+          buttons: [
+            { extend: 'copy', text: '<i class="fas fa-copy"></i>' },
+            { extend: 'csv', text: '<i class="fas fa-file-excel"></i>' },
+            { extend: 'pdf', text: '<i class="fas fa-file-pdf"></i>' },
+            { extend: 'print', text: '<i class="fas fa-print"></i>' }
+          ]
+          } );
         });
         
         new Chartkick.LineChart("multiple-line", [{

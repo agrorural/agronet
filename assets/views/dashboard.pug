@@ -79,7 +79,7 @@ block content
                 #multiple-line.chart
         +card('Directorio', 'Del personal', '#')
             .table-responsive
-                table.datagrid
+                table#datagrid
                     thead
                         tr
                             th Order #
@@ -152,6 +152,8 @@ block append scripts
       let Cookie = require('js-cookie');
       let Swiper = require('swiper');
 
+
+
       var typeahead = require("typeahead.js-browserify");
       typeahead.loadjQueryPlugin();
 
@@ -180,6 +182,16 @@ block append scripts
       $(document).ready(function() {
         $('.datepicker').pickadate();
         $('.timepicker').pickatime();
+
+        $('#datagrid').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+          { extend: 'copy', text: '<i class="fas fa-copy"></i>' },
+          { extend: 'csv', text: '<i class="fas fa-file-excel"></i>' },
+          { extend: 'pdf', text: '<i class="fas fa-file-pdf"></i>' },
+          { extend: 'print', text: '<i class="fas fa-print"></i>' }
+        ]
+        } );
       });
 
       new Chartkick.LineChart("multiple-line", [{

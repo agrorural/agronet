@@ -11,6 +11,7 @@
     <link rel="icon" href="dist/images/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="dist/images/favicon.ico">
     <link rel="stylesheet" type="text/css" media="screen" href="dist/styles/app.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css">
     <body class="theme-default" id="page">
       <div id="wrapper">
         <nav class="header">
@@ -160,7 +161,7 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
-                                  <table id="datagrid">
+                                  <table class="table datagrid">
                                     <thead>
                                       <tr>
                                         <th scope="col">#</th>
@@ -210,40 +211,6 @@ $(&quot;table&quot;).DataTable();</code></pre>
         </section>
       </div>
       <script src="dist/scripts/vendor.js"></script>
-      <script>
-        let $ = require('jquery');
-        let DataTable = require('datatables.net-responsive-bs4')();
-        
-        $(document).ready(function() {
-          $('table#datagrid').DataTable({
-              language: {
-                  "sProcessing": "Procesando...",
-                  "sLengthMenu": "Mostrar _MENU_ registros",
-                  "sZeroRecords": "No se encontraron resultados",
-                  "sEmptyTable": "Ningún dato disponible en esta tabla",
-                  "sInfo": "Mostrando del _START_ al _END_ de _TOTAL_ registros",
-                  "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-                  "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
-                  "sInfoPostFix": "",
-                  "sSearch": "Buscar:",
-                  "sUrl": "",
-                  "sInfoThousands": ",",
-                  "sLoadingRecords": "Cargando...",
-                  "oPaginate": {
-                      "sFirst": "Primero",
-                      "sLast": "Último",
-                      "sNext": "Siguiente",
-                      "sPrevious": "Anterior"
-                  },
-                  "oAria": {
-                      "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-                      "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-                  }
-              },
-              responsive: true
-          });
-        });
-      </script>
     </body>
   </head>
 </html>
