@@ -1,6 +1,8 @@
-var $ = require('jquery');
+const $ = require('jquery');
+
 window.jQuery = require('jquery');
 window.Popper = require('popper.js');
+
 require('bootstrap');
 
 // require("jszip");
@@ -8,6 +10,7 @@ require('bootstrap');
 
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
+import "inputmask/dist/inputmask/jquery.inputmask";
 
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
@@ -34,21 +37,26 @@ const confirm = require('jquery-confirm');
 const redirect = require('jquery.redirect');
 const Cookie = require('js-cookie');
 const flatpickr = require("flatpickr");
-var Swiper = require('swiper');
+const Swiper = require('swiper');
+const toastr = require("toastr");
+const simplebar = require('simplebar');
+const inputmask = require('inputmask');
 
-var Bloodhound = require("typeahead.js-browserify").Bloodhound
-var engine = new Bloodhound({
+const Bloodhound = require("typeahead.js-browserify").Bloodhound
+const engine = new Bloodhound({
     local: ['dog', 'pig', 'moose'],
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     datumTokenizer: Bloodhound.tokenizers.whitespace
 });
 
-var typeahead = require("typeahead.js-browserify");
+const typeahead = require("typeahead.js-browserify");
 typeahead.loadjQueryPlugin();
 
 Chartkick.options = {
     colors: ['#7daf28', '#f5d269', '#8c6437', '#b48caf', '#3ccdcd']
 }
+
+new simplebar(document.getElementById('sidebar'));
 
 $(function() {
     $('[data-toggle="popover"]').popover();

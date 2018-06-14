@@ -176,7 +176,7 @@ $purple-200: #690a55;
         }
 
         .header {
-            background-color: $analog;
+            background-color: color-yiq($primary);
             border-bottom: 1px solid $analog;
 
             .navbar-header {

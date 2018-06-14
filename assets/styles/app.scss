@@ -1,7 +1,8 @@
 @import "common/_sintax";
 @import "common/_variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
-@import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
+@import "../../node_modules/toastr/toastr";
+//@import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
 @import "common/_mixins";
 @include theme(theme-purple, $purple-200, $cream, $orange-200);
 @include theme(theme-default);
@@ -16,6 +17,7 @@
 @import "components/datatables/datatables.net-bs4-responsive";
 @import "components/confirm/jquery-confirm";
 @import "components/swiper/_swiper";
+@import "components/simplebar/_simplebar";
 @import "layouts/_nav";
 @import "components/_login";
 @import "components/_article";

@@ -110,16 +110,8 @@ body#login {
     }
     #brand {
         margin: 4rem auto;
-        background-image: url('#{$cdn-dist-path}/images/agronet__logo--color--sm.png');
         width: 185px;
         height: 125px;
-        a {
-            width: 185px !important;
-            height: 125px !important;
-            span{
-                @include text-hide();
-            }
-        }
     }
 
     .recover{

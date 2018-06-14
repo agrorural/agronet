@@ -111,9 +111,47 @@
             outline: none;
             color: $link-hover-color;
             text-decoration: $link-hover-decoration;
-            transition: all 0.1s;
+            transition: all 0.3s;
         }
     }
+
+    svg {
+      transition: all 0.1s;
+      width: 100%; 
+      height: auto;
+
+      use {
+        svg {
+          fill: inherit;
+        }
+      }
+
+      &#logo {
+        height: 3rem;
+        
+        .st0 {
+          fill: $black-100;
+        }
+
+        .st1 {
+          fill: $blue-100;
+        }
+
+        .st2 {
+          fill: $yellow-300;
+        }
+
+        .st3 {
+          fill: $green-100;
+        }
+      }
+    }
+
+    #wide,
+    #square {
+      display: none;
+    }
+
     //
     // Profile 
     //
@@ -174,9 +212,11 @@
     .page-header {
         @extend .card;
         @extend .mb-5;
+
         position: sticky;
-        top: 7rem;
+        top: 5rem;
         z-index: 15;
+
         .page-action{
             padding: .95rem 3rem;
             @extend .d-flex;
@@ -616,12 +656,14 @@ nav[aria-label="breadcrumb"]{
             }
             main {
                 @extend .container-fluid;
+                
                 background-color: transparent;
                 padding-left: 0;
                 padding-right: 0;
                 width: calc(100% - 6rem);
                 flex: 1;
-                margin-top: 7rem;
+                margin-top: 5rem;
+
                 .page-header {
                     margin-left: -3rem;
                     margin-right: -3rem;

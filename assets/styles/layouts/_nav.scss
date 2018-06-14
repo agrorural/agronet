@@ -11,7 +11,8 @@ body {
       height: 5rem;
       z-index: $zindex-fixed;
       background-color: $primary;
-      padding: 0;        
+      padding: 0;
+      justify-content: space-between;
       
       .navbar-header {
           width: 22.5rem;
@@ -36,9 +37,12 @@ body {
               .brand {
                   padding: 0;
                   margin: 0 auto 0 0;
+                  width: 3.5rem;
+                  height: 3rem;
                   
                   @include media-breakpoint-up(sm) {
                       margin: 0 auto;
+                      width: 100%;
                   }
               }
 
@@ -65,7 +69,7 @@ body {
 
       .nav {
         .profile-img {
-          width: 1.4rem;
+          width: 1.6rem;
         }
       }
 
@@ -203,21 +207,57 @@ body {
   }
 
   &.sidebar-expand {
-      &.theme-default{
+      &.theme-default,
+      &.theme-purple {
           .header {         
-              .navbar-header {
-                  @include media-breakpoint-only(xs) {
-                      width: 100%;
+            .navbar-header {
+                @include media-breakpoint-only(xs) {
+                  width: 100%;
+
+                  svg#square {
+                    display: block;
                   }
 
-                  @include media-breakpoint-up(sm) {
-                      width: 100%;
+                  svg#wide {
+                    display: none;
+                  }
+                }
+
+                @include media-breakpoint-up(sm) {
+                  width: 100%;
+                  
+                  svg#square {
+                    display: block;
                   }
 
-                  @include media-breakpoint-up(md) {
-                      width: 22.5rem;
+                  svg#wide {
+                    display: none;
                   }
+                }
+
+                @include media-breakpoint-up(md) {
+                    width: 22.5rem;
+                    
+                    svg#square {
+                      display: none;
+                    }
+  
+                    svg#wide {
+                      display: block;
+                    }
+                }
+            }
+
+            .nav {
+              .name {
+                display: none;
+
+                @include media-breakpoint-up(sm) { 
+                  display: block;
+                  margin-left: 1rem;
+                }
               }
+            }
           }
       }
       @include media-breakpoint-up(md) {
@@ -278,7 +318,7 @@ body {
                       .collapsing {
                           li {
                               a {
-                                  text-indent: 2rem;
+                                  text-indent: 1rem;
                               }
                           }
                       }
@@ -299,7 +339,15 @@ body {
                       nav {
                           display: flex;
                           align-items: center;
-                          justify-content: space-between;
+                          justify-content: start;
+
+                          svg#square {
+                            display: block;
+                          }
+
+                          svg#wide {
+                            display: none;
+                          }
                       }
                       
                   }
@@ -308,6 +356,17 @@ body {
                       min-width: 6rem;
                       max-width: 6rem;
                   }
+              }
+
+              .nav {
+                .name {
+                  display: none;
+
+                  @include media-breakpoint-up(sm) { 
+                    display: block;
+                    margin-left: 1rem;
+                  }
+                }
               }
           }
       }
@@ -381,7 +440,8 @@ body {
 
                       .profile-img {
                           width: 4.8rem;
-                          margin-right: 1rem;
+                          // margin-right: 1rem;
+                          margin: 0 1rem 0 0;
                       }
                       
                       .profile-menu {
@@ -426,7 +486,7 @@ body {
                           .collapsing {
                               li {
                                   a {
-                                      text-indent: 2rem;
+                                      text-indent: 1rem;
                                   }
                               }
                           }
@@ -443,6 +503,12 @@ body {
                       }
                   }
               }
+          }
+
+          @include media-breakpoint-only(sm) {
+            .profile-img {
+              margin: auto;
+            }
           }
           
           @include media-breakpoint-up(sm) {
@@ -810,7 +876,7 @@ body {
 //                         .collapsing {
 //                             li {
 //                                 a {
-//                                     text-indent: 2rem;
+//                                     text-indent: 1rem;
 //                                 }
 //                             }
 //                         }
@@ -914,22 +980,22 @@ body {
 //     }
 // }
 
-// nav{
-//     &.nav-actions{
-//         @extend .nav;
-//         a{
-//             @extend .nav-link;
-//             padding: 0 .75rem;
-//             color: $black-100 !important;
-//             &:hover{
-//                 color: $black-200 !important;
-//             }
-//             &.danger{
-//                 color: $danger !important;
-//                 &:hover{
-//                     color: darken($danger, 15%) !important;
-//                 }
-//             }
-//         }
-//     }
-// }
+nav{
+    &.nav-actions{
+        @extend .nav;
+        a{
+            @extend .nav-link;
+            padding: 0 .75rem;
+            color: $black-100 !important;
+            &:hover{
+                color: $black-200 !important;
+            }
+            &.danger{
+                color: $danger !important;
+                &:hover{
+                    color: darken($danger, 15%) !important;
+                }
+            }
+        }
+    }
+}
