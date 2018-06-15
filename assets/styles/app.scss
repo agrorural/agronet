@@ -7,12 +7,12 @@
 @include theme(theme-purple, $purple-200, $cream, $orange-200);
 @include theme(theme-default);
 @import "common/_global";
-@import "components/compass-mixins/animate";
+// @import "components/compass-mixins/animate";
 // @import "components/font-awesome/fontawesome";
 // @import "components/font-awesome/fa-regular";
 // @import "components/font-awesome/fa-solid";
 // @import "components/font-awesome/fa-brands";
-@import "components/font-agro-rural/ar-icons";
+// @import "components/font-agro-rural/ar-icons";
 @import "components/datatables/datatables.net-bs4";
 @import "components/datatables/datatables.net-bs4-responsive";
 @import "components/confirm/jquery-confirm";

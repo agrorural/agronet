@@ -56,7 +56,7 @@ Chartkick.options = {
     colors: ['#7daf28', '#f5d269', '#8c6437', '#b48caf', '#3ccdcd']
 }
 
-new simplebar(document.getElementById('sidebar'));
+// new simplebar(document.getElementById('sidebar'));
 
 $(function() {
     $('[data-toggle="popover"]').popover();
